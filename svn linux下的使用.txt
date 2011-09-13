@@ -1,7 +1,7 @@
 svn checkout url --username uname /path 签出某个项目路径到本地某个目录
 svn checkout url -read-only
 svn add * 	添加该目录下的所有文件(包括子目录)
-svn ci -m "日志模式"	提交添加的文件 
+svn ci -m "日志模式"	提交添加的文件
 	选C继续
 	输入用户名和密码
 
