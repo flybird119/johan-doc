@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+;加入把py文件编译成pyc功能的右键菜单 
+[HKEY_CLASSES_ROOT\*\shell\mymenu1]
+@="编译PY文件"
+[HKEY_CLASSES_ROOT\*\shell\mymenu1\command]
+@="cmd.exe /k python C:\Python26\Scripts\my_py_compile.py %1"
+
+;下面几种值都行
+;C:\Python26\Scripts\path.bat %1
+;cmd.exe /k python C:\Python26\Scripts\my_py_compile.py %1
+;python C:\Python26\Scripts\my_py_compile.py %1

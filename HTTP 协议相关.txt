@@ -1,0 +1,199 @@
+firebug查看http响应头的时候，有时候发现有content-length属性，有时候没有这个属性，取而代之的是Transfer-Encoding: chunked属性。由于客户端强制要求，服务器端必须返回content-length,否则，客户端将不予解析
+
+
+HTTP协议中使用Content-Length这个头来告知body内容的长度。然后，在数据下行的过程中，Content-Length的方式要预先在服务器中缓存所有数据，然后所有数据再一股脑儿地发给客户端。
+如果要一边产生数据，一边发给客户端，WEB 服务器就需要使用"Transfer-Encoding: chunked"这样的方式来代替Content-Length。
+
+
+
+Chunked编码使用若干个Chunk串连而成，由一个标明长度为0的chunk标示结束。每个Chunk分为头部和正文两部分，头部内容指定下一段正文的字符总数（十六进制的数字）和数量单位（一般不写），正文部分就是指定长度的实际内容，两部分之间用回车换行(CRLF)隔开。在最后一个长度为0的Chunk中的内容是称为footer的内容，是一些附加的Header信息（通常可以直接忽略）。
+
+
+Chunk编码格式如下：
+
+　　Chunked-Body = *chunk
+　　　　　　　　　"0" CRLF
+　　　　　　　　　footer
+　　　　　　　　　CRLF 
+　　chunk = chunk-size [ chunk-ext ] CRLF
+　　　　　　 chunk-data CRLF
+
+　　hex-no-zero = <HEX excluding "0">
+
+　　chunk-size = hex-no-zero *HEX
+　　chunk-ext = *( ";" chunk-ext-name [ "=" chunk-ext-value ] )
+　　chunk-ext-name = token
+　　chunk-ext-val = token | quoted-string
+　　chunk-data = chunk-size(OCTET)
+
+　　footer = *entity-header
+
+
+RFC文档中的Chunked解码过程如下：
+　　length := 0
+　　read chunk-size, chunk-ext (if any) and CRLF
+　　while (chunk-size > 0) {
+　　read chunk-data and CRLF
+　　append chunk-data to entity-body
+　　length := length + chunk-size
+　　read chunk-size and CRLF
+　　}
+　　read entity-header
+　　while (entity-header not empty) {
+　　append entity-header to existing header fields
+　　read entity-header
+　　}
+　　Content-Length := length
+　　Remove "chunked" from Transfer-Encoding
+
+要解决服务器不返回Transfer-Encoding:chunked，在客户端请求的时候可以使用http 1.0的协议
+
+Transfer-Encoding:chunked是在http 1.1上包办出现的
+nginx对http1.1->http 1.0是不支持的，他只支持http1.1->http1.1 和http1.0->http1.0
+
+
+
+
+HTTP 1.1中有两个实体头(Entity-Header)直接与编码相关,分别为Content-Encoding和Transfer-Encoding.
+Content-Encoding:表示实体已经采用了的编码方式,不区分大小写 HTTP1.1标准中已包括的有gzip/compress/deflate/identity
+	HTTP请求中包含了一个Accept-Encoding头,该头用来说明用户代理(User-Agent)能接受哪些类型的编码,如果HTTP请求不存在该头,服务器认为用户代理能接受任何编码类型.
+Transfer-Encoding:该头表示为了达到安全传输或者数据压缩等目的而对实体进行的编码
+	在传输过程中才有的,并非请求URL对应实体的本身特性
+	例如,请求URL为http://host/abc.txt,服务器发送数据时认为该文件可用gzip方式压缩以节省带宽,接收端看到Transfer-Encoding为gzip首先进行解码然后才能得到请求实体.
+	多个编码可能同时对同一实体使用,所以Transfer-Encoding头中编码顺序代表了解码的顺序过程.同样也是不区分大小写的,目前HTTP1.1标准中已包括的有gzip/compress/deflate/identity/chunked等.
+	chunked编码.该编码将实体分块传送并逐块标明长度,直到长度为0块表示传输结束
+	HTTP1.1标准规定,只要使用了Transfer-Encoding的地方就必须使用chunked编码,并且chunked必须为最后一层编码.任何HTTP 1.1应用都必须能处理chunked编码.
+	与之对应的请求头为TE,它主要表示请求发起者愿意接收的Transfer-Encoding类型，TE为空或者不存在,则表示唯一能接受的类型为chunked
+	与之相关的头还包括Trailer,它与chunked编码相关
+Content-Length表：示传输的实体长度,以字节为单位
+	只要Transfer-Encoding不为identity,则实际传输长度由编码中的chunked决定,Content-Length即使存在也被忽略.
+	
+在HTTP中有消息体(Message body)和实体(Entity body)之分,简单说来在没有Transfer-Encoding作用时,消息体就是实体,而应用了Transfer-Encoding后,消息体就是编码后的实体,
+	Message body = Transfer-Encoding encode(Entity body)
+	
+	
+如何确定消息体的长度? HTTP 1.1标准给出了如下方法(按照优先级依次排列):
+        1, 响应状态(Response Status)为1xx/204/304或者请求方法为HEAD时,消息体长度为0.
+        2, 如果使用了非"identity"的Transfer-Encoding编码方式,则消息体长度由"chunked"编码决定,除非该消息以连接关闭为结束.
+        3, 如果存在"Content-Length"实体头,则消息长度为该数值.
+        3, 如果消息使用关闭连接方式代表消息体结束,则长度由关闭前收到的长度决定. 该条对HTTP Request包含的消息体不适用.
+        
+"Transfer-Encoding: chunked"是这样编码的：
+HTTP头
+
+\r\n
+\r\n      --连续的两个\r\n之后就是HTTP体了
+
+16进制值代表的数据长度
+\r\n
+上面所指的数据长度
+\r\n    --每段数据结束后，以\r\n标识
+
+16进制代表的第二段数据
+\r\n
+XX长度的数据
+\r\n
+
+………… (反复通过这样的方式表示每次传输的数据长度)
+
+0      --数据结束部分用0表示，然后是连续的两个\r\n
+\r\n
+\r\n
+
+
+
+
+C语言解析"Transfer-Encoding: chunked"的数据：
+//test_chunked.cpp
+#include <stdio.h>
+#include <string.h>
+
+int Hex2Int(const char* str)
+{
+    int nResult = 0;
+    while (*str!='\0')
+    {
+        switch (*str)
+        {
+        case '0'...'9':
+            nResult = nResult*16 + *str-'0';
+            break;
+        case 'a'...'f':
+            nResult = nResult*16 + *str-'a'+10;
+            break;
+        case 'A'...'F':
+            nResult = nResult*16 + *str-'A'+10;
+            break;
+        default:
+            return -1;
+            break;
+        }
+        str++;
+    }
+    return nResult;
+}
+
+#define COPY_STRING(dst, src, src_len) do{memcpy((dst), (src), (src_len)); dst[(src_len)]='\0';}while(0);
+
+void test(const char* file)
+{
+    //
+    const int BUFFER_SIZE = 1024*10;
+    char* buf = new char[BUFFER_SIZE];
+    FILE* fp = fopen(file, "rb");
+    if (NULL==fp)
+    {
+        printf("open file error\n");
+        return;
+    }
+    int nLen = fread(buf, 1, BUFFER_SIZE, fp);
+    fclose(fp);
+    fp = NULL;
+    buf[nLen] = '\0';
+    //
+    char* pBody = strstr(buf, "\r\n\r\n");
+    if (NULL==pBody)
+    {
+        return;
+    }
+    pBody += 4;
+    FILE* fDst = fopen("result.txt.gz", "ab");
+    //下面开始解析
+    int nBytes;
+    char* pStart = pBody;
+    char* pTemp;
+    char temp[10];
+    do
+    {
+        pTemp = strchr(pStart, '\r');
+        if (NULL==pTemp)
+        {
+            printf("格式错误！\n");
+            break;
+        }
+        nLen = pTemp-pStart;
+        COPY_STRING(temp, pStart, nLen);
+        nBytes = Hex2Int(temp);
+        pStart = pTemp + 2;
+        //下面写入到另一个文件
+        if (nBytes>0)
+        {
+            if (nBytes!=fwrite(pStart, 1, nBytes, fDst))
+            {
+                printf("write error!\n");
+                break;
+            }
+            pStart += nBytes + 2;
+        }
+    } while(nBytes>0);
+    fclose(fDst);
+    fDst = NULL;
+    delete[] buf;
+    buf = NULL;
+}
+
+int main()
+{
+    test("chunked.txt");
+    return 1;
+}
