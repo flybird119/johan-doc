@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Help Center</title>
+	<link rel="stylesheet" type="text/css" href="css/help.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body class="help_body1">
+	<div class="help_position"><span class="help_positionIcon">Help Center</span> -> Access Control System Management -&gt; Real-time monitoring</div>
+<div class="help_mainContant">
+  <h2>Real-time monitoring</h2>
+  Monitor the statuses and real-time events of doors  under the access control panels in the system in real-time, including normal  events and exceptional events (including alarm events).<br />
+  <br />
+  <b>Appendix: Real-Time Event  Description:</b><br /><br />
+  <b>Normal punching card open: </b>Means the person has open door permission  punch the card and trigger this normal event of open the door .<br />
+  <b>Punching card at door normally  open period: </b>At the  normally open period (set to normally open period of a single door or the door  open period after the first card normally open), the person has open door  permission punch the effective card at the opened door to trigger this normal  events.<br />
+  <b>Punching card as first card  normally open: </b>The person  has first card normally open permission, punch card at the setting first card  normally open period but the door is not opened, and trigger the normal event.<br />
+  <b>Multi-card open: </b>Multi-card combination can be used to open  the door. After the last piece of card verified, the system trigger this normal  event.<br />
+  <b>Emergency password open door: </b>The password (also known as the super  password) set for the current door can be used for door open. It will trigger  this normal event after the emergency password verified.<br />
+  <b>Open door at normally open  period: </b>If the current door  is set a normally open period, the door will open automatically after the  setting start time, and trigger this normal event.<br />
+  <b>Trigger linkage events: </b>After the system linkage configuration take  effect, trigger this normal event.<br />
+  <b>Cancel alarm: </b>When the user cancel the alarm of the  corresponding door, and the operation is success, trigger this normal event.<br />
+  <b>Remote open door: </b>When the user open a door from remote and  the operation is successful, it will trigger this normal event.<br />
+  <b>Remote close door: </b>When the user close a door from remote and  the operation is successful, it will trigger this normal event.<br />
+  <b>Cancel normally open: </b>Punch effective card 5 times or remote close  the door to cancel the current state of the door normally open, trigger this  normal event.<br />
+  <b>Card punching interval is too  short: </b>when the interval  between two card punching is less than the set time interval, trigger this  abnormal event.<br />
+  <b>Card punching out of door  effective period: </b>The user  has the door open permission, punch card but not at the door effective period  of time, and trigger this abnormal event.<br />
+  <b>Illegal time period: </b>The user has the door open permission, punch  card but not at the access effective period of time, and trigger this abnormal  event.<br />
+  <b>Unauthorized access: </b>The registered card without the access  permission of the current door, punch to open the door, trigger this abnormal  event.<br />
+  <b>Anti-pass back: </b>When the anti-pass back setting of the  system take effect, trigger this abnormal event.<br />
+  <b>Interlock: </b>When the interlocking rules of the system  take effect, trigger this abnormal event.<br />
+  <b>Multi-card verify: </b>Use multi-card combination to open the door,  the card verification before the last card (whether verified or not), trigger  this normal event.<br />
+  <b>Card is not registered: </b>Refers to the current card is not registered  in the system, trigger this abnormal event.<br />
+  <b>Door open expired:</b> The door sensor detect that it is expired  the delay time after opened, if not close the door, trigger this abnormal  event. <br />
+  <b>Card has expired validity: </b>The person with the door access permission,  punch card to open the door after the effective time of the access control, can  not be verified and will trigger this abnormal event.<br />
+  <b>Duress password open door: </b>Use the duress password of current door  verified and triggered alarm event.<br />
+  <b>Door is unexpectedly opened: </b>Except all the normal events (normal events  such as user with door open permission to punch card and open the door,  password open door, open the door at normally open period, remote door open,  the linkage triggered door open), the door sensor detect the door is opened,  that is the door is unexpectedly opened.<br />
+  <b>Door is opened: </b>When the door sensor detect that the door  has been properly opened, triggering this normal event.<br />
+  <b>Door is closed: </b>When the door sensor detect that the door  has been properly closed, triggering this normal event.<br />
+  <b>Exit button open: </b>When using the door button to open the door,  triggering this normal event.<br />
+  <b>Auxiliary input point  disconnect: </b>When the  auxiliary input point disconnected, trigger this normal event.<br />
+  <b>Auxiliary input point short: </b>When the auxiliary input point short  circuit, trigger this normal event.<br /><br />
+</div>
+</body>
+</html>

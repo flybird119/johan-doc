@@ -1,0 +1,295 @@
+{% extends "data_opform.html" %}
+{% load i18n %}
+{% block addjs %}
+
+var emps=[]  //后台取出的人员列表
+var cards=[] //批量发卡卡号存储变量,用于后台处理
+var empid=[] //记录员工id号,用于后台处理
+var curi=0   //当前处理行号
+var pin_width=1
+$(function(){
+	$(".tbl_data_edit").find("tr").eq([0]).css({display:"none"});//隐藏空行
+	$(".tbl_data_edit").find("tr").eq([1]).css({display:"none"});//隐藏空行
+    var $div=$("form#id_edit_form");
+	$div.find("#div_id_issuecardnumber").html("<label>"+curi+"</label>")
+	$div.find("#div_id_remainnumber").html("<label>"+(emps.length-curi)+"</label>");
+    //$div.find(".form_help").text(gettext('批量发卡人员编号的长度位数必须相等！' ));
+    $div.find("#id_cardno").attr("readonly",true);
+    $('form#id_edit_form').find('#id_cardno').keydown(function(event){
+       
+        if(event.keyCode==13)
+        {
+            issue();
+        }
+    });
+    $div.find("#id_genemps").click(function(){
+       $("#id_tbl_old tbody").remove()
+        get_emps();
+    });
+    $div.find("#id_clearcard").click(function(){
+        funclear();
+    });
+    pin_width=$("#id_pin_width").val();
+    $("#id_chnageemps").click(function(){
+		$div.find("#id_startpin").val("");
+		$div.find("#id_startpin").removeAttr("readonly");
+		$div.find("#id_endpin").val("");
+		$div.find("#id_endpin").removeAttr("readonly");
+		
+		$("#id_tbl_old tbody").remove()
+		$div.find("#id_startpin").focus();
+	});
+});
+function validcardno(s)
+{
+    var t=/^([0-9])+$/
+   
+    return t.test(s)
+
+}
+function get_range(start,end)
+{
+    if (end-start>100)
+    {
+        alert(gettext('每次发卡数量不能超过100'));
+        return [];
+    }
+    var v=[]
+    for(var i=start;  i<=end;i++)
+    {
+        v.push(i);
+    }
+    return v;
+}
+function get_emps()
+{
+    
+    var $div=$("form#id_edit_form");
+    
+    var startpin=$div.find("#id_startpin").val();
+    var endpin=$div.find("#id_endpin").val();
+	if(startpin.length>pin_width)
+	{
+		alert(gettext("起始编号长度不能超过")+pin_width+gettext("位"));
+		return;
+	}
+	if(endpin.length>pin_width)
+	{
+		alert(gettext("结束编号长度不能超过")+pin_width+gettext("位"));
+		return;
+	}
+	startpin=fillPIN(startpin)
+	endpin=fillPIN(endpin)
+    if(startpin=='')
+    {
+        alert('{% trans "起始编号不能为空" %}');
+        return;
+    }
+    if(endpin=='')
+    {
+        alert('{% trans "结束编号不能为空" %}');
+        return;
+    }
+    pin=[]
+	if(startpin.length!=endpin.length)
+	{
+		alert(gettext('起始人员编号与结束人员编号的长度位数不同！'));
+		return
+	}
+    pin.push(startpin);
+    pin.push(endpin);
+	/*
+    ret=get_range(startpin,endpin);
+    if( ret.length==0)
+    {
+        return;
+    }
+	*/
+    $.ajax({
+        url:"/{{request.surl}}personnel/getmodeldata/personnel/Employee/?fields=id,PIN,EName,DeptID__name&stamp=1",
+        data:"PIN__range=('" +pin[0].toString()+"','"+pin[1].toString()+"')&Card__exact=",
+        //data:"PIN__in="+ret.toString()+"&Card__exact=",
+        dataType:"json",
+        type:"POST",
+        success:function(data){
+            emps=data;
+            curi=0;
+            if (emps.length>0)
+            {
+                //fillcuremp(emps[curi]);
+                var tbl=$div.find("#id_tbl_old")
+                for(var i=0;i<emps.length;i++)
+                {   
+                    var curemp=emps[i];
+                    tbl.append("<tr><td>"+curemp[1]+"</td><td>"+curemp[2]+"</td><td>"+curemp[3]+"</td></tr>");
+                }
+                $div.find("#id_startpin").attr("readonly",true);
+                $div.find("#id_endpin").attr("readonly",true);
+                $div.find("#id_cardno").attr("readonly",false);
+                $div.find("#id_cardno").focus();
+				
+				$div.find("#div_id_issuecardnumber").html("<label>"+curi+"</label>");
+				$div.find("#div_id_remainnumber").html("<label>"+(emps.length-curi)+"</label>");
+				
+				
+            }
+            else
+            {
+                alert("{% trans '该人员编号段内不存在人员' %}");
+            }
+        }
+    });
+}
+function fillPIN(pin)
+{
+	var t=""
+	for(var i=0;i<pin_width;i++)
+	{
+		t=t+"0"
+	}
+	t=t+pin
+	return t.substr(t.length-pin_width)
+}
+function fillcuremp(curemp)
+{
+    var $div=$("form#id_edit_form");
+    /*
+    $div.find("#td_pin").html("<label>"+curemp[1]+"</label>");
+    $div.find("#td_ename").html("<label>"+curemp[2]+"</label>");
+    $div.find("#td_dept").html("<label>"+curemp[3]+"</label>");
+    */
+    $div.find("#div_id_issuecardnumber").html("<label>"+curi+"</label>");
+    $div.find("#div_id_remainnumber").html("<label>"+(emps.length-curi)+"</label>");
+}
+function issue()
+{   
+    var $div=$("form#id_edit_form");
+    var cardno=$div.find("#id_cardno").val();
+    
+    if(validcardno(cardno))
+    {
+		if(cardno==0)
+		{
+			alert("{% trans '卡号不正确' %}");
+			return;
+		}
+        for(var i=0;i<cards.length;i++)
+        {
+            if(cards[i]==cardno)
+            {
+                alert("{% trans '此卡已使用!' %}");
+                return;                
+            }
+            
+        }
+        cards.push(cardno);//保存卡号
+        var html=""
+        var curemp=emps[curi]
+        empid.push(curemp[0]);//保存用户ID
+        html="<tr><td>"+ (curi+1) +"</td><td>"+curemp[1]+"</td><td>"+ curemp[2]+"</td><td>"+curemp[3]+"</td><td>"+ cards[curi]+"</td></tr>"
+        $div.find("#tr_first").after(html);
+        $div.find("#id_cardno").val("");  
+        curi+=1;
+        if (curi>=emps.length)
+        {
+            
+            $("#id_startpin").focus()
+            $div.find("#id_startpin").attr("readonly",false);
+            $div.find("#id_endpin").attr("readonly",false);
+            $div.find("#id_cardno").attr("readonly",true);   
+            
+            $div.find("#div_id_issuecardnumber").html("<label>"+curi+"</label>");
+            $div.find("#div_id_remainnumber").html("<label>"+(emps.length-curi)+"</label>");
+            
+            $("#id_tr_old").parent().next().find("tr:first").remove()
+                      
+            return ;
+        }
+        fillcuremp(emps[curi]);
+        $("#id_tr_old").parent().next().find("tr:first").remove()
+             
+    }
+    else
+    {
+        alert("{% trans '卡号不正确' %}");
+    }
+    
+}
+function funclear()
+{
+  
+    $('form#id_edit_form').find('#id_cardno').val("");
+}
+function before_submit()
+{
+    //alert("enter");
+	if(empid.length==0)
+	{
+		return false;
+	}
+    $('form#id_edit_form').find('#id_empids').val(empid.toString());
+    $('form#id_edit_form').find('#id_cardnos').val(cards.toString());
+    return true;
+}
+{% endblock %}
+
+{% block form %}
+{% autoescape off %}
+<tr style="display:None">
+<td>
+	{{ form.pin_width }}
+	</td>
+</tr>
+<tr ><td>
+<div>
+<table><tr><td>
+    <table cellspacing="3">
+        <tr>
+            <th valign="bottom">{% trans '输入起始人员编号:' %}</th><td><input type="text" name="startpin" id="id_startpin"></input></td>
+        </tr>
+        <tr>
+            <th valign="bottom">{% trans '输入结束人员编号:' %}</th><td><input type="text" name="endpin" id="id_endpin"></input>
+			<span id="id_genemps" class="Link_blue1"> <a href="javascript:void(0)" >{% trans '生成人员列表'%}</a></span>
+			<span id="id_chnageemps" class="Link_blue1"> <a href="javascript:void(0)" >{% trans '更改人员编号'%}</a></span>
+			</td>
+        </tr>
+       
+       <tr><th height="22px"><div class="" style="margin-left:20px;">{% trans '剩余发卡数:' %}</div></th><td><div id="div_id_remainnumber" class="floatL color_orange" style="margin-top:2px;*margin-top:-2px;_margin-top:-5px;"></div></td></tr>
+        <tr><td colspan=2><div id="div_id_showdetail" class="div_box"><h1>&nbsp;</h1><div class="div_issuecar_currentUser">
+                     <table class="table" width="100%" id="id_tbl_old"><thead>
+                     <tr id="id_tr_old"><th>{% trans '人员编号' %}</th><th>{% trans '姓名' %}</th><th>{% trans '部门名称' %}</th></tr></thead>
+                     
+                     </table>
+        </div></div></td></tr>
+        
+    </table>
+    </td><td>
+    <table cellspacing="3" style="margin-top: 2px;">
+    <tr >
+                <th valign="bottom">{% trans '选择卡输入方式:' %}</th><td><select><option>{% trans '发卡器' %}</option></select></td>
+            </tr>
+
+    <tr>
+            <th valign="bottom">{% trans '输入卡号:' %}</th><td><input type="text" maxlength="20" class="wZBaseCharField" name="cardno" id="id_cardno"></input><span class="Link_blue1"> <a href="javascript:void(0)" onclick="issue()">{% trans '确定' %}</a></span> 
+        <span id="id_clearcard" class="Link_blue1"> <a href="javascript:void(0)" >{% trans '清除' %}</a></span></td>
+        </tr>
+    
+       <tr><th height="22px"><div class="">{% trans '已发卡数:' %}</div></th><td><div id="div_id_issuecardnumber" class="floatL color_orange" style="margin-top:2px;_margin-top:-5px;"></div></td></tr>   
+          <tr><td colspan=2>
+    <div id="div_id_showmore" class="div_box" style="margin: 2px 2px 1px 0px;_margin: 4px 2px 1px 0px;"><h1>&nbsp;</h1><div class="div_issuecar_user">
+                      <table id="tbl_datalist" class="table" width="100%"><thead>
+                      <tr id="tr_first"><th>{% trans '序号' %}</th><th>{% trans '人员编号' %}</th><th>{% trans '姓名' %}</th><th>{% trans '部门名称' %}</th><th>{% trans '卡号' %}</th></tr></thead>
+                      </table>
+          </div></div></td></tr>
+    
+    </table>
+    
+    </td></tr>
+    <input type="hidden" id="id_empids" name="empids" value=""></input>
+    <input type="hidden" id="id_cardnos" name="cardnos" value=""></input>
+</div>
+</tr></td>
+{% endautoescape %}
+{% endblock %}
+
+

@@ -1,0 +1,13 @@
+{% extends "data_edit.html" %}
+{% load i18n %}
+{% block help_panel %}{% endblock %}
+{% block title %} {% endblock %}
+{% block addjs %}
+    $("input[id=id_base.shortdatetime_format]").parent().parent().hide();
+    $("input[id=id_base.datetime_format]").parent().parent().hide();
+    $("input[id=id_base.date_format]").parent().parent().hide();
+    $("input[id=id_base.shortdate_format]").parent().parent().hide();
+    $("input[id=id_base.time_format]").parent().parent().hide();
+    $("input[id=id_dbapp.max_photo_width]").parent().parent().hide();
+    $("input[id=id_dbapp.theme]").parent().parent().hide();
+{% endblock %}

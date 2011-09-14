@@ -1,0 +1,1047 @@
+---2011-09-09 14:04:42.484000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:04:49.609000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:04:59.625000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:05:12.796000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:05:28.812000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:05:47.843000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:06:09.875000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:06:34.906000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:07:02.937000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:07:33.968000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:08:08: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:08:45.015000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:09:25.046000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:10:29.078000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 313, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:11:15.109000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 313, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=1 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-09-09 14:12:27.468000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 315, in getreq
+    connection._commit()
+NameError: global name 'connection' is not defined
+---------------------------------
+---2011-09-09 14:13:54.406000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 315, in getreq
+    connection._commit()
+NameError: global name 'connection' is not defined
+---------------------------------
+---2011-09-09 14:14:01.437000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 315, in getreq
+    connection._commit()
+NameError: global name 'connection' is not defined
+---------------------------------
+---2011-09-09 14:14:11.453000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 315, in getreq
+    connection._commit()
+NameError: global name 'connection' is not defined
+---------------------------------
+---2011-09-09 14:14:24.468000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 315, in getreq
+    connection._commit()
+NameError: global name 'connection' is not defined
+---------------------------------
+---2011-09-09 14:14:40.484000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 315, in getreq
+    connection._commit()
+NameError: global name 'connection' is not defined
+---------------------------------
+---2011-09-09 14:14:59.515000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 315, in getreq
+    connection._commit()
+NameError: global name 'connection' is not defined
+---------------------------------
+---2011-09-09 14:15:21.531000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 315, in getreq
+    connection._commit()
+NameError: global name 'connection' is not defined
+---------------------------------
+---2011-09-09 14:15:46.546000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 315, in getreq
+    connection._commit()
+NameError: global name 'connection' is not defined
+---------------------------------
+---2011-09-09 14:16:14.578000: -- 192.168.10.157/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 315, in getreq
+    connection._commit()
+NameError: global name 'connection' is not defined
+---------------------------------
+---2011-09-09 14:17:23.687000: -- 192.168.10.157/iclock/devicecmd --
+ID=1&Return=0&CMD=INFO
+IclockSvrFun=1
+MSpeed=2
+RS232CRC=0
+RS232Stop=1
+NoiseThreshold=90
+~One2OneFunOn=1
+CCCKey=1
+~ShowName=1
+UnlockPerson=1
+~IsTestMachine=0
+~MustChoiceInOut=0
+Must1To1=0
+LimitFpCount=3000
+TOState=10
+TOPin=10
+TOMenu=60
+SaveAttLog=1
+EThreshold=45
+RS232Fun=1
+~IsModule=0
+~RFSStart=0
+~RFSLen=10
+~OPLM1=-1
+~OPLM2=0
+~DC=4
+~IncThr=300
+~TopThr=200
+~MinThr=30
+~MaxTL=598
+~MinM=7
+Mixor=7
+DTFMT=9
+HasFingerThreshold=200
+TopFingerThresholdDiff=280
+TopFingerThreshold=310
+~MaxUserFingerCount=10
+WEBPort=808
+~NetworkFunOn=1
+IsNetSwitch=0
+~RS485Port=0
+NetworkOn=1
+TCPPort=4370
+UDPPort=4370
+~IsOnlyOneSensor=1
+~NewFPReader=0
+~OS=1
+~IsWiegandKeyPad=0
+ECnt=3
+AdminCnt=1
+~SSR=1
+~Platform=ZEM600_TFT
+~OEMVendor=ZKSoftware Inc.
+~AlgVer=ZKFinger VX
+~SerialNumber=20110909
+~IsOnlyRFMachine=0
+Is232Switch=1
+~PIN2Width=5
+WAVFILEPATH=/mnt/ramdisk/wav/
+BMPFILEPATH=/mnt/mtdblock/image/
+FONTFILEPATH=/mnt/mtdblock/
+PICFILEPATH=/mnt/mtdblock/
+WebRoot=/mnt/mtdblock/
+PHOTOFILEPATH=/mnt/mtdblock/photo/
+CAPTUREPHOTOPATH=/mnt/mtdblock/
+~FlashLed=1
+~MaxFingerCount=15
+~MaxAttLogCount=3
+~MaxUserCount=30
+TFTKeyLayout=0
+LcdMode=0
+KeyPadBeep=1
+VoiceOn=1
+VOLUME=67
+AlarmOpLog=99
+AdmRetry=3
+~ML=0
+Language=83
+NewLng=83
+VThreshold=35
+MThreshold=55
+AlarmAttLog=99
+AlarmReRec=0
+DtFmt=0
+DeviceID=1
+USB232FunOn=1
+RS232BaudRate=115200
+RS232On=0
+RS485On=0
+USB232On=1
+NetSpeed=0
+HiSpeedNet=2
+MAC=00:17:61:00:00:02
+NetMask=255.255.255.0
+~RFCardOn=1
+~MIFARE=1
+~MIFAREID=1
+~iCLASS=0
+~iCLASSID=0
+~iCLASSTYPE=0
+~RFFPC=1
+FPRetry=3
+PwdRetry=3
+InterStyle=1
+LogoTime=10
+FPSelect=2
+FreeTime=30
+HavePowerKey=1
+LockPowerKey=0
+~ASFO=0
+AlwaysShowState=0
+~ShowState=1
+~VALF=1
+~SMS=0
+SMSCount=100
+UseNewBell=0
+~AAFO=0
+AAMaxCount=15
+IMEFunOn=0
+HzImeOn=0
+~AuthServer=0
+~ASDewarpedImage=1
+AuthServerIP=0.0.0.0
+AuthServerEnabled=0
+AuthServerCheckMode=0
+~PrinterFunOn=0
+~UserExtFmt=0
+OnlyPINCard=0
+WIFI=0
+~MODEM=0
+DaylightSavingTimeOn=0
+PhotoFunOn=0
+ShowPhoto=0
+WorkCode=0
+~MCWKCD=0
+MustChoiceWorkCode=0
+AttUseTZ=0
+isSupportAlarmExt=0
+~LockFunOn=15
+~APBFO=0
+~ExtWGInFunOn=0
+ExtWiegandInFmt=wiegand26
+WiegandInType=1
+WiegandFmt=wiegand26
+WiegandOutType=1
+CameraOpen=0
+CapturePic=0
+CapturevfTimes=3
+CaptureAlarm=20
+ClockTime=0
+DetectFpAlg=0
+~ZKFPVersion=10
+FingerSensitivity=1
+~MulAlgVer=1
+~DSTF=1
+~LCDType=1
+~USBDisk=1
+FP10DBVersion=1
+AttState=0
+RSize=512
+ZF_WIDTH=0
+ZF_HEIGHT=0
+GATEIPAddress=192.168.10.254
+IPAddress=192.168.10.157
+WebServerPort=8099
+EnableProxyServer=0
+ProxyServerIP=192.1.1.254
+ProxyServerPort=0
+WebServerIP=192.168.10.158
+TransactionCount=0
+FPCount=0
+UserCount=0
+MainTime=2010-05-06 08:45:06
+FlashSize=230912
+FreeFlashSize=200712
+FWVersion=Ver 6.60 Jun  1 2011
+
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 452, in devpost
+    update_cmds(device, rets)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\model_utils.py", line 40, in update_cmds
+    update_cmd(device, id, rets[id],None)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\model_utils.py", line 32, in update_cmd
+    cmdobj.CmdOverTime=datetime.datetime.now()
+NameError: global name 'datetime' is not defined
+---------------------------------
+---2011-09-09 14:17:25.750000: -- 192.168.10.157/iclock/devicecmd --
+ID=1&Return=0&CMD=INFO
+IclockSvrFun=1
+MSpeed=2
+RS232CRC=0
+RS232Stop=1
+NoiseThreshold=90
+~One2OneFunOn=1
+CCCKey=1
+~ShowName=1
+UnlockPerson=1
+~IsTestMachine=0
+~MustChoiceInOut=0
+Must1To1=0
+LimitFpCount=3000
+TOState=10
+TOPin=10
+TOMenu=60
+SaveAttLog=1
+EThreshold=45
+RS232Fun=1
+~IsModule=0
+~RFSStart=0
+~RFSLen=10
+~OPLM1=-1
+~OPLM2=0
+~DC=4
+~IncThr=300
+~TopThr=200
+~MinThr=30
+~MaxTL=598
+~MinM=7
+Mixor=7
+DTFMT=9
+HasFingerThreshold=200
+TopFingerThresholdDiff=280
+TopFingerThreshold=310
+~MaxUserFingerCount=10
+WEBPort=808
+~NetworkFunOn=1
+IsNetSwitch=0
+~RS485Port=0
+NetworkOn=1
+TCPPort=4370
+UDPPort=4370
+~IsOnlyOneSensor=1
+~NewFPReader=0
+~OS=1
+~IsWiegandKeyPad=0
+ECnt=3
+AdminCnt=1
+~SSR=1
+~Platform=ZEM600_TFT
+~OEMVendor=ZKSoftware Inc.
+~AlgVer=ZKFinger VX
+~SerialNumber=20110909
+~IsOnlyRFMachine=0
+Is232Switch=1
+~PIN2Width=5
+WAVFILEPATH=/mnt/ramdisk/wav/
+BMPFILEPATH=/mnt/mtdblock/image/
+FONTFILEPATH=/mnt/mtdblock/
+PICFILEPATH=/mnt/mtdblock/
+WebRoot=/mnt/mtdblock/
+PHOTOFILEPATH=/mnt/mtdblock/photo/
+CAPTUREPHOTOPATH=/mnt/mtdblock/
+~FlashLed=1
+~MaxFingerCount=15
+~MaxAttLogCount=3
+~MaxUserCount=30
+TFTKeyLayout=0
+LcdMode=0
+KeyPadBeep=1
+VoiceOn=1
+VOLUME=67
+AlarmOpLog=99
+AdmRetry=3
+~ML=0
+Language=83
+NewLng=83
+VThreshold=35
+MThreshold=55
+AlarmAttLog=99
+AlarmReRec=0
+DtFmt=0
+DeviceID=1
+USB232FunOn=1
+RS232BaudRate=115200
+RS232On=0
+RS485On=0
+USB232On=1
+NetSpeed=0
+HiSpeedNet=2
+MAC=00:17:61:00:00:02
+NetMask=255.255.255.0
+~RFCardOn=1
+~MIFARE=1
+~MIFAREID=1
+~iCLASS=0
+~iCLASSID=0
+~iCLASSTYPE=0
+~RFFPC=1
+FPRetry=3
+PwdRetry=3
+InterStyle=1
+LogoTime=10
+FPSelect=2
+FreeTime=30
+HavePowerKey=1
+LockPowerKey=0
+~ASFO=0
+AlwaysShowState=0
+~ShowState=1
+~VALF=1
+~SMS=0
+SMSCount=100
+UseNewBell=0
+~AAFO=0
+AAMaxCount=15
+IMEFunOn=0
+HzImeOn=0
+~AuthServer=0
+~ASDewarpedImage=1
+AuthServerIP=0.0.0.0
+AuthServerEnabled=0
+AuthServerCheckMode=0
+~PrinterFunOn=0
+~UserExtFmt=0
+OnlyPINCard=0
+WIFI=0
+~MODEM=0
+DaylightSavingTimeOn=0
+PhotoFunOn=0
+ShowPhoto=0
+WorkCode=0
+~MCWKCD=0
+MustChoiceWorkCode=0
+AttUseTZ=0
+isSupportAlarmExt=0
+~LockFunOn=15
+~APBFO=0
+~ExtWGInFunOn=0
+ExtWiegandInFmt=wiegand26
+WiegandInType=1
+WiegandFmt=wiegand26
+WiegandOutType=1
+CameraOpen=0
+CapturePic=0
+CapturevfTimes=3
+CaptureAlarm=20
+ClockTime=0
+DetectFpAlg=0
+~ZKFPVersion=10
+FingerSensitivity=1
+~MulAlgVer=1
+~DSTF=1
+~LCDType=1
+~USBDisk=1
+FP10DBVersion=1
+AttState=0
+RSize=512
+ZF_WIDTH=0
+ZF_HEIGHT=0
+GATEIPAddress=192.168.10.254
+IPAddress=192.168.10.157
+WebServerPort=8099
+EnableProxyServer=0
+ProxyServerIP=192.1.1.254
+ProxyServerPort=0
+WebServerIP=192.168.10.158
+TransactionCount=0
+FPCount=0
+UserCount=0
+MainTime=2010-05-06 08:45:06
+FlashSize=230912
+FreeFlashSize=200712
+FWVersion=Ver 6.60 Jun  1 2011
+
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 452, in devpost
+    update_cmds(device, rets)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\model_utils.py", line 40, in update_cmds
+    update_cmd(device, id, rets[id],None)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\model_utils.py", line 32, in update_cmd
+    cmdobj.CmdOverTime=datetime.datetime.now()
+NameError: global name 'datetime' is not defined
+---------------------------------
+---2011-09-09 14:17:27.796000: -- 192.168.10.157/iclock/devicecmd --
+ID=1&Return=0&CMD=INFO
+IclockSvrFun=1
+MSpeed=2
+RS232CRC=0
+RS232Stop=1
+NoiseThreshold=90
+~One2OneFunOn=1
+CCCKey=1
+~ShowName=1
+UnlockPerson=1
+~IsTestMachine=0
+~MustChoiceInOut=0
+Must1To1=0
+LimitFpCount=3000
+TOState=10
+TOPin=10
+TOMenu=60
+SaveAttLog=1
+EThreshold=45
+RS232Fun=1
+~IsModule=0
+~RFSStart=0
+~RFSLen=10
+~OPLM1=-1
+~OPLM2=0
+~DC=4
+~IncThr=300
+~TopThr=200
+~MinThr=30
+~MaxTL=598
+~MinM=7
+Mixor=7
+DTFMT=9
+HasFingerThreshold=200
+TopFingerThresholdDiff=280
+TopFingerThreshold=310
+~MaxUserFingerCount=10
+WEBPort=808
+~NetworkFunOn=1
+IsNetSwitch=0
+~RS485Port=0
+NetworkOn=1
+TCPPort=4370
+UDPPort=4370
+~IsOnlyOneSensor=1
+~NewFPReader=0
+~OS=1
+~IsWiegandKeyPad=0
+ECnt=3
+AdminCnt=1
+~SSR=1
+~Platform=ZEM600_TFT
+~OEMVendor=ZKSoftware Inc.
+~AlgVer=ZKFinger VX
+~SerialNumber=20110909
+~IsOnlyRFMachine=0
+Is232Switch=1
+~PIN2Width=5
+WAVFILEPATH=/mnt/ramdisk/wav/
+BMPFILEPATH=/mnt/mtdblock/image/
+FONTFILEPATH=/mnt/mtdblock/
+PICFILEPATH=/mnt/mtdblock/
+WebRoot=/mnt/mtdblock/
+PHOTOFILEPATH=/mnt/mtdblock/photo/
+CAPTUREPHOTOPATH=/mnt/mtdblock/
+~FlashLed=1
+~MaxFingerCount=15
+~MaxAttLogCount=3
+~MaxUserCount=30
+TFTKeyLayout=0
+LcdMode=0
+KeyPadBeep=1
+VoiceOn=1
+VOLUME=67
+AlarmOpLog=99
+AdmRetry=3
+~ML=0
+Language=83
+NewLng=83
+VThreshold=35
+MThreshold=55
+AlarmAttLog=99
+AlarmReRec=0
+DtFmt=0
+DeviceID=1
+USB232FunOn=1
+RS232BaudRate=115200
+RS232On=0
+RS485On=0
+USB232On=1
+NetSpeed=0
+HiSpeedNet=2
+MAC=00:17:61:00:00:02
+NetMask=255.255.255.0
+~RFCardOn=1
+~MIFARE=1
+~MIFAREID=1
+~iCLASS=0
+~iCLASSID=0
+~iCLASSTYPE=0
+~RFFPC=1
+FPRetry=3
+PwdRetry=3
+InterStyle=1
+LogoTime=10
+FPSelect=2
+FreeTime=30
+HavePowerKey=1
+LockPowerKey=0
+~ASFO=0
+AlwaysShowState=0
+~ShowState=1
+~VALF=1
+~SMS=0
+SMSCount=100
+UseNewBell=0
+~AAFO=0
+AAMaxCount=15
+IMEFunOn=0
+HzImeOn=0
+~AuthServer=0
+~ASDewarpedImage=1
+AuthServerIP=0.0.0.0
+AuthServerEnabled=0
+AuthServerCheckMode=0
+~PrinterFunOn=0
+~UserExtFmt=0
+OnlyPINCard=0
+WIFI=0
+~MODEM=0
+DaylightSavingTimeOn=0
+PhotoFunOn=0
+ShowPhoto=0
+WorkCode=0
+~MCWKCD=0
+MustChoiceWorkCode=0
+AttUseTZ=0
+isSupportAlarmExt=0
+~LockFunOn=15
+~APBFO=0
+~ExtWGInFunOn=0
+ExtWiegandInFmt=wiegand26
+WiegandInType=1
+WiegandFmt=wiegand26
+WiegandOutType=1
+CameraOpen=0
+CapturePic=0
+CapturevfTimes=3
+CaptureAlarm=20
+ClockTime=0
+DetectFpAlg=0
+~ZKFPVersion=10
+FingerSensitivity=1
+~MulAlgVer=1
+~DSTF=1
+~LCDType=1
+~USBDisk=1
+FP10DBVersion=1
+AttState=0
+RSize=512
+ZF_WIDTH=0
+ZF_HEIGHT=0
+GATEIPAddress=192.168.10.254
+IPAddress=192.168.10.157
+WebServerPort=8099
+EnableProxyServer=0
+ProxyServerIP=192.1.1.254
+ProxyServerPort=0
+WebServerIP=192.168.10.158
+TransactionCount=0
+FPCount=0
+UserCount=0
+MainTime=2010-05-06 08:45:06
+FlashSize=230912
+FreeFlashSize=200712
+FWVersion=Ver 6.60 Jun  1 2011
+
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 452, in devpost
+    update_cmds(device, rets)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\model_utils.py", line 40, in update_cmds
+    update_cmd(device, id, rets[id],None)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\model_utils.py", line 32, in update_cmd
+    cmdobj.CmdOverTime=datetime.datetime.now()
+NameError: global name 'datetime' is not defined
+---------------------------------
+---2011-09-09 14:17:29.843000: -- 192.168.10.157/iclock/devicecmd --
+ID=1&Return=0&CMD=INFO
+IclockSvrFun=1
+MSpeed=2
+RS232CRC=0
+RS232Stop=1
+NoiseThreshold=90
+~One2OneFunOn=1
+CCCKey=1
+~ShowName=1
+UnlockPerson=1
+~IsTestMachine=0
+~MustChoiceInOut=0
+Must1To1=0
+LimitFpCount=3000
+TOState=10
+TOPin=10
+TOMenu=60
+SaveAttLog=1
+EThreshold=45
+RS232Fun=1
+~IsModule=0
+~RFSStart=0
+~RFSLen=10
+~OPLM1=-1
+~OPLM2=0
+~DC=4
+~IncThr=300
+~TopThr=200
+~MinThr=30
+~MaxTL=598
+~MinM=7
+Mixor=7
+DTFMT=9
+HasFingerThreshold=200
+TopFingerThresholdDiff=280
+TopFingerThreshold=310
+~MaxUserFingerCount=10
+WEBPort=808
+~NetworkFunOn=1
+IsNetSwitch=0
+~RS485Port=0
+NetworkOn=1
+TCPPort=4370
+UDPPort=4370
+~IsOnlyOneSensor=1
+~NewFPReader=0
+~OS=1
+~IsWiegandKeyPad=0
+ECnt=3
+AdminCnt=1
+~SSR=1
+~Platform=ZEM600_TFT
+~OEMVendor=ZKSoftware Inc.
+~AlgVer=ZKFinger VX
+~SerialNumber=20110909
+~IsOnlyRFMachine=0
+Is232Switch=1
+~PIN2Width=5
+WAVFILEPATH=/mnt/ramdisk/wav/
+BMPFILEPATH=/mnt/mtdblock/image/
+FONTFILEPATH=/mnt/mtdblock/
+PICFILEPATH=/mnt/mtdblock/
+WebRoot=/mnt/mtdblock/
+PHOTOFILEPATH=/mnt/mtdblock/photo/
+CAPTUREPHOTOPATH=/mnt/mtdblock/
+~FlashLed=1
+~MaxFingerCount=15
+~MaxAttLogCount=3
+~MaxUserCount=30
+TFTKeyLayout=0
+LcdMode=0
+KeyPadBeep=1
+VoiceOn=1
+VOLUME=67
+AlarmOpLog=99
+AdmRetry=3
+~ML=0
+Language=83
+NewLng=83
+VThreshold=35
+MThreshold=55
+AlarmAttLog=99
+AlarmReRec=0
+DtFmt=0
+DeviceID=1
+USB232FunOn=1
+RS232BaudRate=115200
+RS232On=0
+RS485On=0
+USB232On=1
+NetSpeed=0
+HiSpeedNet=2
+MAC=00:17:61:00:00:02
+NetMask=255.255.255.0
+~RFCardOn=1
+~MIFARE=1
+~MIFAREID=1
+~iCLASS=0
+~iCLASSID=0
+~iCLASSTYPE=0
+~RFFPC=1
+FPRetry=3
+PwdRetry=3
+InterStyle=1
+LogoTime=10
+FPSelect=2
+FreeTime=30
+HavePowerKey=1
+LockPowerKey=0
+~ASFO=0
+AlwaysShowState=0
+~ShowState=1
+~VALF=1
+~SMS=0
+SMSCount=100
+UseNewBell=0
+~AAFO=0
+AAMaxCount=15
+IMEFunOn=0
+HzImeOn=0
+~AuthServer=0
+~ASDewarpedImage=1
+AuthServerIP=0.0.0.0
+AuthServerEnabled=0
+AuthServerCheckMode=0
+~PrinterFunOn=0
+~UserExtFmt=0
+OnlyPINCard=0
+WIFI=0
+~MODEM=0
+DaylightSavingTimeOn=0
+PhotoFunOn=0
+ShowPhoto=0
+WorkCode=0
+~MCWKCD=0
+MustChoiceWorkCode=0
+AttUseTZ=0
+isSupportAlarmExt=0
+~LockFunOn=15
+~APBFO=0
+~ExtWGInFunOn=0
+ExtWiegandInFmt=wiegand26
+WiegandInType=1
+WiegandFmt=wiegand26
+WiegandOutType=1
+CameraOpen=0
+CapturePic=0
+CapturevfTimes=3
+CaptureAlarm=20
+ClockTime=0
+DetectFpAlg=0
+~ZKFPVersion=10
+FingerSensitivity=1
+~MulAlgVer=1
+~DSTF=1
+~LCDType=1
+~USBDisk=1
+FP10DBVersion=1
+AttState=0
+RSize=512
+ZF_WIDTH=0
+ZF_HEIGHT=0
+GATEIPAddress=192.168.10.254
+IPAddress=192.168.10.157
+WebServerPort=8099
+EnableProxyServer=0
+ProxyServerIP=192.1.1.254
+ProxyServerPort=0
+WebServerIP=192.168.10.158
+TransactionCount=0
+FPCount=0
+UserCount=0
+MainTime=2010-05-06 08:45:06
+FlashSize=230912
+FreeFlashSize=200712
+FWVersion=Ver 6.60 Jun  1 2011
+
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 452, in devpost
+    update_cmds(device, rets)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\model_utils.py", line 40, in update_cmds
+    update_cmd(device, id, rets[id],None)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\model_utils.py", line 32, in update_cmd
+    cmdobj.CmdOverTime=datetime.datetime.now()
+NameError: global name 'datetime' is not defined
+---------------------------------

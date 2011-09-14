@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Help Center</title>
+	<link rel="stylesheet" type="text/css" href="css/help.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body class="help_body1">
+	<div class="help_position"><span class="help_positionIcon">Help Center</span> -> System Settings -> Database management</div>
+<div class="help_mainContant">
+  <h2>Database management</h2><br />
+
+  The homepage of the system shows database backup  history. The system allows database backup, database initialization and  database restoration.<br />
+      <br />
+<b>1. Backup database:</b><br /><br />
+
+    Periodically backup the system’s database to ensure  data security. To use the backed up data, just restore the data.<br />
+    (1) Click [Backup database] to enter the backup interface;<br />
+  <div class="alignC"><img width="587" height="149" src="dbbackuplog_clip_image002.jpg" /></div><br />
+    (2) Select from backup now, scheduled backup and cancel  scheduled backup. Scheduled backup can set backup every several hours since a  start time;<br />
+    (3) Click [OK]. For Backup now, it will return after  backup. For scheduled backup, it will backup as scheduled.<br />
+  <br />
+<b>2. Initialize database:</b><br />
+    Initialize database is to restore data to system  initialization status. Initialized data in the database will be deleted. Please  operate with care.<br />
+    Click [Initialize database] to enter edit interface,  select one or several datasheets to initialize, and click [OK] to complete  initialization and return.<br />
+  <div class="alignC"><img width="307" height="348" src="dbbackuplog_clip_image004.jpg" /></div><br />
+  <b>For example:</b><br />
+  <b>Select to initialize access  level: </b>After selection, it  will initialize access control time periods, access control holidays and access  levels. All contents on these three pages will restore initial statuses;<br />
+  <b>Select to initialize door  settings: </b>After selection,  it will initialize all interlock settings, anti-passback settings, linkage  settings, first-card opening settings, and multi-card opening settings  (including personnel group of multi-card verification);<br />
+  <b>Select to initialize events: </b>After selection, it will initialize all  real-time monitoring records;<br />
+  <b>Select to initialize access  control: </b>After selection,  it will initialize all settings and information in the access control system,  including the above three items, and only reserve system default settings;<br />
+  <b>Select to initialize devices:</b> After selection, it will initialize all device  information in the system (including access control). If the device is an  access control panel, corresponding device parameters and door information will  be deleted.<br />
+  <br /><b> </b><b>Note: </b>If the device is still in  normal use, please initialize database cautiously, especially when involving  access level-related departments and personnel, access levels, door settings,  areas, devices, users and roles. It is recommended that if there are still  devices in use after database initialization, the user shall [Synchronize all  data] for the setting to avoid unexpected errors.<br />
+<br /><br />
+</div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+---2011-07-12 09:27:43.062000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 919, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 465, in check_device
+    device.save(force_insert=True, log_msg=False)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\models\model_device.py", line 390, in save
+    raise e
+Exception: \u767b\u8bb0\u7684\u8003\u52e4\u673a\u65700\uff0c\u5df2\u7ecf\u8fbe\u5230\u7cfb\u7edf\u9650\u52360\uff01
+---------------------------------
+---2011-07-12 09:28:09.546000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 919, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 465, in check_device
+    device.save(force_insert=True, log_msg=False)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\models\model_device.py", line 390, in save
+    raise e
+Exception: \u767b\u8bb0\u7684\u8003\u52e4\u673a\u65700\uff0c\u5df2\u7ecf\u8fbe\u5230\u7cfb\u7edf\u9650\u52360\uff01
+---------------------------------
+---2011-07-12 09:28:12.531000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 919, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 465, in check_device
+    device.save(force_insert=True, log_msg=False)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\models\model_device.py", line 390, in save
+    raise e
+Exception: \u767b\u8bb0\u7684\u8003\u52e4\u673a\u65700\uff0c\u5df2\u7ecf\u8fbe\u5230\u7cfb\u7edf\u9650\u52360\uff01
+---------------------------------
+---2011-07-12 09:28:13.156000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 919, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 465, in check_device
+    device.save(force_insert=True, log_msg=False)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\models\model_device.py", line 390, in save
+    raise e
+Exception: \u767b\u8bb0\u7684\u8003\u52e4\u673a\u65700\uff0c\u5df2\u7ecf\u8fbe\u5230\u7cfb\u7edf\u9650\u52360\uff01
+---------------------------------
+---2011-07-12 09:28:13.421000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 919, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 465, in check_device
+    device.save(force_insert=True, log_msg=False)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\models\model_device.py", line 390, in save
+    raise e
+Exception: \u767b\u8bb0\u7684\u8003\u52e4\u673a\u65700\uff0c\u5df2\u7ecf\u8fbe\u5230\u7cfb\u7edf\u9650\u52360\uff01
+---------------------------------
+---2011-07-12 09:28:18.281000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 919, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 465, in check_device
+    device.save(force_insert=True, log_msg=False)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\models\model_device.py", line 390, in save
+    raise e
+Exception: \u767b\u8bb0\u7684\u8003\u52e4\u673a\u65700\uff0c\u5df2\u7ecf\u8fbe\u5230\u7cfb\u7edf\u9650\u52360\uff01
+---------------------------------
+---2011-07-12 09:33:17.968000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 925, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 458, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:33:23.968000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 925, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 458, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:33:26.062000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 925, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 458, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:33:39.718000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 925, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 458, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:34:39.078000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 925, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 458, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:34:54.859000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 925, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 458, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:35:56.437000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:35:58.234000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:35:59.171000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:35:59.703000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:35:59.734000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:35:59.765000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:35:59.796000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:35:59.843000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:36:00.250000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:36:00.671000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:36:01: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:36:01.531000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:36:01.562000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:36:01.593000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------
+---2011-07-12 09:36:01.921000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 926, in cdata
+    device = check_device(request, True)
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 459, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------

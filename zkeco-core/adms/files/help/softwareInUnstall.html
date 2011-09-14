@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>系统帮助</title>
+	<link rel="stylesheet" type="text/css" href="css/help.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body class="help_body1">
+	<div class="help_position"><span class="help_positionIcon">系统帮助</span> -> 软件的安装与卸载</div>
+<div class="help_mainContant">
+	  <h2>软件的安装与卸载</h2><br />
+	  <p><b>软件安装前： </b></p><br />
+			<p>1.在win7系统中执行安装文件要以管理员用户登录后进行； </p><br />
+	    	<p>2.如果电脑中曾经安装过此软件，请在卸载完成后，重启电脑再开始安装。 </p><br />
+	    	<p>3.安装前建议关闭其他运行的应用程序，以避免在安装过程中发生冲突。 </p><br />
+	    	<p><b>4.安装过程中，电脑安装的防火墙软件会阻止一些服务的启动，请全部选择允许，或者先暂时关闭防火墙再开始安装； </b></p><br />
+			<p>5．检查系统的环境变量：</p><br />
+			<p>右键点击我的电脑，点击属性—高级—环境变量，在系统变量中找到变量名path双击，显示如下界面：</p> <br />
+            <div class="alignC"><img width="346" height="134" src="images/help_images/softwareInstall_clip_image002_00000.jpg" /></div>
+			 <p>在变量值中找到路径<b>【%SystemRoot%\system32;】</b>，若不存在此路径，需要手动添加。（系统默认存在此环境变量，但有些服务器管理员因为安全考虑可能会删除此路径）。</p><br />
+  <p>6．系统支持使用的数据库包括MySQL、MS SQL Server、Oracle等。 <br />
+</p>
+  <p>您可以在<b>本机安装数据库</b>，但需要在软件安装前先行安装，安装过程请参见1.2数据库安装； <br />
+    </p>
+  <p>也可以<b>访问其他主机安装的数据库服务器</b>，但在主机安装的数据库服务器需要进行特殊配置，配置方式请参见1.2 数据库安装； <br />
+    </p>
+  <p>如果您不想在本机安装数据库，也不想访问其他主机中的数据库服务器，可以使用<b>软件安装包内置的MySQL数据库</b>，具体安装过程请参见1.1 软件的安装。 <br />
+    </p>
+  <p>本文档以MySQL Server 5.1数据库为例，介绍了数据库的安装和配置过程。 <br />
+    </p>
+  <p>7．如果您的电脑中<b>已经安装了数据库软件</b>，可跳过数据库的安装，直接安装软件程序。在软件程序的安装过程中，除使用内置的MySQL数据库，均需要填写数据库的有关信息，例如数据库名称、用户名、密码、主机地址、端口号等，请在数据库配置过程中记录这些信息。 <br />
+    </p>
+  <p>如果数据库不可用或使用过程中出现错误，可以重新对数据库进行配置（数据库修复）。以MySQL Server 5.1为例：单击开始—&gt;程序—&gt;MySQL—&gt;MySQL Server 5.1—&gt;<b>【MySQL  Server Instance Config Wizard】</b>，具体配置过程请参见1.2数据库安装。数据库修复不会影响数据库中原有数据。 <br />
+    </p>
+  <p>8．供其他计算机访问的数据库服务器主机，需要进行如下特殊配置：在安全设置时勾选<b>【</b><b>Enable root  access from remote machines</b><b>】</b>；在端口设置时勾选<b>【</b><b>Add firewall exception for this port</b><b>】</b>。具体操作请参见1.2数据库安装。 <br />
+    </p>
+  <p>9．在配置数据库时，<b>语言编码格式请选择使用【utf8】</b>，否则，系统将无法正常使用。具体配置过程请参见1.2数据库安装。<b> </b></p>
+  <br />
+		    <p>10．<b>文中图片可能与您使用光盘安装时不完全相符，请以光盘安装为准。 </b></p>
+		    <br />
+		<ol>
+        <p><b>注意：</b>光盘中附带MySQL Server 5.1数据库软件仅供演示之用，如需使用请到官方网站下载。</p></ol><br /><br />
+</div>
+</body>
+</html>

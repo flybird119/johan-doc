@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>系统帮助</title>
+	<link rel="stylesheet" type="text/css" href="css/help.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body class="help_body1">
+	<div class="help_position"><span class="help_positionIcon">系统帮助</span> -> 软件的安装与卸载 -> 软件的安装</div>
+<div class="help_mainContant">
+	  <h2>软件的安装 
+	  </h2><p>&nbsp;</p>
+      <p>请将安装光盘放入光驱，系统会自动弹出安装程序选择菜单，在弹出菜单中，选择安装该软件，安装过程如下所示：</p>
+	  <br />
+	  <p>
+	    1.选择安装语言的种类，如下图所示，然后单击【确定】按钮。</p>
+	    <br />
+          <div class="alignC"><img src="images/help_images/SoftwareSetup_clip_image002.jpg" alt="图（4）" width="303" height="143" /></div><br />
+          <br />
+	    <p>2.在安装程序窗口中弹出最终用户软件许可协议对话框，如下图所示。选择【我同意】选项，单击【下一步】。 </p>
+	    <br />
+  <div class="alignC"><img width="500" height="360" src="images/help_images/SoftwareSetup_clip_image004.jpg" /></div>
+  <br />
+    <p>此时系统会弹出Windows配置弹出窗口，<b>请勿取消该操作</b>，界面在配置完成后会自动关闭。 </p>
+    <br />
+      <div class="alignC"><img width="384" height="148" src="images/help_images/softwareInstall_clip_image00200.jpg" /></div>
+  <br />
+
+	  <p>3.选择软件的服务端口号以及安装路径，均单击【下一步】按钮。</p><br />
+	  <p>4.选择创建快捷方式的位置，单击【下一步】。 </p>
+	    <br />
+
+  <p style="color:#ff0000;">5．如果本机没有安装数据库，且不想安装或不想连接其他电脑上的数据库。可以使用内置的MySQL数据库，在下面界面选择Local MySQL，直接点击【下一步】开始安装程序。否则，请选择数据库后，在界面右侧填入以下相关信息：</p>
+  <p style="color:#ff0000;">&nbsp;</p>
+  <p style="color:#ff0000;">注意：当安装了内置数据库，同时PC上又存在mysql数据库时，会导致备份和还原数据库不成功。一台电脑上相同数据库只能安装一个。 <br />
+  </p>
+  <p><b>数据库名称：</b>您安装的数据库名称； </p>
+    <p><b>用户名：</b>root； </p>
+    <p><b>密码：</b>您在配置数据库过程中设置的安全密码； </p>
+    <p><b>主机地址：</b>即安装了数据库的主机IP地址（若本机安装了数据库服务器则填写本机IP地址）； </p>
+    <p><b>端口：</b>即在配置数据库时设置的端口号（默认3306）； </p>
+		<p>填完后点击【测试连接】，系统提示【连接成功】，则点击【下一步】开始安装程序，否则，请检查后重试； </p>
+<p>若需使用MSSQLServer2005或Oracle 10g数据库，请参考相关资料进行配置。</p>
+
+
+	<div class="alignC"><img width="503" height="360" src="images/help_images/softwareInstall_clip_image002_0000.jpg" /></div>
+	<br />
+	  <p>6．系统开始安装程序，如果您的系统安装了防火墙，可能会弹出安全提示，请选择“允许...”（或类似提示），允许本次操作，以保证程序顺利安装。 </p><br />
+
+	  <p>7．程序安装完成后，会提示是否重新启动计算机。电脑重启后服务器程序才能生效，选择【是】则立即重启，选择【否】后用户可以自行重启计算机。</p> <br />
+  <!-- <div class="alignC"><img src="images/help_images/softwareInstall_clip_image002_0002.jpg" alt="图（11）" width="502" height="360" /></div> -->
+	<p>8．程序安装结束后，会看到在【开始】—【程序】中，包含软件本身、服务控制台、卸载软件等项目。</p>
+	<p>点击程序菜单中的【服务控制台】，或双击桌面的【服务控制台】快捷方式，在电脑右下角的托盘中会出现【服务控制台】的图标。 点击右键显示操作菜单如下所示： </p>
+	<br />
+<div class="alignC"><img width="247" height="98" src="images/help_images/softwareInstall_clip_image00020.jpg" /></div>
+    <p><b>软件安装完成后，请注意以下事项：</b><b> </b>
+    <br />
+    <p>1．<b>配置端口：</b><br /></p>
+      <p>在安装完成后打开【服务控制台】，选择【配置服务器端口】，弹出如下界面，点击测试端口（默认80端口），如不可用，可选择其他端口，若测试可用保存即可，进入系统时请IP地址后加上“：端口号”。例如：端口设置为8080，就在IE地址栏中输入http://127.0.0.1:8080。其他电脑访问也要加上端口号。</p>
+      <br />
+  <div class="alignC"><img width="442" height="232" src="images/help_images/softwareInstall_clip_image004_00000.jpg" /></div>
+  <br />
+      <p>2．在防火墙设置中，把前面设置的端口设置成例外，其他电脑就可以访问。 </p>
+      <p>在开始—设置—控制面板中，双击Windows防火墙，点击【例外】，如下图所示： </p><br />
+  <div class="alignC"><img width="434" height="473" src="images/help_images/softwareInstall_clip_image0060.jpg" /></div><br />
+      <p>点击【添加端口】，弹出如下界面： </p><br />
+  <div class="alignC"><img width="392" height="263" src="images/help_images/softwareInstall_clip_image0080.jpg" /></div><br />
+      <p>设置端口名称和端口号，如zkeco，8080。 点击【确定】保存并退出。</p>
+      <br />
+      <p>3．<b>启动</b><b>/</b><b>停止服务运行：</b><br />
+<p>若不能够打开系统主页，请在开始—程序中打开【服务控制台】，如果服务器程序没有运行，可以点击“服务没有运行，点击此处启动运行”，直接运行服务；在运行过程中，如果需要退出使用，可以点击“服务正在运行，点击此处停止运行”停止运行服务。 </p>
+      <br />
+      <p><b>4</b><b>．配置数据库： </b><br />
+<p>在使用过程中，如需更换数据库，请在【服务控制台】的操作菜单中选择【配置数据库】，出现如下界面：</p> <br />
+<div class="alignC"><img width="529" height="384" src="softwareInstall_clip_image002.jpg" /></div><br />
+<p>输入各项目信息，点击保存。点击【测试连接】后，弹出如下界面：</p><br />
+<div class="alignC"><img width="267" height="120" src="softwareInstall_clip_image004.jpg" /></div><br />
+<p>选择【是】则将系统与新数据库同步，选择【否】则暂时不同步数据库。 </p>
+<p><br />
+    <b>5</b><b>．还原数据库： </b><br />
+  </p>
+<p>点击【浏览】，在备份数据库列表中选择成功备份的数据库，点击【还原】开始还原数据库。还原成功后系统会有相应提示。</p>
+  <div class="alignC"><img width="419" height="249" src="softwareInstall_clip_image006.jpg" /></div></p>
+</div>
+</body>
+</html>

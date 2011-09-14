@@ -1,0 +1,293 @@
+{% load i18n %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+    {% if "mysite.iaccess&mysite.att"|hasApp %}
+        {% if "mysite"|is_oem %}
+            {% trans "时间&安全管理平台" %}
+        {% else %}
+            {% trans "ZKECO 时间&安全管理平台" %}
+        {% endif %}
+    {% else %}
+        {% if "mysite.iaccess"|hasApp %}
+            {% if "mysite"|is_oem %}
+                {% trans "门禁管理系统" %}
+            {% else %}
+                {% trans "ZKAccess5.0 门禁管理系统" %}
+            {% endif %}
+        {% else %}
+            {% if "mysite"|is_oem %}
+                {% trans "考勤管理系统" %}
+            {% else %}
+                 {% trans "ZKTime8.0 考勤管理系统" %}
+            {% endif %}
+        {% endif %}
+    {% endif %} - {% trans '登录' %}
+</title>
+<link href="{{ MEDIA_URL }}/css/css.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="{{ MEDIA_URL }}/images/ZKECO16.ico" type="image/x-icon" ></link>
+<script src="{{ MEDIA_URL }}/jslib/jquery.js"></script>
+</head>
+<body style="overflow:hidden;">    	
+    <div id="wrap"> 
+        <div id="subwrap"> 
+            <div id="content_login">
+                <div>
+                    <div class="login_leftBox"></div>    
+                    <div class="login_rightBox"></div>  
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <OBJECT classid="clsid:A318A9AC-E75F-424C-9364-6B40A848FC6B" width=0 height=0 id=zkonline >
+    </OBJECT>
+
+    <COMMENT style="display:None">
+    <EMBED type="application/x-eskerplus"
+        classid="clsid:A318A9AC-E75F-424C-9364-6B40A848FC6B"
+        codebase="ZKOnline.ocx"                        
+    </EMBED>
+    </COMMENT>
+
+	<div class="login_middleBox">
+        <div class="login_middle_l">
+            <div class="login_middle_logo">
+                <img src="{{ MEDIA_URL }}/images/login/{% if "mysite.iaccess&mysite.att"|hasApp %}logoZKECO_{{ LANGUAGE_CODE }}{% if "mysite"|is_oem %}_oem{% endif %}{% else %}{% if "mysite.iaccess"|hasApp %}logoZKAccess_{{ LANGUAGE_CODE }}{% if "mysite"|is_oem %}_oem{% endif %}{% else %}logoAtt_{{ LANGUAGE_CODE }}{% if "mysite"|is_oem %}_oem{% endif %}{% endif %}{% endif %}.jpg">
+            </div>
+            <div class="login_middle_title">{% trans '用户登录' %}</div>
+            <form action="" method="post" id="login-form">{% csrf_token %}
+                <div class="login_inputBox">
+                    <div  class="floatL Link_black fontB login_titleBox">{% trans '用户名' %}</div>
+                    <div>
+                        <input type="text" name="username" id="id_username" class="login_textBox" />
+                    </div>
+                    <div style="clear:both"></div>
+                    <div id="id_classlabel" class="floatL Link_black fontB login_titleBox " >
+                        {% trans '密码' %}
+                    </div>
+                    <div id="id_pwdtxt" >
+                        <input type="password" name="password" id="id_password" class="login_textBox" />
+                    </div><br />
+                    <div class="floatL login_titleBox" style="width:15px;" cellpadding="10"></div>
+                    <div style="margin-top:10px;_margin-top:20px;" id="login_btn_box">
+                        <!--
+                        <input type="button" value="{% trans '密码登录' %}" id="id_pwdlogin" class="pwd_login_btn" onMouseOver="this.className='pwd_login_btnOver'" 
+                        onmousedown="this.className='pwd_login_btndown'"  onmouseout="this.className='pwd_login_btn'" />&nbsp;&nbsp;
+                        -->
+                        <div class="login_btn0">
+							<div class="login_btn_l"></div>
+							<div class="login_btn_m">
+								<span id="id_login">{% trans '登 录' %}</span>
+							</div>
+							<div class="login_btn_r"></div>
+						</div>
+                        <div class="login_btn0">
+							<div class="login_btn_l"></div>
+							<div class="login_btn_m">
+								<span id="id_reset">{% trans '重 置' %}</span>
+							</div>
+							<div class="login_btn_r"></div>
+						</div>
+                        <div class="login_btn0">
+							<div class="login_btn_l"></div>
+							<div class="login_btn_m">
+                        		<span id="id_fp_identify">{% trans '指纹登录' %}</span>
+							</div>
+							<div class="login_btn_r"></div>
+						</div>
+						<div class="clear"></div>
+                        <input type="hidden" id="id_template9" value="" name="template9" alt=""></input>
+                        <input type="hidden" id="id_finnger10" name="finnger10" alt="" value="">   </input>
+                        <input type="hidden" id="id_finnger9" name="finnger9" alt="" value=""></input>
+                        <input type="hidden" id="id_template10"  value="" name="template10" alt="">   </input>
+                        <!-- <input type="hidden" id="id_tfids" name="tfids" alt="" value=""></input> -->
+                        <input type="hidden" id="id_fpflag" name="fpflag" alt="" value='pwdlogin'></input>
+                        <input type="hidden" id="id_client_language" name="client_language" alt="" value="{{ LANGUAGE_CODE }}"></input>
+                    </div>
+                    <div id="id_selpwd" class="displayN" >
+
+                    </div>
+                    <div class="messageBox" style="display:none;">{% trans '会话超时，请重新登录！' %}</div>
+                </div>
+            </form>
+        </div>
+        {% if "mysite.iaccess&mysite.att"|hasApp %}
+			<div class="login_middle_r">
+				<div class="login_iClock">Time&Attendance</div>
+				<div class="login_C">Access Control</div>
+				<div class="login_IFace">Patrol</div>
+				<div class="login_P">Handset</div>
+				<div class="login_PT">Multi Biometric</div>
+			</div>
+		{% else %}
+			{% if "mysite.iaccess"|hasApp %}
+				<div class="login_middle_r_iaccess">
+					<div class="login_iClock">C4&nbsp;{% trans '系列' %}</div>
+					<div class="login_C">C3&nbsp;{% trans '系列' %}</div>
+					<div class="login_IFace">F6</div>
+					<div class="login_P">F7</div>
+					<div class="login_PT">F18</div>
+				</div> 
+			{% else %}
+                <div class="login_middle_r">
+                    <div class="login_iClock">Time&Attendance</div>
+                    <div class="login_C">Access Control</div>
+                    <div class="login_IFace">Patrol</div>
+                    <div class="login_P">Handset</div>
+                    <div class="login_PT">Multi Biometric</div>
+                </div>
+			{% endif %}
+		{% endif %}
+    	<div class="login_middle_l1{% if "mysite"|is_oem %}_oem{% endif %}"></div>
+        <div class="login_middle_r1">
+        	<p class="Link_hui">{% if not "mysite"|is_oem %}<span class="font12">{% trans '深圳市中控生物识别技术有限公司 版权所有' %}</span><br />{% endif %}<span class="font11">Copyright &copy; {% get_this_year %} {% if not "mysite"|is_oem %}ZKSoftware Inc{% endif %}. All Rights Reserved.</span></p>
+        </div>
+		<script type="text/javascript">
+			//window maximize
+			if(document.body.offsetWidth < 900 || document.body.offsetHeight < 360){
+				top.moveTo(0,0);
+				top.resizeTo(screen.availWidth,screen.availHeight);
+			}
+			//button style
+			var login_btn=$("#login_btn_box").find("div>span");
+			for(var i=0; i<login_btn.length;i++){
+				login_btn.eq(i).hover(
+					function(){
+						$(this).parents(".login_btn0").attr("class","login_btn1");
+					},
+					function(){
+						$(this).parents(".login_btn1").attr("class","login_btn0");
+					}
+				)					
+			}
+			var doc_user_name=document.getElementById('id_username');
+			var doc_user_pwd=document.getElementById('id_password');
+            var client_language="";
+            if(navigator.systemLanguage){
+                client_language=navigator.systemLanguage
+            }else{
+                client_language=navigator.language
+            }
+            //$("#id_client_language").val(client_language.toLowerCase());
+            doc_user_name.focus();
+            /*if($.cookie('login_name')){
+                doc_user_name.value=$.cookie('login_name');
+                doc_user_name.select();
+            }*/
+			$("#id_password").keypress(function(event){
+				if(event.keyCode==13){
+					$("#id_login").click();
+				}
+			}); 
+			$("#id_reset")
+				.click(function(){
+					$("#id_username").val('');
+					$("#id_password").val('');
+					$("#id_username").select();
+				});
+			
+			//密码登入
+			$("#id_login")
+				.click(function(){
+					if($.trim(doc_user_name.value)=="" || $.trim(doc_user_pwd.value)==""){
+						$(".messageBox").html("{% trans '请输入正确的用户名和密码！'%}").show();
+						$("#id_username").select();
+						return false;
+					}
+					serialize_form=$("#login-form").serialize();
+					$.ajax({
+						url:window.location.href,
+						type:"POST",
+						data:serialize_form,
+						dataType:"html",
+						success:function(msg){
+							if(msg=='ok'){
+                               // $.cookie('login_name',doc_user_name.value,{expires:7});
+								var index=-1;//window.location.href.indexOf("?next=");
+                                if(index!=-1){
+                                    window.location.href=window.location.href.substring(index+6);
+                                }else{
+                                    window.location.href='../../data/index/';
+                                }
+							}else{
+								$("#id_username").select();
+								$("#id_password").val('');
+								$(".messageBox").html(msg).show();
+							}
+						}
+					});
+				});
+
+			//指纹登入
+            $("#id_fp_identify")
+                .click(function(){
+//                    if($.trim(doc_user_name.value)=="" ){
+//                        $(".messageBox").html("{% trans '请输入用户名!'%}").show();
+//                        $("#id_username").select();
+//                        return false;
+//                    }
+                    $("#id_pwdlogin").attr("disabled",true);
+                    $(".messageBox").html("{% trans '请按手指......' %}").show();
+                    $("#id_fpflag").val('fplogin');
+                    $("#id_username").val("");
+                    $("#id_password").val("");
+                    doc_user_name.focus();
+                    if($("#id_client_language").val().toLowerCase()=='zh-cn')
+                    {
+                        zkonline.SetLanguageFile("zkonline.chs")  //设置为中文界面
+                    }
+                    if($("#id_client_language").val().toLowerCase()!='zh-cn')
+                    {
+                        zkonline.SetLanguageFile("zkonline.en")  //设置为英文界面
+                    }
+                    zkonline.FPEngineVersion = '10';
+                    //zkonline.FPEngineVersion = '9';
+                    if(zkonline.GetVerTemplate())
+                    {
+                        $("#id_template10").val(zkonline.VerifyTemplate.toString());
+                        serialize_form=$("#login-form").serialize();
+                        $(".messageBox").html("{% trans '比对验证中，请稍等!' %}").show();
+                        $.ajax({
+                            url:window.location.href,
+                            type:"POST",
+                            data:serialize_form,
+                            dataType:"html",
+                            success:function(msg){
+                                //alert('msg='+msg);
+                                if(msg=='error'){
+                                    $(".messageBox").html("{% trans '验证失败，请重试!' %}").show();
+                                    //return false;                    
+                                }else if(msg == "1"){
+                                    $(".messageBox").html("{% trans '10.0指纹算法许可失败!' %}").show();
+                                    //return false;
+                                }else if(msg == "user_error"){
+                                    $(".messageBox").html("{% trans '用户名错误，请重试!' %}").show();
+                                    //return false;
+                                }else{
+                                    $(".messageBox").html("{% trans '验证通过，登录系统!' %}").show();
+                                }
+                                window.location.href='../../data/index/';
+                            }
+                        });                      
+                    }
+                    else
+                    {
+                        $(".messageBox").html("{% trans '获取指纹失败，请重试!' %}").show();
+                        window.location.href='../../data/index/';
+                    }
+                })
+			
+			if(!$.browser.msie){
+				$("#id_fp_identify").attr({disabled:"true",title:"{% trans '指纹登录功能只能在IE环境下使用！'%}"}).css({cursor:"default",color:"#888888"}).unbind().click(function(){
+					$(".messageBox").html("{% trans '指纹登录功能只能在IE环境下使用！'%}").show();
+				});
+			}
+		</script>
+        <div style="display:none">login_page_tag_for_ajax</div>
+    </div>      
+</body>
+</html>

@@ -1,0 +1,18 @@
+---2011-07-22 14:06:22.234000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 930, in cdata
+    def cdata(request):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\models\model_device.py", line 390, in save
+    raise e
+Exception: \u767b\u8bb0\u7684\u8003\u52e4\u673a\u65703\uff0c\u5df2\u7ecf\u8fbe\u5230\u7cfb\u7edf\u9650\u52360\uff01
+---------------------------------
+---2011-07-22 14:07:33.609000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 930, in cdata
+    def cdata(request):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\models\model_device.py", line 390, in save
+    raise e
+Exception: \u767b\u8bb0\u7684\u8003\u52e4\u673a\u65703\uff0c\u5df2\u7ecf\u8fbe\u5230\u7cfb\u7edf\u9650\u52360\uff01
+---------------------------------

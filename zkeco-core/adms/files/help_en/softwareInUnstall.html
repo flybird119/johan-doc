@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Help Center</title>
+	<link rel="stylesheet" type="text/css" href="css/help.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body class="help_body1">
+	<div class="help_position"><span class="help_positionIcon">Help Center</span> -> Installation And Uninstallation</div>
+    <div class="help_mainContant">
+	  <h2>Before installation</h2><br />
+
+	  1. If you  install the software in Windows 7 system, please use administrator account to  log in.<br />
+	  <br />
+2. If you  have installed this software before, please uninstall it first, and restart  your computer.<br />
+<br />
+3. It’s  better to turn off all the other application program before installation, to  avoid any conflict in installing procedure.<br />
+<br />
+4. During  the installation, the computer firewall software may prevent some service of  the system, please select “Allow all”, or temporarily  stop the firewall software before installation.<br />
+<br />
+5. Check the system environment variables:<br />
+Right click [My computer] on desktop, click Properties - Advanced -  Environment Variables, double click the variable [path], , show the following  interface:<br />
+<div class="alignC"><img width="308" height="129" src="softwareInUnstall_clip_image002.jpg" /></div><br />
+Check if the  variable value [% SystemRoot% \ system32;] is exist, if not, you need to add it  manually.(This variable is exist by default, but some server administrator  maybe delete it for security consideration).<br />
+<br />
+6. 
+You need  install the database before program installing. This document introduce the  procedure of MySQL Server installation and configuration as an example. <br />
+  <b>If you have installed the other database  software before</b>, you can skip the database installation, and install the  program directly. During installation, you need to input the database  information as needed.<br />
+  If the  database is not work properly, or any fault happened, you can re-configure the  database (database restoration). Such as MySQL Server 5.1, click <b>[MySQL Server Instance Config Wizard]</b> in the directory of Start –&gt; Program –&gt; MySQL –&gt; MySQL Server 5.1. For  the configuration details, please refer to the description in <u>Database  Installation</u>. Database restoration won’t affect the original data.<br />
+<br />
+7.  If you don’t want to install the database in your computer, you can access database server in other computer. But you need to configure the database server forehead, especially the following items: In Security Settings tick <span style="color:#FF0000">[Enable root access from remote machines]</span>, in port number settings tick <span style="color:#FF0000">[Add firewall exception for this port ]</span>. Please refer to the description in <u> Database  Installation</u>.<br />
+<br />
+8. During  the database configuration, you need <b style="color:#FF0000;">select to use [utf8] language encoding</b>. See the specific  operation please refer to <u>Database Installation</u>..<br />
+<b><br />
+9. </b><b>The photograph in this manual  may be different from that of the real installation process. The real installation  process prevails.</b><b> </b><br />
+Put the  installation CD into the CD driver, the system will automatically pop up the  program selection menu. If your computer have not installed any database  before, please select to install MySQL 5.1 database program (system default),  after installing the database, select to install program.<br />
+<b>Note: </b>MySQL Server 5.1 software  in CD-ROM just for demonstration, if you need to use it, please download it  from official website. </p>
+</div>
+</body>
+</html>

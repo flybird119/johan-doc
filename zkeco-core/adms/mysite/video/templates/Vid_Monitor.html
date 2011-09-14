@@ -1,0 +1,37 @@
+{% load i18n %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}><head>
+    {% include "site_medias_js.html" %}
+    <script type="text/javascript">
+    var UserID=-1
+    function GetQueryString(sProp) 
+    {
+        var re = new RegExp("[&,?]"+sProp + "=([^\\&]*)", "i");
+        var a = re.exec(document.location.search);   
+        if (a == null) return ""; 
+        return a[1];
+    }
+    window.onload = function() { 
+        var vid_ip = GetQueryString("vid_ip");
+        var vid_port = GetQueryString("vid_port");
+        var vid_login = GetQueryString("vid_login");
+        var vid_pwd = GetQueryString("vid_pwd");
+        var vid_ch = GetQueryString("vid_ch");
+        var Netocx1 = document.getElementById("NetOCX1");
+        UserID = Netocx1.Login(vid_ip, vid_port, vid_login, vid_pwd);
+        Netocx1.StartRealPlay(vid_ch, 0, 0);
+    }    
+    </script>    
+</head>
+<body class="indexBody">
+<table>
+<tr>
+  <td align="center"><object classid="clsid:CAFCF48D-8E34-4490-8154-026191D73924" codebase="/media/ActiveX/NetVideoActiveX23.cab#version=2,3,9,1"
+  standby="Waiting..." id="NetOCX1" width="400" height="300" name="ocx1" align="center" >
+  </object>
+  </td>
+</tr>
+</table>
+</body>
+</html>

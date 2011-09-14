@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Help Center</title>
+	<link rel="stylesheet" type="text/css" href="css/help.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body class="help_body1">
+	<div class="help_position"><span class="help_positionIcon">Help Center</span> -> Installation And Uninstallation -> Software Installation </div>
+    <div class="help_mainContant">
+	  <h2>Software Installation </h2><br />
+In the  CD pop up menu, select to install system, the installation process as  follows.
+</p>
+<br />
+<ol>
+          <li>1. Select your desired installing language,  as shown below, and click [OK] button.</li>
+  </ol>
+        <p align="center"><img width="304" height="157" src="softwareInstall_clip_image001.jpg" /><br />
+          <br />
+          2. The  End-User License Agreement dialog will pop up, as shown below. Select [I accept  the agreement], and click [Next].<br />
+  <div class="alignC"><img width="584" height="419" src="softwareInstall_clip_image003.jpg" /></div><br />
+          In this  step, the system will pop up the [Windows Configuration Collecting……]  interface, please don’t cancel it, the window will automatically shut down when  its finished </p>
+  <div><br />
+          3. Select the service port of the server and the installation path of  the software, It will be installed under the system disk, and you should both click [Next] button.<br />
+          4. Select the folder of shortcuts,  as shown below, and click [Next]. <br />
+        <div>
+         <br />
+         5.  Select the database, input the database information at right side of interface:<br />
+              <b>Database Name:</b> MySQL as default.<br />
+              <b>User Name:</b> root.<br />
+              <b>Password:</b> the password you set in  configuration process.<br />
+              <b>Host Address: </b>IP address for which installed the  database server (If you have installed the database server at this PC, input  the IP address of this PC).<br />
+              <b>Prot:</b> Input the port number you set in  configuration process (3306 by default).<br />
+            When  completed, click [Test Connection], and if the system prompts [Connection  Successful], click [Next] to start installation. Otherwise, check and retry.<br />
+            <br />
+          If  MSSQLServer2005 or Oracle9i database is selected, please refer to the relevant  document for configuration.<br />
+            <div class="alignC"><img width="583" height="417" src="softwareInstall_clip_image009.jpg" /></div>
+        </div>
+        <div>
+         <br />
+         6. The system will start install  the software. If your have installed a firewall software, a security prompt may  pop up. If so, please select “Permitted”( or a similar option) to continue the  installation.<br />
+              
+        </div>
+        <ol>
+          <li><br />
+          7. After software installation, it  will prompt whether to restart the computer or not. The server program will be  enabled only after restarting the computer. Select [Yes] to restart  immediately, or select [No] to restart later.</li>
+        </ol>
+        <!-- <div>
+          <p align="center"><img width="583" height="418" src="softwareInstall_clip_image013.jpg" /></p>
+        </div> -->
+        <ol>
+          <li><br />
+          8. After software installation,  from [Start] - [Programs],  you will see such items as ZKECO Time &amp; Security Management Platform, Service  Controller, ZKECO Time &amp; Security Management Platform Uninstalling.</li>
+        </ol>
+          Select [Server Controller] in  program menu, or double click [Server Controller] shortcut on desktop, and an  icon will appear on the tray on the lower right corner of the desktop.  Right-click on the icon, and the menu will be shown.<br />
+
+        <br />
+
+			  <h1>After Installation<br />
+			  </h1>
+			  After  installation, please pay attention to these items:<br />
+			  <br />
+			    1. Port  Configuration:<br />
+			    Select  [Configure server port] in the [Server Controller] menu , the following will be  shown.<br />
+  <div class="alignC"><img width="442" height="232" src="softwareInstall_clip_image002.jpg" /></div>
+  <br />
+			    Click  [Test port] (80 by default), if it is not usable, change the port number. If  usable, click [Save] and quit. If you have changed the port number, please add  “:port” after IP address when you access the system. For example, if you set  the port as 8080, you need input [http://127.0.0.1:8080] in IP box. <br />
+			    <br />
+			    2. In  Windows Firewall configuration, set this port number as an exception, then  other computers could access this server through internet.<br />
+			    Double  click [Windows Firewall] under [Start] – [Settings] – [Control Panel], click  [Exceptions], the interface shown below.<br />
+			    <div class="alignC"><img width="432" height="514" src="softwareInstall_clip_image005_0000.jpg" /></div><br />
+			    Click [Add Port],  the following interface pops up.<br />
+  <div class="alignC"><img width="393" height="289" src="softwareInstall_clip_image007_0000.jpg" /></div><br />
+			    Set the  port name and port number, such as zkeco, 8080, click [OK] to save and exit.<br />
+			    <br />
+			    <b>3. Start/ Stop  service:</b><br />
+			    If you can not open  the homepage of the program, click “Service is not running. Click here to run  it” in [Service Controller] menu, and start the service. When running, click  “Service is running. Click here to stop it” to stop it.<br />
+                <br />
+                <b>4. Configure database:</b><br />
+                  During the use of this program, if you want change  another database, please select [Configure database] in [Server Controller]  operation menu, the following interface appear:<br />
+  <div class="alignC"><img width="533" height="384" src="softwareInstall_clip_image002_0000.jpg" /></div><br />
+                  Input all the fields and click [Save]. After click  [Test connection] the following interface pops up.<br /><br />
+  <div class="alignC"><img width="422" height="119" src="softwareInstall_clip_image004.jpg" /></div><br />
+                  Select “Yes” to synchronize the database with the  system, otherwise select “No” to cancel.<br />
+  <br /><b>5. Restore DB</b><br /><br />
+   Click [Browse] to select a successfully backed up  database from the backup database list, click [Start] begin the database  restoration.</p>
+      <div class="alignC"><img width="417" height="249" src="softwareInstall_clip_image006.jpg" /></div></div>
+        <br /><br />
+</div>
+</body>
+</html>

@@ -1,0 +1,706 @@
+{% extends "data_edit.html" %}
+{% load i18n %}
+
+{% block headajaxjs %}
+<script src="{{ MEDIA_URL }}/jslib/ipinput.widget.js"></script>
+{% endblock %}
+
+{% block form %}
+	{% if request.user|HasPerm:"iclock.add_device" or request.user|HasPerm:"iclock.change_device" %}
+	{% autoescape off %} 
+	<tr class="sel_dev_type">
+		<td>
+			<div id="div_id_first" class="div_box1">
+				<h2>{% trans '第一步:选择设备类型' %}</h2>
+				<table><tr>{{ form.device_type|field_as_td_h }}</tr></table>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="div_id_second"class="div_box1"> 
+				<h2 class="sel_dev_type">{% trans '第二步:添加设备信息' %}</h2>    
+				<table>
+
+					<!--公共1-->
+					<tr id="alias_sn">{{ form.alias|field_as_td_h }}{{ form.sn|field_as_td_h }}</tr>
+					<tr id="tr_comm_type">{{ form.comm_type|field_as_td_h }}</tr>
+					<!-- http -->
+					<tr id="id_ip_input" class="displayN">{{ form.ipaddress|field_as_td_h }}</tr>
+					<tr class="id_http_tcp"><th><label class="required">{% trans "IP地址" %}:</label></th><td><div id="ip_input"></div></td></tr>
+					<tr class="id_http_tcp">{{ form.ip_port|field_as_td_h }}</tr>
+					<!-- rs485 -->
+					<tr class="id_com">{{ form.com_port|field_as_td_h }}</tr>
+					<tr class="id_com">{{ form.com_address|field_as_td_h }}</tr>
+					<tr class="id_com">{{ form.baudrate|field_as_td_h }}</tr>
+					
+					
+					<!--考勤信息-->
+					<!--<tr><td><table id="div_id_att">-->
+						<!-- push -->
+					<tr class="div_id_att">{{ form.tz_adj|field_as_td_h }}</tr>
+					<tr class="div_id_att">{{ form.trans_interval|field_as_td_h }}</tr>
+					<tr class="div_id_att">{{ form.log_stamp|field_as_td_h }}</tr>
+					<tr class="div_id_att">{{ form.oplog_stamp|field_as_td_h }}</tr>
+					<tr class="div_id_att">{{ form.photo_stamp|field_as_td_h }}</tr>
+					<tr class="div_id_att">{{ form.update_db|field_as_td_h }}</tr>
+				   
+					<tr class="div_id_att">{{ form.trans_times|field_as_td_h }}</tr>
+					<tr class="div_id_att">{{ form.city|field_as_td_h }}</tr>
+					<tr class="div_id_att">{{ form.realtime|field_as_td_h }}</tr>
+					<!--new-->
+					<tr class="div_id_att">{{ form.max_comm_size|field_as_td_h }}</tr>
+					<tr class="div_id_att">{{ form.max_comm_count|field_as_td_h }}</tr>
+					<tr class="div_id_att">{{ form.delay|field_as_td_h }}</tr>	
+					<!--</table></td></tr>	-->
+					
+					<!--视频联动-->
+					<tr class="div_id_vid" >{{ form.video_login|field_as_td_h_asterisk }}</tr>
+					
+					<!--门禁信息--> 
+					<tr class="div_id_acc div_id_vid" id="tr_comm_pwd">{{ form.comm_pwd|field_as_td_h }}</tr>
+					<tr id="m_comm_pwd">
+						<td align="right"><label id="modify_comm_pwd">{%trans "重置通讯密码"%}:</label></td>
+						<td><input id="pbox1" type="checkbox"></td>
+					</tr>
+					<tr id="tr_old_comm_pwd">
+						<td align="right">{% trans "旧密码"%}:</td>
+						<td><input  type="password" id="old_comm_pwd" maxlength="16" onblur="check_comm_pwd()"/></td><td>&nbsp;<a id="valid_comm_pwd" href="javascript:void(0)" onclick="check_comm_pwd()">{% trans "验证" %}</a>&nbsp;&nbsp;&nbsp;<span id="r_msg"></span</td>
+					</tr>
+					<tr id="tr_new_comm_pwd">
+						<td align="right">{% trans "新密码"%}:</td>
+						<td><input type="password" id="new_comm_pwd"  maxlength="16" disabled="disabled"></input></td>
+					</tr>
+					<tr id="tr_conf_comm_pwd">
+						<td align="right">{%trans "确认密码"%}:</td>
+						<td><input id="confirm_comm_pwd" onblur="check_comm_pass()" type="password"  maxlength="16" disabled="disabled"/><span id="e_msg2"></span></td>
+					</tr>
+					
+					<tr class="div_id_acc" >{{ form.acpanel_type|field_as_td_h }}</tr>
+					<tr class="div_id_acc" id="tr_four_to_two">{{ form.four_to_two|field_as_td_h }}</tr>
+					<tr class="div_id_acc">{{ form.sync_time|field_as_td_h }}</tr>
+					<tr class="displayN"><th></th><td><input type="checkbox" name="connect_result" class="wZBaseBooleanField" id="id_connect_result"></td></tr>
+					<tr class="displayN"><th></th><td><input type="text" name="ACPanelOptions" id="id_acpanel_options"></td></tr>
+					
+					<!--公共3-->
+					<tr>{{ form.area|field_as_td_h }}</tr>	
+					
+					<!--其他-->
+				</table>    
+			</div>
+		</td>
+	</tr>
+
+	<tr>
+		<div class="displayN">
+		<!--{{ form.delay.as_widget }} {{ form.max_comm_size }} {{ form.max_comm_count }}-->
+		</div>
+	</tr>
+
+	<tr>
+		<td>
+			<div id="div_id_shownext" class="Link_blue1">
+				<span id="id_device_next"><span class="action_next"></span><a href="javascript:void(0)">{% trans '下一步' %}</a></span>
+				<span id="id_device_cancel"><span class="action_Cancel"></span><a href="javascript:void(0)">{% trans '放弃' %}</a></span>
+			</div>
+		</td>
+	</tr>
+	{% if form.non_field_errors %}
+	<tr><td>{{ form.non_field_errors }}</td></tr>
+	{% endif %}
+	{% endautoescape %}
+	{% endif %}<!--add/change_accdoor-->
+{% endblock %}
+
+{% block addjs %}
+	
+	{% if request.user|HasPerm:"iclock.add_device" or request.user|HasPerm:"iclock.change_device" %}
+
+		{% if 'mysite.att&mysite.iaccess'|hasApp %} //同时有门禁（视频）、考勤
+		var sel_dev_types=[1,2];
+		{% else %} //仅有考勤或门禁
+		var sel_dev_types=[{% if 'mysite.att'|hasApp %}1{% else %}2{% endif %}];
+		{% endif %}		
+		$(".tbl_data_edit").css({width:"98%"});
+		//ip地址输入框
+		var ipv4 = new IpV4Box("ipv4" , "ip_input");
+		ipv4.setValue($("#id_ipaddress").val());
+		
+		function after_init(){
+			if($("#id_edit_form").find("#id_alias").val() == "")//新增时开始隐藏放弃、确定等按钮
+			{
+				if(sel_dev_types.length > 1 || sel_dev_types == 2)//考勤机和 门禁（视频）
+				{
+					$(".editformbtn").hide();
+				}
+			}
+			device_id = 0;//--全局变量 
+			device_id = $($("#id_datalist").get(0).current_row).attr("data");//Model中的id    
+		}
+
+		//保存并继续
+		function after_save_continue()
+		{
+			if(sel_dev_types.length>1 || sel_dev_types == 2) 
+			{	
+				$(".editformbtn").hide();
+				$("#div_id_second").hide();
+				$("#div_id_shownext").show();
+				$("#div_id_first").show(); 
+			}
+		}
+
+		function before_submit()
+		{
+			if((!$("#id_comm_pwd").attr("readonly")) && $("#id_edit_form").find("#id_alias").val() != "")
+			{
+				if(state1){
+					if(check_old_comm_pwd)
+					{
+						if(b_check_comm_pass)
+						{
+							$("#id_comm_pwd").val($("#new_comm_pwd").val());
+						}else if((!b_check_comm_pass) && $("#new_comm_pwd").val()=="" && $("#confirm_comm_pwd").val()=="" && $("#e_msg2").find("font[color='red']").length==0)
+						{
+							$("#id_comm_pwd").val("");
+									
+						}else
+						{
+							return false;
+						}
+					}else
+					{
+						return false;
+					}
+				}
+			}
+		    $("#id_ipaddress").attr("value",ipv4.getValue());
+			//验证--虽然非星号，但是tcp/ip，串口必填其一   
+			var comm_type_val = $("#tr_comm_type input[name='comm_type']:checked").val();
+			var alias = $("#id_alias").val();
+			var device_sn = $("#id_sn").val(); 
+			var comm_pwd = $("#id_comm_pwd").val()
+			var ip_address = $("#id_ipaddress").val();
+			var ip_port = $("#id_ip_port").val();
+			var com_address = $("#id_com_address").val();
+			var com_port = $("#id_com_port").val();
+			var baudrate = $("#id_baudrate option:selected").text();
+			var alias = $("#id_alias").val();
+			var four_to_two = $("#id_four_to_two").attr("checked");
+			var acpanel_type = $("#id_acpanel_type").val(); 
+			var area = $("input[name='area']").val();
+			var vid_login_name = $("#id_video_login").val();
+			
+			if(alias === "")
+			{
+				alert(gettext("设备名称不能为空"));
+				return false;
+			}
+			//考勤机必须输入序列号
+			if(att_checked && device_sn == "")
+			{
+				alert(gettext("设备序列号不能为空"));
+				$("#id_sn").focus();
+				return false;
+			}
+
+			if( comm_type_val == '1'|| comm_type_val == '3' )
+			{   
+				var reg = /^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$/;
+				if(ip_address == "" ||(ip_address != "" && !reg.test(ip_address)))// !reg.exec(reg) )??????
+				{
+					alert(gettext("请输入一个有效的IPv4地址"));//Enter a valid IPv4 address.
+					$("#id_ipaddress").focus();
+					return false;
+				}
+			   
+				if(ip_port == "")
+				{
+					alert(gettext("请输入一个有效的IP端口号"));
+					$("#id_ip_port").focus();
+					return false;
+				}
+
+				$("#id_com_address").val("");
+				$("#id_com_port").val("");
+				$("#id_baudrate").val("");
+			}
+			else if(comm_type_val == '2')
+			{
+				if(com_address == "")
+				{
+					alert(gettext("请输入一个485地址"));
+					$("#id_com_address").focus();
+					return false;
+				}
+				
+				var reg_addr = /^[0-9]+$/;
+				if(!reg_addr.test(com_address) || com_address > 255 || com_address <1)
+				{
+					alert(gettext("485地址必须为1到255之间的数字"));
+					$("#id_com_address").focus();
+					return false;
+				}
+				
+				if(com_port == "")
+				{
+					alert(gettext("请选择串口号"));
+					$("#id_com_port").focus();
+					return false;
+				}
+				
+				if(baudrate == "")
+				{
+					alert(gettext("请选择波特率"));
+					$("#id_baudrate").focus();
+					return false;
+				}
+				
+				$("#id_ipaddress").val("");
+				$("#id_ip_port").val("");
+			}
+			
+			if(area == "")
+			{
+				alert(gettext("请选择设备所属区域"));
+				return false;
+			}
+
+			$("#id_sn").attr("disabled",false);
+			if(acc_checked || vid_checked)//门禁 或视频服务器
+			{
+				if($("#id_acpanel_type").attr("disabled") == true)//门禁（视频）编辑时的处理，且不执行下面的判断
+				{ 
+					$("input[id^='id_comm_type_']").each(function(){
+						$(this).attr("disabled",false);
+					});
+					
+					$("#id_acpanel_type").attr("disabled",false);
+					//$("#id_sn").attr("disabled", false);
+					$("#id_ipaddress").attr("readonly", false);
+					ipv4.setEnable("false");
+					$("#id_ip_port").attr("readonly", false);
+					$("#id_com_address").attr("readonly", false);
+					$("#id_baudrate").attr("disabled", false);
+					
+					if(vid_checked)
+					{
+						if(vid_login_name == "")
+						{
+							alert(gettext("用户名不能为空"));
+							return false;
+						}
+						//视频不需要再执行下面的脚本，直接返回
+					}
+					else
+					{
+						$("#id_comm_pwd").attr("readonly", false);
+					}
+					return true; //编辑时直接返回       
+				}
+				//非编辑状态将继续执行
+			}
+			
+			if(!acc_checked)
+			{
+				return true;//考勤和视频不需要再执行下面的脚本，直接返回
+			}
+
+			//加是否是添加控制器，以及是否是新增编辑
+			//当前设备连接不上，是否需要继续添加？当前门数量与连接的设备不符合，是否需要继续添加？
+			var door_count = $("#id_acpanel_type").val();
+			var flag = true;
+			function getdata(connect_args)
+			{
+				var stamp = new Date().getTime();
+				$.ajax({
+					type: "GET",
+					url: "/{{ request.surl }}iaccess/GetData/?func=connect_dev"+connect_args+"&stamp="+stamp,
+					dataType: "json",
+					async: false,
+					success: function(args)
+					{
+						$("#id_page_load").hide();
+						if(args['result'] == '485repeat')
+						{
+							alert(gettext("串口：COM")+com_port+gettext(" 的485地址：")+com_address+gettext(" 已被占用！"));
+							flag = false;
+						}
+						else if(args['result'] == '485busy')
+						{
+							alert(gettext("后台通讯忙，请稍后重试！"));
+							flag = false;
+						}
+						else if(args['result'] > 0)
+						{
+							var acp_opts = new Array();
+							if(door_count != args.data.LockCount)
+							{
+								if(confirm(gettext("提示：设备连接成功,但控制器类型与实际不符，将修改为")+args.data.LockCount+gettext("门控制器，继续添加？")))
+								{
+									flag = true;
+									$("#id_connect_result").attr("checked", true);
+									for(opt in args.data)
+									{
+										acp_opts.push(opt + "=" + args.data[opt]);
+									}
+									$("#id_acpanel_type").val(args.data.LockCount);
+									$("#id_acpanel_options").val(acp_opts);
+								}
+								else
+								{
+									flag = false;
+								}                         
+							}
+							else
+							{
+								//此处可以不加这个提示
+								if(confirm(gettext("提示：设备连接成功，确定后将添加设备！")))
+								{
+									flag = true;
+									$("#id_connect_result").attr("checked",true);
+									for(opt in args.data)
+									{
+										acp_opts.push(opt + "=" + args.data[opt]);
+									}
+									//$("#id_acpanel_type").val(args.data.LockCount);
+									$("#id_acpanel_options").val(acp_opts);
+								}
+								else
+								{
+									flag = false;
+								}
+							}
+						}
+						else
+						{
+							if(args['reason'] == "")
+							{
+								if(confirm(gettext("提示：设备连接失败（错误码：")+args['result']+gettext("），确定添加该设备？")))
+								{
+									$("#id_connect_result").attr("checked",false);
+									flag = true;
+								}
+								else
+								{
+									flag = false;
+								}
+							}
+							else
+							{
+								if(confirm(gettext("提示：设备连接失败（原因：")+args['reason']+gettext("），确定添加该设备？")))
+								{
+									$("#id_connect_result").attr("checked",false);
+									flag = true;
+								}
+								else
+								{
+									flag = false;
+								}
+							}
+						}
+					},
+					error:function(XMLHttpRequest, textStatus, errorThrown) 
+					{
+						$("#id_page_load").hide();
+						alert(gettext("服务器处理数据失败，请重试！错误码：-615"));
+						flag = false;
+					}            
+				}); //end of ajax       
+			}//end of function getdata
+
+			$("#id_page_load").show();
+			if(!confirm(gettext("提示：新增设备将清空设备中的所有数据，确定要继续？")))
+			{
+				flag = false;
+				$("#id_page_load").hide();
+			}
+			else
+			{
+				if(comm_type_val == '1')
+				{
+					var connect_args = "&comm_type="+comm_type_val+"&ip="+ip_address+"&ip_port="+ip_port+"&comm_pwd="+comm_pwd+"&acpanel_type="+acpanel_type+"&four_to_two="+four_to_two;
+					getdata(connect_args);
+				}
+				else if(comm_type_val == '2')
+				{
+					var connect_args = "&comm_type="+comm_type_val+"&com_address="+com_address+"&com_port="+com_port+"&baudrate="+baudrate+"&comm_pwd="+comm_pwd+"&acpanel_type="+acpanel_type+"&four_to_two="+four_to_two;  
+					getdata(connect_args);
+				}
+			}
+			return flag;
+		}
+		
+		$("#tr_comm_pwd").hide();
+		$("#m_comm_pwd").hide();
+		$("#tr_old_comm_pwd").hide();
+		$("#tr_new_comm_pwd").hide();
+		$("#tr_conf_comm_pwd").hide();
+		var state1 = false;
+
+		$(function(){
+			//下一步
+			$("#id_device_next").click(function(){
+				$("#id_info").hide();//保存并继续时适用
+				$("#div_id_first").hide();
+				var title_http_tcpip = "";//考勤机现只支持http,控制器支持tcp/ip不支持http,视频服务器http
+
+				att_checked = false;//global
+				acc_checked = false;//global
+				vid_checked = false;//global
+
+				var title = ""
+				$("input[name='device_type']").each(function(){
+					if($(this).attr("checked"))//设备类型选择
+					{
+						title = $(this).parent().text();
+						if($(this).val() == 1)
+						{
+							att_checked = true;
+						}
+						else if($(this).val() == 2)
+						{
+							acc_checked = true;
+						}
+						else if($(this).val() == 4)
+						{
+							vid_checked = true;
+						}
+					}
+				});
+				
+				//通讯方式必填.
+				$("#alias_sn, .id_com, .id_http_tcp").find("th label").each(function(){
+					$(this).attr('class','required');
+				});
+
+				//ip地址输入框-tcp/ip-http
+				
+				if(att_checked)//考勤机--新增和编辑时均适应
+				{
+					$(".div_id_att").show();
+					$(".div_id_acc").css("display","None");
+					$(".div_id_vid").hide();
+
+					//通讯方式默认只有http,扩展时只需参考控制器即可
+					//选中http(隐藏)--模型中comm_type字段默认类型为http，即已选中该radiobutton
+					//$("#tr_comm_type td ul li:lt(2)").remove();
+					//$("#id_comm_type_2").attr("checked","checked");
+					$("#tr_comm_type").hide();
+					$(".id_com").hide();
+				}
+				else if(acc_checked)//门禁控制器--新增和编辑时均适应
+				{  
+					//不显示序列号
+					$("#id_sn").hide();
+					$($("#id_sn").parent().parent().find("th")[1]).hide()
+
+					$(".div_id_att").css("display","None");    
+					$(".div_id_vid").hide();//必须在$(".div_id_acc").show();后
+					$(".div_id_acc").show();
+					$("#tr_four_to_two").hide();//4_to_2默认不显示
+					$("#tr_comm_type td ul li:gt(1)").remove();
+					
+					//初始通讯方式
+					var type = $("#tr_comm_type input[name='comm_type']:checked").val();
+					if(type == '2')
+					{
+						$(".id_http_tcp").hide();
+						$(".id_com").show();    
+					}
+					else if(type == '1' || type == undefined)
+					{
+						$("#id_comm_type_0").attr("checked","checked");
+						$(".id_http_tcp").show();
+						$(".id_com").hide();                              
+					}
+					
+					//切换通讯方式
+					$("#tr_comm_type input[name='comm_type']").click(function(){
+						if(this.value == '2')
+						{   
+							$(".id_http_tcp").hide();
+							$(".id_com").show();
+						}
+						if(this.value == '1')
+						{
+							//IP地址输入框
+							$(".id_http_tcp").show();
+							$(".id_com").hide();
+						}
+					});
+					
+					//切换控制器类型
+					$("#id_acpanel_type").change(function(){
+						if($(this).val() == 4)
+						{
+							$("#tr_four_to_two").show();
+						}
+						else
+						{
+							$("#tr_four_to_two").hide();
+							$("#tr_four_to_two input").attr("checked",false)
+						}
+					});
+				}
+				else if(vid_checked)
+				{
+					$("#id_sn").hide();
+					$($("#id_sn").parent().parent().find("th")[1]).hide()
+					$(".div_id_att").css("display","None");
+					$(".div_id_vid").show();
+					
+					$("#tr_comm_type").hide();
+					$(".id_com").hide();
+					$("#id_ip_port").val('8000');
+				}
+
+				$("#div_id_second").css("display","block");  
+				$("#div_id_second h2").text($("#div_id_second h2").text().split("(")[0]+"( "+ title +" )"); 
+				$("#id_communition #http_tcpip fieldset legend").text(title_http_tcpip);
+				$("#div_id_shownext").css("display","None");
+				$(".editformbtn").css("display","block");
+				$("#div_id_first").addClass("displayN");//只读
+			});
+
+			//放弃
+			$("#id_device_cancel").click(function(){
+				$("#Cancel").click();
+			});       
+			
+			$("#div_id_second").css("display","None");    
+			$(".div_id_att").css("display","None");    
+			$(".div_id_acc").css("display","None");  
+			$(".div_id_vid").css("display","None");      
+			
+			if($("#id_edit_form").find("#id_alias").val() != "")//编辑
+			{
+				$("#id_device_next").click();
+				$("#id_sn").attr("disabled",true);
+				$("#div_id_second h2").text(gettext('编辑设备信息(')+$("#div_id_second h2").text().split("(")[1]);
+
+				if(acc_checked || vid_checked)//门禁 或 视频
+				{
+					$("input[id^='id_comm_type_']").each(function(){
+						$(this).attr("disabled",true);
+						//$(this).attr("onclick","return false;");
+					});
+					
+					$("#id_acpanel_type").attr("disabled", true);
+					$("#id_ipaddress").attr("readonly", true);
+					ipv4.setEnable("true");
+					$("#id_ip_port").attr("readonly", true);
+					$("#id_com_address").attr("readonly", true);
+					$("#id_baudrate").attr("disabled", true);
+					if(!vid_checked)
+					{
+						$("#id_comm_pwd").attr("readonly", true);
+					}
+				}
+			}
+
+			if(sel_dev_types == 1) //单考勤无须选择  sel_dev_types.length < 2
+			{   
+				$("input[name=device_type][value="+sel_dev_types[0]+"]").click(); //选中对应的设备类型
+				$("#id_device_next").click();  //模仿 点击下一步
+				$(".sel_dev_type").hide();     //隐藏掉 选择项本身
+				$(".div_box1").css("background-image", "none");
+			}
+			else if(sel_dev_types == 2)//门禁(视频)均需选择
+			{
+				$("#id_device_type_0").parent().parent().hide();
+				if($("#id_edit_form").find("#id_alias").val() == "")//新增
+				{
+					$("#id_device_type_1").attr("checked",true);//默认选择第一个
+				}
+			}
+			if((!$("#id_comm_pwd").attr("readonly")) && $("#id_edit_form").find("#id_alias").val() != "")
+			{
+				if($("#id_comm_pwd").val()==""){
+					$("#tr_comm_pwd").show();
+				}else{
+					$("#tr_comm_pwd").hide();
+					$("#m_comm_pwd").show();
+				}
+				$("#modify_comm_pwd").click(function(){
+						modify_comm_pwd();
+				});
+				$("#pbox1").click(function(){
+						modify_comm_pwd();
+				});
+			}
+		});
+		
+		function modify_comm_pwd(){
+			if(state1 == false){
+				$("#tr_old_comm_pwd").show();
+				$("#tr_new_comm_pwd").show();
+				$("#tr_conf_comm_pwd").show();
+				$("#pbox1").attr("checked","checked");
+				state1 = true;
+			}else{
+				$("#tr_old_comm_pwd").hide();
+				$("#tr_new_comm_pwd").hide();
+				$("#tr_conf_comm_pwd").hide();
+				$("#pbox1").attr("checked","");
+				$("#new_comm_pwd").attr("disabled","disabled");
+				$("#confirm_comm_pwd").attr("disabled","disabled");
+				$("#old_comm_pwd").attr("value","");
+				$("#new_comm_pwd").attr("value","");
+				$("#confirm_comm_pwd").attr("value","");
+				$("#r_msg").html("");
+				$("#e_msg2").html("");
+				state1 = false;
+			}
+		}
+		
+		var check_old_comm_pwd = false;
+		function check_comm_pwd(){
+			var old_comm_pwd=$("#old_comm_pwd").val();
+			var device=$("input[name='pk']").val();
+			$.post(
+				"/iaccess/check_pwd/",
+				{"old_pwd":old_comm_pwd,"device":device,"field":"comm_pwd"},
+				function(xml){
+					if(xml == 'ok')
+					{
+						$("#r_msg").html("{% trans '正确' %}");
+						check_old_comm_pwd = true;
+						$("#new_comm_pwd").attr("disabled","");
+						$("#confirm_comm_pwd").attr("disabled","");
+					}else
+					{
+						$("#r_msg").html("<font color='red'>{% trans '错误' %}</font>");
+						check_old_comm_pwd = false;
+						$("#new_comm_pwd").attr("disabled","disabled");
+						$("#confirm_comm_pwd").attr("disabled","disabled");
+					}
+				}
+			);
+		}
+		
+		var b_check_comm_pass=false;
+		
+		function check_comm_pass(){
+			var v1 = $("#new_comm_pwd").val();
+			var v2 = $("#confirm_comm_pwd").val();
+			if(v1==v2){
+				var html="{% trans '正确' %}";
+				$("#e_msg2").html(html);
+				b_check_comm_pass = true;
+			}else{
+				var html="<font color='red'>{%trans '密码必须一致'%}</font>"
+				$("#e_msg2").html(html);
+				$("#new_comm_pwd").attr("value","");
+				b_check_comm_pass = false;
+			}
+		}
+		
+	{% else %}      
+	    alert(gettext("对不起，您没有访问该页面的权限，不能浏览更多信息！"));
+	    window.location.href = "/{{ request.surl }}accounts/login/";
+	{% endif %}<!--add/change_device-->
+{% endblock %}
+
+
+

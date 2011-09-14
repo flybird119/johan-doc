@@ -1,0 +1,9 @@
+---2011-09-03 10:00:14.406000: -- 127.0.0.1/iclock/cdata --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 205, in cdata
+    device = check_device(request, True)    #---检测、验证当前发出请求的设备
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\conv_device.py", line 67, in check_device
+    sn = request.raw_post_data.split("SN=")[1].split("&")[0]
+IndexError: list index out of range
+---------------------------------

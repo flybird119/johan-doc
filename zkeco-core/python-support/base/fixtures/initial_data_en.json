@@ -1,0 +1,6 @@
+[{"pk":3835,
+"model":"base.BaseCode",
+"fields":{"content":"base.language","display":"Simplified Chinese","value":"zh-cn"}},
+{"pk":3836,
+"model":"base.BaseCode",
+"fields":{"content":"base.language","display":"English","value":"en"}}]

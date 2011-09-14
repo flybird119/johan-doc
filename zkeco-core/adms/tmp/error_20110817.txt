@@ -1,0 +1,1200 @@
+---2011-08-17 16:31:33.781000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:32:37.609000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:32:47.718000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:33:00.859000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:33:17.062000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:33:36.250000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:34:40.921000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:35:06.187000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:35:34.468000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:36:44.171000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:37:18.531000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 311, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:38:49.750000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:39:12.484000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:40:15.343000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:40:25.453000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:40:38.609000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:40:54.781000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:41:13.984000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:42:18.640000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:42:43.890000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:43:12.187000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:44:21.890000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:44:56.234000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:46:25.140000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:47:05.562000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:48:28.406000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:49:14.875000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:50:31.656000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:51:24.187000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:52:34.890000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:53:33.484000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:54:38.125000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:55:39.765000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:56:41.390000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:57:43.015000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:58:44.640000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 16:59:46.250000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:00:47.890000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:01:49.500000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:02:51.140000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:03:52.781000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:04:54.406000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:05:56.046000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:06:57.687000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:07:59.343000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:09:00.968000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:10:02.609000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:11:04.250000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:12:05.875000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:13:07.515000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:14:09.140000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:15:10.781000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:16:12.406000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:17:14.031000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:18:15.671000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:19:17.296000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:20:18.937000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:21:20.578000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:22:22.203000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:23:23.843000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:24:25.468000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:25:27.125000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:26:28.765000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:27:30.421000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:28:32.062000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:29:33.703000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:30:35.359000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:31:37: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:32:38.640000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:33:40.296000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:34:42.250000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:35:43.921000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:36:45.562000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:37:47.218000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:38:48.843000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:39:50.484000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:40:52.125000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:41:53.796000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:42:55.437000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------
+---2011-08-17 17:43:57.078000: -- 192.168.10.159/iclock/getrequest --
+
+Traceback (most recent call last):
+  File "E:\Python Work Place\zktime8.0.5_core\adms\mysite\iclock\devview.py", line 312, in getreq
+    dev_cur.execute(get_sql)
+  File "C:\Python26\lib\site-packages\django\db\backends\util.py", line 19, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python26\lib\site-packages\django\db\backends\mysql\base.py", line 86, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python26\lib\site-packages\MySQLdb\cursors.py", line 173, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python26\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20 id,CmdContent,CmdReturn from devcmds  where SN_id=4 and (CmdTransTime is null' at line 1")
+---------------------------------

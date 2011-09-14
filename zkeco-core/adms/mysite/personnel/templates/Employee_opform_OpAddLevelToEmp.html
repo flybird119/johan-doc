@@ -1,0 +1,44 @@
+{% extends "data_opform.html" %}
+{% load i18n %}
+
+{% block form %}
+{% autoescape off %}
+<tr >
+    <th>{% trans "选择权限组:" %}</th>
+    <td>
+		<div id="id_level" style="border:1px solid #CAE2F9;"></div>
+    </td>
+</td>
+</tr>
+<ul class="errorlist" id="emp_select_error"></ul> 
+
+
+{% endautoescape %}
+{% endblock %}
+
+{% block addjs %}
+    var key= $($("#id_datalist").get(0).current_row).attr("data");
+    $.ajax({ 
+        type: "POST",
+        url:"/{{ request.surl }}iaccess/GetData/?func=level&key="+key,
+        dataType:"json",
+        async:false,
+        success:function(json){
+            var level_list="<ul id='levelSingleBrowser' class='level_list'>";
+            if (json.length>0)
+            {   
+                for(index in json)
+                {
+                    level_list+='<li><input type="checkbox" name="level" value="'+json[index][0]+'"/><p>'+json[index][1]+'</p></li>';
+                }
+                level_list+='</ul>';
+            }
+            else
+            {
+                level_list+='<li><label class="none_selected">'+gettext("没有可选的门禁权限组！")+'</label></li></ul>';
+            }
+            $("#id_level").append(level_list);
+        }
+    });
+
+{% endblock%}

@@ -1,0 +1,34 @@
+/*上圆角框通用设置样式，如果要运用多个不同颜色，以下6句不用重新变化--------------------------------*/
+@charset "utf-8";
+.tabs_contant{word-break:keep-all;
+word-wrap:normal;
+white-space:nowrap;
+}
+.h1{height:1px;line-height:1px; font-size:1px; overflow:hidden;}
+.w1{ width:1px;line-height:1px; font-size:1px; overflow:hidden;}
+
+.tboc{ background-color:#b9dfff; padding:0px !important;}/*未选中的边框颜色*/
+.tbac{background-color:#4a8cc3; padding:0px !important;}/*未选中的背景颜色#3a76a9*/
+.tabs_li_focus .tboc{ background-color:#ffffff; padding:0px !important;}/*选中的边框颜色*/
+.tabs_li_focus .tbac{background-color:#ffffff; padding:0px !important;}/*选中的背景颜色*/
+.tabs_li_focus .tbg{background:#ffffff url(../images/images_bg.gif) 0px -200px repeat-x; padding:0px !important;}/*选中的背景图片*/
+
+/*选人控件里面的圆角*/
+/*.tboc1,.tbac1{font-size:1px; overflow:hidden;}*/
+.tboc1{ background-color:#b9dfff;}/*未选中的边框颜色*/
+.tbac1{background-color:#dcf3fe;}/*未选中的背景颜色*/
+.corner_tbl{margin-bottom:3px; z-index:6;/*background-color:#ffffff;*/}
+.corner_tbl td{padding:0px;}
+.td_contant{position:relative;}
+.div_contant{ background:#FFFFFF url(../images/images_bg.gif) 0px -340px repeat-x; border:1px solid #b7ddfb; margin:1px; padding:5px;}
+
+/*工作面板的圆角*/
+.corner_tl{background:url(../images/corner_ctb.gif) top left no-repeat; width:13px; height:13px;}
+.corner_tm{background:url(../images/corner_ctb.gif) repeat-x; background-position:0px -141px;}
+.corner_tr{background:url(../images/corner_ctb.gif) top right no-repeat; width:13px;}
+.corner_ml{background:url(../images/corner_lr.gif) left repeat-y;}
+.corner_mr{background:url(../images/corner_lr.gif) right repeat-y;}
+.corner_bl{background:url(../images/corner_ctb.gif) no-repeat; height:13px; background-position:0px -123px;}
+.corner_bm{background:url(../images/corner_ctb.gif) bottom repeat-x;}
+.corner_br{background:url(../images/corner_ctb.gif) no-repeat;background-position:-123px -123px;}
+.corner_mm{background-color:#FFFFFF;}
