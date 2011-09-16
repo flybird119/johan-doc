@@ -10,3 +10,16 @@ Windows Registry Editor Version 5.00
 ;C:\Python26\Scripts\path.bat %1
 ;cmd.exe /k python C:\Python26\Scripts\my_py_compile.py %1
 ;python C:\Python26\Scripts\my_py_compile.py %1
+
+;删除.svn文件
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN] 
+@="Delete SVN Folders"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN\command] 
+@="cmd.exe /c \"TITLE Removing SVN Folders in %1 && COLOR 9A && FOR /r \"%1\" %%f IN (.svn) DO RD /s /q \"%%f\" \""
+;或者简单点 @="cmd.exe /c  FOR /r \"%1\" %%f IN (.svn) DO RD /s /q \"%%f\" \""
+
+; 删除.pyc 文件
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeletePYC] 
+@="删除.pyc文件"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeletePYC\command] 
+@="cmd.exe /c cd %1 & del *.pyc /s"
