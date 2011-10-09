@@ -1,4 +1,8 @@
-set pythonpath=E:\Python Work Place\zktime8.0.5_core\python-support
+echo %cd%
+cd ../../
+cd python-support/
+set pythonpath=%cd%
 set pythonpath
+cd ../units/adms
 python svr8000.py
 pause
