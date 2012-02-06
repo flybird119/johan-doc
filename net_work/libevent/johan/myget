@@ -1,0 +1,25 @@
+I/O事件: EV_WRITE和EV_READ
+定时事件:EV_TIMEOUT
+信号:    EV_SIGNAL
+
+辅助选项:EV_PERSIST,表明是一个永久事件
+信号和I/O事件不能同时
+
+event 结构体中的 3 个链表节点指针和一个堆索引
+
+当有事件 event 转变为就绪状态时,    libevent 就会把它移入到 active event list[priority]
+中,其中 priority 是 event 的优先级;
+
+根据自己的调度策略选择就绪事件,调用其 cb_callback()函数执行事件
+处理;并根据就绪的句柄和事件类型填充 cb_callback 函数的参数。
+
+用 epoll 作为 I/O demultiplex 机制
+ 在初始化时并将 eventop 的 5个函数指针指向这 5 个函数
+
+
+event_base_new
+为 event_base 实例申请空间,然后初始化 timer mini-heap,选择并初始化合适的系统 I/O 的 demultiplexer 机制,初始化各事件链表;
+
+
+Libevent 中 Signal 事件的管理是通过结构体 evsignal_info 完成的
+

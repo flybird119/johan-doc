@@ -1,0 +1,56 @@
+主要可分为头文件、内部使用的头文件、辅助功能函数、日志、libevent框架、对系统I/O多路复用机制的封装、信号管理、定时事件管理、缓冲区管理、基本数据结构和基于libevent的两个实用库等几个部分
+
+
+1）头文件
+	event.h：事件宏定义、接口函数声明，主要结构体event的声明；
+2）内部头文件
+	xxx-internal.h：内部数据结构和函数，对外不可见
+3）libevent框架
+	event.c   event整体框架的代码实现；
+4）对系统I/O多路复用机制的封装
+	epoll.c：对epoll的封装；
+	select.c：对select的封装；
+	devpoll.c：对dev/poll的封装;
+	kqueue.c：对kqueue的封装；
+5）定时事件管理
+	min-heap.h：其实就是一个以时间作为key的小根堆结构；
+6）信号管理
+	signal.c：对信号事件的处理；
+7）辅助功能函数
+	evutil.h 和evutil.c：一些辅助功能函数
+8）日志
+	log.h和log.c：log日志实现
+9）缓冲区管理
+	evbuffer.c和buffer.c：libevent对缓冲区的封装；
+10）基本数据结构
+	compat\sys下的两个源文件：
+		queue.h是libevent基本数据结构的实现，包括链表，双向链表，队列等；
+		_libevent_time.h：一些用于时间操作的结构体定义、函数和宏定义；
+11）实用网络库
+	http和evdns：是基于libevent实现的http服务器和异步dns查询库；
+	
+	
+	
+	
+libevent会根据自己的调度策略选择就绪事件，调用其cb_callback()函数执行事件处理；并根据就绪的句柄和事件类型填充cb_callback函数的参数
+
+向libevent添加一个事件，需要首先设置event对象，这通过调用libevent提供的函数有：event_set(), event_base_set(), event_priority_set()
+
+libevent有一个全局event_base指针current_base
+
+
+剖析libevent对事件的详细处理流程了
+
+Reactor框架组件 在libevent中，这就表现为event_base结构体
+
+以把evsel和evbase看作是类和静态函数的关系
+
+libevent将系统提供的I/O demultiplex机制统一封装成了eventop结构；因此eventops[]包含了select、poll、kequeue和epoll等等其中的若干个全局实例对象。
+
+evbase实际上是一个eventop实例对象
+
+epoll，libevent实现了eventop 5个对应的接口函数，并在初始化时并将eventop的5个函数指针指向这5个函数，那么程序就可以使用epoll作为I/O demultiplex机制了
+
+创建一个event_base对象也既是创建了一个新的libevent实例
+
+通过调用event_init()（内部调用event_base_new函数执行具体操作）函数来创建
