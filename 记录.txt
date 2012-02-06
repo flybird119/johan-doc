@@ -1,1 +1,3 @@
 http://www.oschina.net/p/django-editor
+
+tinycore  linux 
