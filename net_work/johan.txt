@@ -1,0 +1,111 @@
+% make   % make 32bit
+
+Redis is just a single binary
+
+make install to copy the binary in /usr/local/bin
+
+to test it, using: % make test
+(
+result:815 tests, 815 passed, 0 failed
+)
+
+Buliding using tcmalloc  % make USE_TCMALLOC=yes
+
+Running Redis
+-------------
+    % cd src
+    % ./redis-server
+    
+    % ./redis-server /path/to/redis.conf
+    
+Playing with Redis
+------------------
+in another terminal try
+    % cd src
+    % ./redis-cli
+
+    
+    redis> ping
+    PONG
+    redis> set foo bar
+    OK
+    redis> get foo
+    "bar"
+    redis> incr mycounter
+    (integer) 1
+    redis> incr mycounter
+    (integer) 2
+    redis> 
+
+You can find the list of all the available commands here:
+
+    http://redis.io/commands
+    
+    
+    
+redis-benchmark：用于做性能测试；
+redis-check-aof：更新日志检查；
+redis-check-dump：用于本地数据库检查；
+redis-cli：客户端程序；
+redis-server：服务端程序；
+
+
+
+adlist.h/adlist.c：用于对list的定义，它是个双向链表结构
+ae.h/ae.c：用于Redis的事件处理，包括句柄事件和超时事件
+anet.h/anet.c：这两个文件非常重要，作为Server/Client通信的基础封装
+aof.c：aof，全称为append only file，作用就是记录每次的写操作,在遇到断电等问题时可以用它来恢复数据库状态
+config.h/config.c：用于将配置文件redis.conf文件中的配置读取出来的属性通过程序放到server对象中
+db.c：对于Redis内存数据库的相关操作
+dict.h/dict.c：也是很重要的两个文件，主要对于内存中的hash进行管理
+fmacros.h：用于Mac下的兼容性处理
+help.h：辅助于命令的提示信息，作用于redis-cli可执行文件中
+intset.h/intset.c：整数范围内的使用set，并包含相关set操作
+multi.c：用于事务处理操作
+networking.c：网络协议传输方法定义相关的都放在这个文件里面了。包括让Client连接上Server，让Slave挂接到Master，已经Server/Client之间的信息交互的实现
+object.c：用于创建和释放redisObject对象
+pqsort.h/pqsort.c/sort.c：关于排序算法，sort.c具体作为Redis场景下的排序实现
+pubsub.c：用于订阅模式的实现，有点类似于Client广播发送的方式
+rdb.c：对于Redis本地数据库的相关操作，默认文件是dump.rdb（通过配置文件获得）
+redis-benchmark.c：用于redis性能测试的实现(默认性能测试中的客户端数量为50个，并行发送的请求有10000条，你也可以通过redis-benchmark命令行参数进行设置)
+
+redis-check-aof.c：用于更新日志检查的实现。
+ 
+redis-check-dump.c：用于本地数据库检查的实现。
+ 
+redis-cli.c：客户端程序的实现。
+ 
+redis.h/redis.c：服务端程序的实现。
+ 
+release.h/release.c：用于发布使用。
+ 
+replication.c：用于主从数据库的复制操作的实现。
+
+sds.h/sds.c：用于对字符串的定义,对于字符串的相关操作，包括复制，连接，清零
+
+sha1.h/sha1.c：有关于sha算法的实现。
+ 
+solarisfixes.h：Solaris系统的兼容性实现。
+ 
+syncio.c：用于同步Socket和文件I/O操作。
+ 
+t_hash.c/t_list.c/t_set.c/t_string.c/t_zset.c：hash，list，set，string，zset在Server/Client中的应答操作。主要通过redisObject进行类型转换。
+ 
+testhelp.h：一个C风格的小型测试框架。
+ 
+util.c：关于通用工具的方法实现。
+ 
+version.h：Redis版本号定义。
+ 
+vm.c：关于虚拟内存的管理实现。
+
+zipmap.h/zipmap.c：zipmap是一个类似于hash的存储对象。在新建一个hash对象时开始是用zipmap（又称为small hash）来存储的。这个zipmap其实并不是hash table但是zipmap相比正常的hash实现可以节省不少hash本身需要的一些元数据存储开销，如果field或者value的大小超出一定限制后，redis会在内部自动将zipmap替换成正常的hash实现。
+ 
+ziplist.h/ziplist.c：ziplist是一个类似于list的存储对象。它的原理类似于zipmap。
+ 
+zmalloc.h/zmalloc.c：关于Redis的内存分配的封装实现
+
+
+
+数据Set的时候，数据保存在内存中，当调用Save方法时候，将数据保存在磁盘中。
+其中你会发现在3个服务目录中，都出现了dump.rdb，说明Master的文件都同步到Slave中去了
