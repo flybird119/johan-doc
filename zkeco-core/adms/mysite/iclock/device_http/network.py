@@ -1,14 +1,16 @@
 # coding=utf-8
 
 def network_monitor(request):
-    print '##################### network_monitor ##########################'
-    print 'url-----------------',request.path
-    print 'method-----------',request.method
-    print 'raw_post_data----',request.raw_post_data
-    print 'post --------------',request.POST
-    print 'get ---------------',request.GET
-    print '#############################################################'
-    return 0
+    from cmds_api import develop_model
+    if develop_model:
+        print '##################### network_monitor ##########################'
+        print 'url-----------------',request.path
+        print 'method-----------',request.method
+        print 'raw_post_data----',request.raw_post_data
+        print 'post --------------',request.POST
+        print 'get ---------------',request.GET
+        print '#############################################################'
+        return 0
 
 def simple_response(content):
     response["Content-Length"] = len(content)
