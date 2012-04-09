@@ -1,0 +1,258 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ARGNUM	.\shttpd_cgi.c	217;"	d	file:
+CGIRoot	.\shttpd.h	/^	char CGIRoot[128];		\/*CGI跟路径*\/$/;"	m	struct:conf_opts
+CGISTR	.\shttpd_cgi.c	216;"	d	file:
+ConfigFile	.\shttpd.h	/^	char ConfigFile[128];		\/*配置文件路径和名称*\/$/;"	m	struct:conf_opts
+DBGPRINT	.\shttpd.h	218;"	d
+DELIM_CHARS	.\shttpd_mine.c	51;"	d	file:
+DefaultFile	.\shttpd.h	/^	char DefaultFile[128];		\/*默认文件名称*\/$/;"	m	struct:conf_opts
+DocumentRoot	.\shttpd.h	/^	char DocumentRoot[128];	\/*根文件路径*\/$/;"	m	struct:conf_opts
+ERROR301	.\shttpd_error.c	/^	ERROR301, ERROR302, ERROR303, ERROR304, ERROR305, ERROR307,$/;"	e	enum:__anon3	file:
+ERROR302	.\shttpd_error.c	/^	ERROR301, ERROR302, ERROR303, ERROR304, ERROR305, ERROR307,$/;"	e	enum:__anon3	file:
+ERROR303	.\shttpd_error.c	/^	ERROR301, ERROR302, ERROR303, ERROR304, ERROR305, ERROR307,$/;"	e	enum:__anon3	file:
+ERROR304	.\shttpd_error.c	/^	ERROR301, ERROR302, ERROR303, ERROR304, ERROR305, ERROR307,$/;"	e	enum:__anon3	file:
+ERROR305	.\shttpd_error.c	/^	ERROR301, ERROR302, ERROR303, ERROR304, ERROR305, ERROR307,$/;"	e	enum:__anon3	file:
+ERROR307	.\shttpd_error.c	/^	ERROR301, ERROR302, ERROR303, ERROR304, ERROR305, ERROR307,$/;"	e	enum:__anon3	file:
+ERROR400	.\shttpd_error.c	/^	ERROR400, ERROR401, ERROR402, ERROR403, ERROR404, ERROR405, ERROR406, $/;"	e	enum:__anon3	file:
+ERROR401	.\shttpd_error.c	/^	ERROR400, ERROR401, ERROR402, ERROR403, ERROR404, ERROR405, ERROR406, $/;"	e	enum:__anon3	file:
+ERROR402	.\shttpd_error.c	/^	ERROR400, ERROR401, ERROR402, ERROR403, ERROR404, ERROR405, ERROR406, $/;"	e	enum:__anon3	file:
+ERROR403	.\shttpd_error.c	/^	ERROR400, ERROR401, ERROR402, ERROR403, ERROR404, ERROR405, ERROR406, $/;"	e	enum:__anon3	file:
+ERROR404	.\shttpd_error.c	/^	ERROR400, ERROR401, ERROR402, ERROR403, ERROR404, ERROR405, ERROR406, $/;"	e	enum:__anon3	file:
+ERROR405	.\shttpd_error.c	/^	ERROR400, ERROR401, ERROR402, ERROR403, ERROR404, ERROR405, ERROR406, $/;"	e	enum:__anon3	file:
+ERROR406	.\shttpd_error.c	/^	ERROR400, ERROR401, ERROR402, ERROR403, ERROR404, ERROR405, ERROR406, $/;"	e	enum:__anon3	file:
+ERROR407	.\shttpd_error.c	/^	ERROR407, ERROR408, ERROR409, ERROR410, ERROR411, ERROR412, ERROR413,$/;"	e	enum:__anon3	file:
+ERROR408	.\shttpd_error.c	/^	ERROR407, ERROR408, ERROR409, ERROR410, ERROR411, ERROR412, ERROR413,$/;"	e	enum:__anon3	file:
+ERROR409	.\shttpd_error.c	/^	ERROR407, ERROR408, ERROR409, ERROR410, ERROR411, ERROR412, ERROR413,$/;"	e	enum:__anon3	file:
+ERROR410	.\shttpd_error.c	/^	ERROR407, ERROR408, ERROR409, ERROR410, ERROR411, ERROR412, ERROR413,$/;"	e	enum:__anon3	file:
+ERROR411	.\shttpd_error.c	/^	ERROR407, ERROR408, ERROR409, ERROR410, ERROR411, ERROR412, ERROR413,$/;"	e	enum:__anon3	file:
+ERROR412	.\shttpd_error.c	/^	ERROR407, ERROR408, ERROR409, ERROR410, ERROR411, ERROR412, ERROR413,$/;"	e	enum:__anon3	file:
+ERROR413	.\shttpd_error.c	/^	ERROR407, ERROR408, ERROR409, ERROR410, ERROR411, ERROR412, ERROR413,$/;"	e	enum:__anon3	file:
+ERROR414	.\shttpd_error.c	/^	ERROR414, ERROR415, ERROR416, ERROR417,$/;"	e	enum:__anon3	file:
+ERROR415	.\shttpd_error.c	/^	ERROR414, ERROR415, ERROR416, ERROR417,$/;"	e	enum:__anon3	file:
+ERROR416	.\shttpd_error.c	/^	ERROR414, ERROR415, ERROR416, ERROR417,$/;"	e	enum:__anon3	file:
+ERROR417	.\shttpd_error.c	/^	ERROR414, ERROR415, ERROR416, ERROR417,$/;"	e	enum:__anon3	file:
+ERROR500	.\shttpd_error.c	/^	ERROR500, ERROR501, ERROR502, ERROR503, ERROR504, ERROR505$/;"	e	enum:__anon3	file:
+ERROR501	.\shttpd_error.c	/^	ERROR500, ERROR501, ERROR502, ERROR503, ERROR504, ERROR505$/;"	e	enum:__anon3	file:
+ERROR502	.\shttpd_error.c	/^	ERROR500, ERROR501, ERROR502, ERROR503, ERROR504, ERROR505$/;"	e	enum:__anon3	file:
+ERROR503	.\shttpd_error.c	/^	ERROR500, ERROR501, ERROR502, ERROR503, ERROR504, ERROR505$/;"	e	enum:__anon3	file:
+ERROR504	.\shttpd_error.c	/^	ERROR500, ERROR501, ERROR502, ERROR503, ERROR504, ERROR505$/;"	e	enum:__anon3	file:
+ERROR505	.\shttpd_error.c	/^	ERROR500, ERROR501, ERROR502, ERROR503, ERROR504, ERROR505$/;"	e	enum:__anon3	file:
+Error_400	.\shttpd_error.c	/^void Error_400(struct worker_ctl* wctl)$/;"	f
+Error_403	.\shttpd_error.c	/^void Error_403(struct worker_ctl* wctl)$/;"	f
+Error_404	.\shttpd_error.c	/^void Error_404(struct worker_ctl* wctl)$/;"	f
+Error_505	.\shttpd_error.c	/^void Error_505(struct worker_ctl* wctl)$/;"	f
+GenerateDirFile	.\shttpd_cgi.c	/^int GenerateDirFile(struct worker_ctl *wctl)$/;"	f
+GenerateErrorMine	.\shttpd_error.c	/^int GenerateErrorMine(struct worker_ctl * wctl)$/;"	f
+HDR_DATE	.\shttpd.h	/^enum {HDR_DATE, HDR_INT, HDR_STRING};	\/* HTTP header types		*\/$/;"	e	enum:__anon2
+HDR_INT	.\shttpd.h	/^enum {HDR_DATE, HDR_INT, HDR_STRING};	\/* HTTP header types		*\/$/;"	e	enum:__anon2
+HDR_STRING	.\shttpd.h	/^enum {HDR_DATE, HDR_INT, HDR_STRING};	\/* HTTP header types		*\/$/;"	e	enum:__anon2
+HEXTOI	.\shttpd_uri.c	28;"	d	file:
+InitClient	.\shttpd.h	/^	int InitClient;				\/*初始化线程数量*\/$/;"	m	struct:conf_opts
+JUMPOVER_CHAR	.\shttpd_request.c	154;"	d	file:
+JUMPTO_CHAR	.\shttpd_request.c	155;"	d	file:
+K	.\shttpd.h	180;"	d
+LINELENGTH	.\shttpd_parameters.c	167;"	d	file:
+ListenPort	.\shttpd.h	/^	int ListenPort;			\/*侦听端口*\/$/;"	m	struct:conf_opts
+METHOD_CGI	.\shttpd.h	/^	METHOD_CGI,		\/**CGI方法*\/$/;"	e	enum:SHTTPD_METHOD_TYPE
+METHOD_DELETE	.\shttpd.h	/^	METHOD_DELETE, 	\/*DELETE方法*\/$/;"	e	enum:SHTTPD_METHOD_TYPE
+METHOD_GET	.\shttpd.h	/^	METHOD_GET, 		\/*GET     方法*\/$/;"	e	enum:SHTTPD_METHOD_TYPE
+METHOD_HEAD	.\shttpd.h	/^	METHOD_HEAD,		\/*HEAD   方法*\/$/;"	e	enum:SHTTPD_METHOD_TYPE
+METHOD_NOTSUPPORT	.\shttpd.h	/^	METHOD_NOTSUPPORT$/;"	e	enum:SHTTPD_METHOD_TYPE
+METHOD_POST	.\shttpd.h	/^	METHOD_POST, 		\/*POST   方法*\/$/;"	e	enum:SHTTPD_METHOD_TYPE
+METHOD_PUT	.\shttpd.h	/^	METHOD_PUT, 		\/*PUT     方法*\/$/;"	e	enum:SHTTPD_METHOD_TYPE
+MINET_ARJ	.\shttpd_mine.c	/^	MINET_GZ,	MINET_ARJ,	MINET_RAR,	MINET_RTF,	MINET_PDF,	MINET_SWF,	MINET_MPG,	MINET_MPEG,$/;"	e	enum:__anon4	file:
+MINET_ASF	.\shttpd_mine.c	/^	MINET_ASF,	MINET_AVI,	MINET_BMP$/;"	e	enum:__anon4	file:
+MINET_AVI	.\shttpd_mine.c	/^	MINET_ASF,	MINET_AVI,	MINET_BMP$/;"	e	enum:__anon4	file:
+MINET_BMP	.\shttpd_mine.c	/^	MINET_ASF,	MINET_AVI,	MINET_BMP$/;"	e	enum:__anon4	file:
+MINET_CSS	.\shttpd_mine.c	/^	MINET_HTML,	MINET_HTM,	MINET_TXT,	MINET_CSS,	MINET_ICO,	MINET_GIF,	MINET_JPG,	MINET_JPEG,$/;"	e	enum:__anon4	file:
+MINET_DOC	.\shttpd_mine.c	/^	MINET_RA,	MINET_DOC,	MINET_EXE,	MINET_ZIP,	MINET_XLS,	MINET_TGZ,	MINET_TARGZ,	MINET_TAR,$/;"	e	enum:__anon4	file:
+MINET_EXE	.\shttpd_mine.c	/^	MINET_RA,	MINET_DOC,	MINET_EXE,	MINET_ZIP,	MINET_XLS,	MINET_TGZ,	MINET_TARGZ,	MINET_TAR,$/;"	e	enum:__anon4	file:
+MINET_GIF	.\shttpd_mine.c	/^	MINET_HTML,	MINET_HTM,	MINET_TXT,	MINET_CSS,	MINET_ICO,	MINET_GIF,	MINET_JPG,	MINET_JPEG,$/;"	e	enum:__anon4	file:
+MINET_GZ	.\shttpd_mine.c	/^	MINET_GZ,	MINET_ARJ,	MINET_RAR,	MINET_RTF,	MINET_PDF,	MINET_SWF,	MINET_MPG,	MINET_MPEG,$/;"	e	enum:__anon4	file:
+MINET_HTM	.\shttpd_mine.c	/^	MINET_HTML,	MINET_HTM,	MINET_TXT,	MINET_CSS,	MINET_ICO,	MINET_GIF,	MINET_JPG,	MINET_JPEG,$/;"	e	enum:__anon4	file:
+MINET_HTML	.\shttpd_mine.c	/^	MINET_HTML,	MINET_HTM,	MINET_TXT,	MINET_CSS,	MINET_ICO,	MINET_GIF,	MINET_JPG,	MINET_JPEG,$/;"	e	enum:__anon4	file:
+MINET_ICO	.\shttpd_mine.c	/^	MINET_HTML,	MINET_HTM,	MINET_TXT,	MINET_CSS,	MINET_ICO,	MINET_GIF,	MINET_JPG,	MINET_JPEG,$/;"	e	enum:__anon4	file:
+MINET_JPEG	.\shttpd_mine.c	/^	MINET_HTML,	MINET_HTM,	MINET_TXT,	MINET_CSS,	MINET_ICO,	MINET_GIF,	MINET_JPG,	MINET_JPEG,$/;"	e	enum:__anon4	file:
+MINET_JPG	.\shttpd_mine.c	/^	MINET_HTML,	MINET_HTM,	MINET_TXT,	MINET_CSS,	MINET_ICO,	MINET_GIF,	MINET_JPG,	MINET_JPEG,$/;"	e	enum:__anon4	file:
+MINET_M3U	.\shttpd_mine.c	/^	MINET_PNG,	MINET_SVG,	MINET_TORRENT,	MINET_WAV,	MINET_MP3,	MINET_MID,	MINET_M3U,	MINET_RAM,$/;"	e	enum:__anon4	file:
+MINET_MID	.\shttpd_mine.c	/^	MINET_PNG,	MINET_SVG,	MINET_TORRENT,	MINET_WAV,	MINET_MP3,	MINET_MID,	MINET_M3U,	MINET_RAM,$/;"	e	enum:__anon4	file:
+MINET_MP3	.\shttpd_mine.c	/^	MINET_PNG,	MINET_SVG,	MINET_TORRENT,	MINET_WAV,	MINET_MP3,	MINET_MID,	MINET_M3U,	MINET_RAM,$/;"	e	enum:__anon4	file:
+MINET_MPEG	.\shttpd_mine.c	/^	MINET_GZ,	MINET_ARJ,	MINET_RAR,	MINET_RTF,	MINET_PDF,	MINET_SWF,	MINET_MPG,	MINET_MPEG,$/;"	e	enum:__anon4	file:
+MINET_MPG	.\shttpd_mine.c	/^	MINET_GZ,	MINET_ARJ,	MINET_RAR,	MINET_RTF,	MINET_PDF,	MINET_SWF,	MINET_MPG,	MINET_MPEG,$/;"	e	enum:__anon4	file:
+MINET_PDF	.\shttpd_mine.c	/^	MINET_GZ,	MINET_ARJ,	MINET_RAR,	MINET_RTF,	MINET_PDF,	MINET_SWF,	MINET_MPG,	MINET_MPEG,$/;"	e	enum:__anon4	file:
+MINET_PNG	.\shttpd_mine.c	/^	MINET_PNG,	MINET_SVG,	MINET_TORRENT,	MINET_WAV,	MINET_MP3,	MINET_MID,	MINET_M3U,	MINET_RAM,$/;"	e	enum:__anon4	file:
+MINET_RA	.\shttpd_mine.c	/^	MINET_RA,	MINET_DOC,	MINET_EXE,	MINET_ZIP,	MINET_XLS,	MINET_TGZ,	MINET_TARGZ,	MINET_TAR,$/;"	e	enum:__anon4	file:
+MINET_RAM	.\shttpd_mine.c	/^	MINET_PNG,	MINET_SVG,	MINET_TORRENT,	MINET_WAV,	MINET_MP3,	MINET_MID,	MINET_M3U,	MINET_RAM,$/;"	e	enum:__anon4	file:
+MINET_RAR	.\shttpd_mine.c	/^	MINET_GZ,	MINET_ARJ,	MINET_RAR,	MINET_RTF,	MINET_PDF,	MINET_SWF,	MINET_MPG,	MINET_MPEG,$/;"	e	enum:__anon4	file:
+MINET_RTF	.\shttpd_mine.c	/^	MINET_GZ,	MINET_ARJ,	MINET_RAR,	MINET_RTF,	MINET_PDF,	MINET_SWF,	MINET_MPG,	MINET_MPEG,$/;"	e	enum:__anon4	file:
+MINET_SVG	.\shttpd_mine.c	/^	MINET_PNG,	MINET_SVG,	MINET_TORRENT,	MINET_WAV,	MINET_MP3,	MINET_MID,	MINET_M3U,	MINET_RAM,$/;"	e	enum:__anon4	file:
+MINET_SWF	.\shttpd_mine.c	/^	MINET_GZ,	MINET_ARJ,	MINET_RAR,	MINET_RTF,	MINET_PDF,	MINET_SWF,	MINET_MPG,	MINET_MPEG,$/;"	e	enum:__anon4	file:
+MINET_TAR	.\shttpd_mine.c	/^	MINET_RA,	MINET_DOC,	MINET_EXE,	MINET_ZIP,	MINET_XLS,	MINET_TGZ,	MINET_TARGZ,	MINET_TAR,$/;"	e	enum:__anon4	file:
+MINET_TARGZ	.\shttpd_mine.c	/^	MINET_RA,	MINET_DOC,	MINET_EXE,	MINET_ZIP,	MINET_XLS,	MINET_TGZ,	MINET_TARGZ,	MINET_TAR,$/;"	e	enum:__anon4	file:
+MINET_TGZ	.\shttpd_mine.c	/^	MINET_RA,	MINET_DOC,	MINET_EXE,	MINET_ZIP,	MINET_XLS,	MINET_TGZ,	MINET_TARGZ,	MINET_TAR,$/;"	e	enum:__anon4	file:
+MINET_TORRENT	.\shttpd_mine.c	/^	MINET_PNG,	MINET_SVG,	MINET_TORRENT,	MINET_WAV,	MINET_MP3,	MINET_MID,	MINET_M3U,	MINET_RAM,$/;"	e	enum:__anon4	file:
+MINET_TXT	.\shttpd_mine.c	/^	MINET_HTML,	MINET_HTM,	MINET_TXT,	MINET_CSS,	MINET_ICO,	MINET_GIF,	MINET_JPG,	MINET_JPEG,$/;"	e	enum:__anon4	file:
+MINET_WAV	.\shttpd_mine.c	/^	MINET_PNG,	MINET_SVG,	MINET_TORRENT,	MINET_WAV,	MINET_MP3,	MINET_MID,	MINET_M3U,	MINET_RAM,$/;"	e	enum:__anon4	file:
+MINET_XLS	.\shttpd_mine.c	/^	MINET_RA,	MINET_DOC,	MINET_EXE,	MINET_ZIP,	MINET_XLS,	MINET_TGZ,	MINET_TARGZ,	MINET_TAR,$/;"	e	enum:__anon4	file:
+MINET_ZIP	.\shttpd_mine.c	/^	MINET_RA,	MINET_DOC,	MINET_EXE,	MINET_ZIP,	MINET_XLS,	MINET_TGZ,	MINET_TARGZ,	MINET_TAR,$/;"	e	enum:__anon4	file:
+MaxClient	.\shttpd.h	/^	int MaxClient;			\/*最大客户端数量*\/$/;"	m	struct:conf_opts
+Method_Do	.\shttpd_method.c	/^void Method_Do(struct worker_ctl *wctl)$/;"	f
+Method_DoCGI	.\shttpd_method.c	/^static int Method_DoCGI(struct worker_ctl *wctl)$/;"	f	file:
+Method_DoDelete	.\shttpd_method.c	/^static int Method_DoDelete(struct worker_ctl *wctl)$/;"	f	file:
+Method_DoGet	.\shttpd_method.c	/^static int Method_DoGet(struct worker_ctl *wctl)$/;"	f	file:
+Method_DoHead	.\shttpd_method.c	/^static int Method_DoHead(struct worker_ctl *wctl)$/;"	f	file:
+Method_DoList	.\shttpd_method.c	/^static int Method_DoList(struct worker_ctl *wctl)$/;"	f	file:
+Method_DoPost	.\shttpd_method.c	/^static int Method_DoPost(struct worker_ctl *wctl)$/;"	f	file:
+Method_DoPut	.\shttpd_method.c	/^static int Method_DoPut(struct worker_ctl *wctl)$/;"	f	file:
+Mine_Type	.\shttpd_mine.c	/^struct mine_type* Mine_Type(char *uri, int len, struct worker_ctl *wctl)$/;"	f
+OFFSET	.\shttpd.h	92;"	d
+PATHLENGTH	.\shttpd_cgi.c	54;"	d	file:
+Para_CmdParse	.\shttpd_parameters.c	/^static int Para_CmdParse(int argc, char *argv[])$/;"	f	file:
+Para_FileParse	.\shttpd_parameters.c	/^void Para_FileParse(char *file)$/;"	f
+Para_Init	.\shttpd_parameters.c	/^void Para_Init(int argc, char *argv[])$/;"	f
+READIN	.\shttpd_cgi.c	218;"	d	file:
+Request_Handle	.\shttpd_request.c	/^int Request_Handle(struct worker_ctl* wctl)$/;"	f
+Request_HeaderParse	.\shttpd_request.c	/^void Request_HeaderParse(char *s, int len, struct headers *parsed)$/;"	f
+Request_Parse	.\shttpd_request.c	/^int  Request_Parse(struct worker_ctl *wctl)$/;"	f
+SCHEDULESTATUS	.\shttpd_worker.c	/^static int SCHEDULESTATUS = STATUS_RUNNING;$/;"	v	file:
+SHTTPD_METHOD_TYPE	.\shttpd.h	/^typedef enum SHTTPD_METHOD_TYPE{$/;"	g
+SHTTPD_METHOD_TYPE	.\shttpd.h	/^}SHTTPD_METHOD_TYPE;$/;"	t	typeref:enum:SHTTPD_METHOD_TYPE
+STATSU_STOP	.\shttpd_worker.c	244;"	d	file:
+STATUS_RUNNING	.\shttpd_worker.c	243;"	d	file:
+TimeOut	.\shttpd.h	/^	int TimeOut;				\/*超时时间*\/$/;"	m	struct:conf_opts
+URI_MAX	.\shttpd.h	109;"	d
+WORKER_DETACHED	.\shttpd.h	/^enum{WORKER_INITED, WORKER_RUNNING,WORKER_DETACHING, WORKER_DETACHED,WORKER_IDEL};$/;"	e	enum:__anon1
+WORKER_DETACHING	.\shttpd.h	/^enum{WORKER_INITED, WORKER_RUNNING,WORKER_DETACHING, WORKER_DETACHED,WORKER_IDEL};$/;"	e	enum:__anon1
+WORKER_IDEL	.\shttpd.h	/^enum{WORKER_INITED, WORKER_RUNNING,WORKER_DETACHING, WORKER_DETACHED,WORKER_IDEL};$/;"	e	enum:__anon1
+WORKER_INITED	.\shttpd.h	/^enum{WORKER_INITED, WORKER_RUNNING,WORKER_DETACHING, WORKER_DETACHED,WORKER_IDEL};$/;"	e	enum:__anon1
+WORKER_ISSTATUS	.\shttpd_worker.c	/^static int WORKER_ISSTATUS(int status)$/;"	f	file:
+WORKER_RUNNING	.\shttpd.h	/^enum{WORKER_INITED, WORKER_RUNNING,WORKER_DETACHING, WORKER_DETACHED,WORKER_IDEL};$/;"	e	enum:__anon1
+WRITEOUT	.\shttpd_cgi.c	219;"	d	file:
+Worker_Add	.\shttpd_worker.c	/^static int Worker_Add(int i)$/;"	f	file:
+Worker_Delete	.\shttpd_worker.c	/^static void Worker_Delete(int i)$/;"	f	file:
+Worker_Destory	.\shttpd_worker.c	/^static void Worker_Destory()$/;"	f	file:
+Worker_Init	.\shttpd_worker.c	/^static void Worker_Init()$/;"	f	file:
+Worker_ScheduleRun	.\shttpd_worker.c	/^int Worker_ScheduleRun(int ss)$/;"	f
+Worker_ScheduleStop	.\shttpd_worker.c	/^int Worker_ScheduleStop()$/;"	f
+__SHTTPD_H__	.\shttpd.h	2;"	d
+_error_http	.\shttpd_error.c	/^struct error_mine _error_http[]=$/;"	v	typeref:struct:error_mine
+_shttpd_methods	.\shttpd.c	/^struct vec _shttpd_methods[] = {$/;"	v	typeref:struct:vec
+auth	.\shttpd.h	/^	union variant	auth;		\/* Authorization		*\/$/;"	m	struct:headers	typeref:union:headers::variant
+big_int_t	.\shttpd.h	79;"	d
+bin	.\shttpd.h	/^	struct vec bin;$/;"	m	struct:cgi	typeref:struct:cgi::vec
+birth_time	.\shttpd.h	/^	time_t	birth_time;	\/*建立时间*\/$/;"	m	struct:conn_response
+builtin_mime_types	.\shttpd_mine.c	/^builtin_mime_types[] = {$/;"	v	typeref:struct:mine_type
+cgi	.\shttpd.h	/^struct cgi{$/;"	s
+cgiHandler	.\shttpd_cgi.c	/^int cgiHandler(struct worker_ctl *wctl)$/;"	f
+ch	.\shttpd.h	/^	struct headers ch;	\/*头部结构*\/$/;"	m	struct:conn_request	typeref:struct:conn_request::headers
+cl	.\shttpd.h	/^	int		cl;			\/*响应内容长度*\/$/;"	m	struct:conn_response
+cl	.\shttpd.h	/^	union variant	cl;		\/* Content-Length:		*\/$/;"	m	struct:headers	typeref:union:headers::variant
+con_req	.\shttpd.h	/^	struct conn_request con_req;$/;"	m	struct:worker_conn	typeref:struct:worker_conn::conn_request
+con_res	.\shttpd.h	/^	struct conn_response con_res;$/;"	m	struct:worker_conn	typeref:struct:worker_conn::conn_response
+conf_opts	.\shttpd.h	/^struct conf_opts{$/;"	s
+conf_para	.\shttpd.c	/^struct conf_opts conf_para={$/;"	v	typeref:struct:conf_opts
+conf_para	.\shttpd_request.c	/^struct conf_opts conf_para;$/;"	v	typeref:struct:conf_opts
+conf_readline	.\shttpd_parameters.c	/^static int conf_readline(int fd, char *buff, int len)$/;"	f	file:
+conn	.\shttpd.h	/^	struct worker_conn *conn;	\/*连接结构指针*\/	$/;"	m	struct:conn_response	typeref:struct:conn_response::worker_conn
+conn	.\shttpd.h	/^	struct worker_conn *conn;	\/*连接结构指针*\/$/;"	m	struct:conn_request	typeref:struct:conn_request::worker_conn
+conn	.\shttpd.h	/^	struct worker_conn conn;$/;"	m	struct:worker_ctl	typeref:struct:worker_ctl::worker_conn
+conn_request	.\shttpd.h	/^struct conn_request{$/;"	s
+conn_response	.\shttpd.h	/^struct conn_response{$/;"	s
+connection	.\shttpd.h	/^	union variant	connection;	\/* Connection:			*\/$/;"	m	struct:headers	typeref:union:headers::variant
+content	.\shttpd_error.c	/^	char *content;$/;"	m	struct:error_mine	file:
+cookie	.\shttpd.h	/^	union variant	cookie;		\/* Cookie:			*\/$/;"	m	struct:headers	typeref:union:headers::variant
+cs	.\shttpd.h	/^	int		cs;			\/*客户端套接字文件描述符*\/$/;"	m	struct:worker_conn
+ct	.\shttpd.h	/^	union variant	ct;		\/* Content-Type:		*\/$/;"	m	struct:headers	typeref:union:headers::variant
+date_to_epoch	.\shttpd_request.c	/^date_to_epoch(char *s)$/;"	f	file:
+display_para	.\shttpd_parameters.c	/^static void display_para()$/;"	f	file:
+display_usage	.\shttpd_parameters.c	/^static void display_usage(void)$/;"	f	file:
+do_listen	.\shttpd.c	/^int do_listen()$/;"	f
+do_work	.\shttpd_worker.c	/^static void do_work(struct worker_ctl *wctl)$/;"	f	file:
+dreq	.\shttpd.h	/^	char		dreq[16*K];	\/*请求缓冲区*\/$/;"	m	struct:worker_conn
+dres	.\shttpd.h	/^	char		dres[16*K];	\/*响应缓冲区*\/$/;"	m	struct:worker_conn
+err	.\shttpd.h	/^	int err;$/;"	m	struct:conn_request
+error_code	.\shttpd_error.c	/^	int error_code;$/;"	m	struct:error_mine	file:
+error_mine	.\shttpd_error.c	/^struct error_mine{$/;"	s	file:
+expire_time	.\shttpd.h	/^	time_t	expire_time;\/*超时时间*\/$/;"	m	struct:conn_response
+ext_len	.\shttpd.h	/^	int			ext_len;$/;"	m	struct:mine_type
+extension	.\shttpd.h	/^	char	*extension;$/;"	m	struct:mine_type
+fd	.\shttpd.h	/^	int 		fd;			\/*请求文件描述符*\/$/;"	m	struct:conn_response
+flags	.\shttpd.h	/^	int flags;				\/*线程状态*\/$/;"	m	struct:worker_opts
+fsate	.\shttpd.h	/^	struct stat fsate;		\/*请求文件状态*\/$/;"	m	struct:conn_response	typeref:struct:conn_response::stat
+head	.\shttpd.h	/^	char *head;			\/*请求头部\\0'结尾*\/$/;"	m	struct:conn_request
+headers	.\shttpd.h	/^struct headers {$/;"	s
+http_header	.\shttpd.h	/^struct http_header {$/;"	s
+http_headers	.\shttpd_request.c	/^static struct http_header http_headers[] = {$/;"	v	typeref:struct:http_header	file:
+ims	.\shttpd.h	/^	union variant	ims;		\/* If-Modified-Since:		*\/$/;"	m	struct:headers	typeref:union:headers::variant
+iscgi	.\shttpd.h	/^	int iscgi;$/;"	m	struct:cgi
+l_main	.\shttpd.c	/^int l_main()$/;"	f
+l_opt_arg	.\shttpd_parameters.c	/^static char *l_opt_arg;$/;"	v	file:
+len	.\shttpd.h	/^	int			len;$/;"	m	struct:vec
+len	.\shttpd.h	/^	int		len;		\/* Header name length		*\/$/;"	m	struct:http_header
+location	.\shttpd.h	/^	union variant	location;	\/* Location:			*\/$/;"	m	struct:headers	typeref:union:headers::variant
+longopts	.\shttpd_parameters.c	/^static struct option longopts[] = {$/;"	v	typeref:struct:option	file:
+main	.\shttpd.c	/^int main(int argc, char *argv[])$/;"	f
+major	.\shttpd.h	/^	unsigned long major;	\/*主版本*\/$/;"	m	struct:conn_request
+method	.\shttpd.h	/^	int 	method;			\/*请求类型*\/$/;"	m	struct:conn_request
+mime_type	.\shttpd.h	/^	char	*mime_type;$/;"	m	struct:mine_type
+mine_type	.\shttpd.h	/^struct mine_type{$/;"	s
+minor	.\shttpd.h	/^	unsigned long minor;	\/*副版本*\/$/;"	m	struct:conn_request
+montoi	.\shttpd_request.c	/^montoi(char *s)$/;"	f	file:
+msg	.\shttpd_error.c	/^	char *msg;$/;"	m	struct:error_mine	file:
+mutex	.\shttpd.h	/^	pthread_mutex_t mutex;\/*线程任务互斥*\/$/;"	m	struct:worker_opts
+name	.\shttpd.h	/^	char	*name;		\/* Header name			*\/$/;"	m	struct:http_header
+name_index	.\shttpd.h	/^	int name_index;$/;"	m	struct:shttpd_method
+offset	.\shttpd.h	/^	size_t		offset;		\/* Value placeholder		*\/$/;"	m	struct:http_header
+opts	.\shttpd.h	/^	struct worker_opts opts;$/;"	m	struct:worker_ctl	typeref:struct:worker_ctl::worker_opts
+para	.\shttpd.h	/^	struct vec para;	$/;"	m	struct:cgi	typeref:struct:cgi::vec
+ptr	.\shttpd.h	/^	char	*ptr;$/;"	m	struct:vec
+range	.\shttpd.h	/^	union variant	range;		\/* Range:			*\/$/;"	m	struct:headers	typeref:union:headers::variant
+referer	.\shttpd.h	/^	union variant	referer;	\/* Referer:			*\/$/;"	m	struct:headers	typeref:union:headers::variant
+remove_double_dots	.\shttpd_uri.c	/^remove_double_dots(char *s)$/;"	f	file:
+req	.\shttpd.h	/^	struct vec	req;		\/*请求向量*\/$/;"	m	struct:conn_request	typeref:struct:conn_request::vec
+res	.\shttpd.h	/^	struct vec	res;		\/*响应向量*\/$/;"	m	struct:conn_response	typeref:struct:conn_response::vec
+rpath	.\shttpd.h	/^	char rpath[URI_MAX];	\/*请求文件的真实地址\\0'结尾*\/$/;"	m	struct:conn_request
+shortopts	.\shttpd_parameters.c	/^static char *shortopts = "c:d:f:ho:l:m:t:";$/;"	v	file:
+shttpd_method	.\shttpd.h	/^typedef struct shttpd_method{$/;"	s
+shttpd_method	.\shttpd.h	/^}shttpd_method;$/;"	t	typeref:struct:shttpd_method
+sig_int	.\shttpd.c	/^static void sig_int(int num)$/;"	f	file:
+sig_pipe	.\shttpd.c	/^static void sig_pipe(int num)$/;"	f	file:
+status	.\shttpd.h	/^	int		status;		\/*响应状态值*\/$/;"	m	struct:conn_response
+status	.\shttpd.h	/^	union variant	status;		\/* Status:			*\/$/;"	m	struct:headers	typeref:union:headers::variant
+status	.\shttpd_error.c	/^	int status;$/;"	m	struct:error_mine	file:
+th	.\shttpd.h	/^	pthread_t th;			\/*线程的ID号*\/$/;"	m	struct:worker_opts
+thread_init	.\shttpd_worker.c	/^pthread_mutex_t thread_init = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+to	.\shttpd.h	/^	int		to;			\/*客户端无响应时间超时退出时间*\/$/;"	m	struct:worker_conn
+transenc	.\shttpd.h	/^	union variant	transenc;	\/* Transfer-Encoding:		*\/$/;"	m	struct:headers	typeref:union:headers::variant
+type	.\shttpd.h	/^	SHTTPD_METHOD_TYPE type;$/;"	m	struct:shttpd_method
+type	.\shttpd.h	/^	SHTTPD_METHOD_TYPE type;$/;"	m	struct:vec
+type	.\shttpd.h	/^	int		type;		\/* Header type			*\/$/;"	m	struct:http_header
+type	.\shttpd.h	/^	int 			type;$/;"	m	struct:mine_type
+uri	.\shttpd.h	/^	char *uri;			\/*请求URI,'\\0'结尾*\/$/;"	m	struct:conn_request
+uri_decode	.\shttpd_uri.c	/^static int uri_decode(char *src, int src_len, char *dst, int dst_len)$/;"	f	file:
+uri_parse	.\shttpd_uri.c	/^void uri_parse(char *src, int len)$/;"	f
+user	.\shttpd.h	/^	union variant	user;		\/* Remote user name		*\/$/;"	m	struct:headers	typeref:union:headers::variant
+useragent	.\shttpd.h	/^	union variant	useragent;	\/* User-Agent:			*\/$/;"	m	struct:headers	typeref:union:headers::variant
+v_big_int	.\shttpd.h	/^	big_int_t	v_big_int;$/;"	m	union:variant
+v_func	.\shttpd.h	/^	void		(*v_func)(void);$/;"	m	union:variant
+v_int	.\shttpd.h	/^	int		v_int;$/;"	m	union:variant
+v_str	.\shttpd.h	/^	char		*v_str;$/;"	m	union:variant
+v_time	.\shttpd.h	/^	time_t		v_time;$/;"	m	union:variant
+v_vec	.\shttpd.h	/^	struct vec	v_vec;$/;"	m	union:variant	typeref:struct:variant::vec
+v_void	.\shttpd.h	/^	void		*v_void;$/;"	m	union:variant
+variant	.\shttpd.h	/^union variant {$/;"	u
+vec	.\shttpd.h	/^typedef struct vec $/;"	s
+vec	.\shttpd.h	/^}vec;$/;"	t	typeref:struct:vec
+wctls	.\shttpd_worker.c	/^static struct worker_ctl *wctls = NULL;\/*线程选项*\/$/;"	v	typeref:struct:worker_ctl	file:
+work	.\shttpd.h	/^	struct worker_ctl *work;	\/*本线程的总控结构*\/$/;"	m	struct:worker_conn	typeref:struct:worker_conn::worker_ctl
+work	.\shttpd.h	/^	struct worker_ctl *work;	\/*本线程的总控结构*\/$/;"	m	struct:worker_opts	typeref:struct:worker_opts::worker_ctl
+worker	.\shttpd_worker.c	/^static void *worker(void *arg)$/;"	f	file:
+worker_conn	.\shttpd.h	/^struct worker_conn $/;"	s
+worker_ctl	.\shttpd.h	/^struct worker_ctl{$/;"	s
+worker_opts	.\shttpd.h	/^struct worker_opts{$/;"	s
+workersnum	.\shttpd_worker.c	/^static int workersnum = 0;\/*工作线程的数量*\/$/;"	v	file:
