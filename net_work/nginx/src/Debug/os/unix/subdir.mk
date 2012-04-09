@@ -39,6 +39,9 @@ C_SRCS += \
 ../os/unix/ngx_user.c \
 ../os/unix/ngx_writev_chain.c 
 
+S_UPPER_SRCS += \
+../os/unix/rfork_thread.S 
+
 OBJS += \
 ./os/unix/ngx_aio_read.o \
 ./os/unix/ngx_aio_read_chain.o \
@@ -73,7 +76,8 @@ OBJS += \
 ./os/unix/ngx_time.o \
 ./os/unix/ngx_udp_recv.o \
 ./os/unix/ngx_user.o \
-./os/unix/ngx_writev_chain.o 
+./os/unix/ngx_writev_chain.o \
+./os/unix/rfork_thread.o 
 
 C_DEPS += \
 ./os/unix/ngx_aio_read.d \
@@ -117,6 +121,13 @@ os/unix/%.o: ../os/unix/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
 	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+os/unix/%.o: ../os/unix/%.S
+	@echo 'Building file: $<'
+	@echo 'Invoking: GCC Assembler'
+	as  -o"$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
