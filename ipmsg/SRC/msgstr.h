@@ -1,0 +1,285 @@
+/*	@(#)Copyright (C) H.Shirouzu 1996-2004   msgstr.h	Ver2.00 */
+/* ========================================================================
+	Project  Name			: IP Messenger for Win32
+	Module Name				: Message Strings
+	Create					: 1997-07-19(Sat)
+	Update					: 2004-09-01(Wed)
+	Copyright				: H.Shirouzu
+	Reference				: 
+	======================================================================== */
+
+#ifndef	MSGSTR_H
+#define	MSGSTR_H
+
+#define ENGLISH
+#ifdef	ENGLISH
+// RECVDLG
+#define BROADCAST_MSGSTR	"Broadcast from..."
+#define MULTICAST_MSGSTR	"Multicast from..."
+#define UNICAST_MSGSTR		"Message from..."
+#define UNIABSENCE_MSGSTR	"Message from (Absence Mode)..."
+#define KEYOPEN_MSGSTR		" (Locked)"
+#define FILEATTBTN_MSGSTR	" (with Files)"
+#define INTERCEPT_MSGSTR	"Intercept"
+#define FONTSET_MSGSTR		"Font Setting"
+#define SIZESET_MSGSTR		"Size Setting"
+#define SAVEPOS_MSGSTR		"Fix Position"
+#define SAVEFILE_MSGSTR		"Save file"
+#define TRANSSTOP_MSGSTR	"Suspend transfer?"
+#define PREPARETRANS_MSGSTR	"Prepare for transfer"
+#define CREATEFAIL_MSGSTR	"Can't create file"
+#define WRITEFAIL_MSGSTR	"Can't write file"
+#define DECRYPTERR_MSGSTR	"\r\n ==== AutoReply(DecryptErr) ====\r\n  My PubKey is updated, I can't\r\n  receive your message.\r\n  Please press refresh button.\r\n  If you use ipmsg beta version,\r\n  please download regular verion.\r\n  http://www.ipmsg.org/index.html.en\r\n ==============================="
+#define PATHTOOLONG_MSGSTR	"Pathname too long"
+#define NOTSAFEPATH_MSGSTR	"Not safe pathname"
+
+//MISCDLG
+#define CANTEXEC_MSGSTR		"Can't Execute"
+#define EXECPROGRAM_MSGSTR	"%s Execute Program"
+#define OPENFILEPRG_MSGSTR	"Program(*.exe)\0*.exe\0All Files(*.*)\0*.*\0\0"
+#define CANTAUTH_MSGSTR		"authentication failed"
+#define NOTSAMEPASS_MSGSTR	"New passwords varification failed"
+#define IPMSGURL_MSGSTR		"http://www.ipmsg.org/index.html.en"
+
+//LOGDLG
+#define OPENFILESND_MSGSTR	"SoundFile selection", "SoundFile(*.wav)\0*.wav\0All Files(*.*)\0*.*\0\0"
+#define OPENFILEICON_MSGSTR	"IconFile selection", "IconFile(*.ico,*.exe,*.dll)\0*.ico;*.exe;*.dll\0All Files(*.*)\0*.*\0\0"
+#define OPENFILELOG_MSGSTR	"LogFile selection", "LogFile(*.log)\0*.log\0All Files(*.*)\0*.*\0\0"
+#define LOGALERT_MSGSTR		"There's a possibility to create logfile in remote drive.\r\n(If you want to stop this alert, describe logfile as fullpath)"
+
+//SENDDLG
+#define FIRE_MSGSTR				"Fire"
+#define ABSENCEQUERY_MSGSTR		"Absence mode now. Release and send now?"
+#define USERNUM_MSGSTR			"Member\r\n"
+#define BROADCASTHEAD_MSGSTR	"broadcast"
+#define RETRYSEND_MSGSTR		"Sending failed. Retry?"
+#define BROADCASTSEND_MSGSTR	"Broadcast OK?"
+#define GROUPSELECT_MSGSTR		"Group Select"
+#define DEFAULTSET_MSGSTR		"Initialize Priority by default"
+#define BROADCASTMSG_MSGSTR		"Broadcast Message"
+#define BUSYMSG_MSGSTR			"Busy...try again"
+#define MOVETO_MSGSTR			"Move to"
+#define SELECT_MSGSTR			"Select"
+#define DEFAULTDISP_MSGSTR		"Default Display  "
+#define DISPPRIORITY_MSGSTR		"Display Priority %d"
+#define NODISP_MSGSTR			"No Display  "
+#define MEMBERCOUNT_MSGSTR		" (Member %2d / %2d)"
+#define MEMBERCOUNTDEF_MSGSTR	" (Member %2d)"
+#define TMPNODISPDISP_MSGSTR	"Display NoDisplayGroup as tempolary"
+#define RESETPRIORITY_MSGSTR	"All Member move to Default Priority"
+#define SORTFILTER_MSGSTR		"Sort/Filter"
+#define FINDDLG_MSGSTR			"Search User Ctl+F"
+#define FILEATTACHMENU_MSGSTR	"File Transfer"
+#define FOLDERATTACHMENU_MSGSTR	"(Folder) Transfer"
+#define SAVECOLUMN_MSGSTR		"Save List Header"
+#define COMCTL_MSGSTR			"comctl32.dll is old ?\r\nPlease get comctl32.dll ver 4.71 or later.\r\nSee readme.txt."
+#define CANTGETORDER_MSGSTR		"Can't get column order"
+#define MEMBERDISP_MSGSTR		"Disp Setting..."
+#define USER_MSGSTR				"User"
+#define PRIORITY_MSGSTR			"Priority"
+#define ABSENCE_MSGSTR			"*"
+#define GROUP_MSGSTR			"Group"
+#define HOST_MSGSTR				"Host"
+#define LOGON_MSGSTR			"Logon"
+#define IPADDR_MSGSTR			"IP Address"
+#define ADDFILE_MSGSTR			"File Add"
+#define OPENFILEALL_MSGSTR		"All Files(*.*)\0*.*\0\0"
+#define FOLDERATTACH_MSGSTR		"Select transfer folder"
+
+//LOGMNG
+#define BROADCASTLOG_MSGSTR	"(broadcast)"
+#define AUTORETLOG_MSGSTR	"(auto)"
+#define MULTICASTLOG_MSGSTR	"(multi)"
+#define PASSWDLOG_MSGSTR	"(locked)"
+#define SECRETLOG_MSGSTR	"(sealed)"
+#define FILEATTACH_MSGSTR	"(files)"
+#define ENCRYPT_MSGSTR		"(RSA)"
+#define CANTDELLOG_MSGSTR	"Can't Delete DecodeFile"
+
+//MAINWIN
+#define USEWIN32_MSGSTR		"This Program is Win16 version.\r\nPlease Use <IPMsg for Win>"
+#define IPMSG_MSGSTR		"IPMsgEng"
+#define PASSWDNOTSET_MSGSTR	"Password is not set.\r\nPlease set."
+#define WIN32EDITION_MSGSTR	"Win32 ed. %s"
+#define WIN16EDITION_MSGSTR	"Win16 ed. %s"
+#define OPENFIN_MSGSTR		"Message Opened"
+#define NOTABSENCE_MSGSTR	"Not Absence mode"
+#define FILEEXTERR_MSGSTR	"Invalid file extention link"
+#define CANTOPENLOG_MSGSTR	"Can't open log file"
+#define ABSENCEMENU_MSGSTR	"Absence Mode"
+#define ABSENCELIFT_MSGSTR	"Lifting"
+#define ABSENCESET_MSGSTR	"Detail Settings..."
+#define DOWNLOAD_MSGSTR		"Download monitor"
+
+//MSGMNG
+#define SETENVHOST_MSGSTR	"Please set your hostname to environment variable<HOSTNAME>"
+#define HOSTUNREACH_MSGSTR	"sendto() failed.\r\nPlease set default gateway in TCP/IP settings"
+
+//SETUPDLG
+#define DEFABSENCE1_MSGSTR	"absence now.\r\n"
+#define DEFABSENCE2_MSGSTR	"having a meal now.\r\n"
+#define DEFABSENCE3_MSGSTR	"in a meeting now.\r\n"
+#define DEFABSENCE4_MSGSTR	"visitors now.\r\n"
+#define DEFABSENCE5_MSGSTR	"out now.\r\n"
+#define DEFABSENCE6_MSGSTR	"home now.\r\n"
+#define DEFABSENCE7_MSGSTR	"Edo tokorobarai mousi watasu!\r\n"
+#define DEFABSENCE8_MSGSTR	"I am tired of life.\r\nPlease don't look for me...\r\n"
+#define DEFABSENCEHEAD1_MSGSTR	"absence"
+#define DEFABSENCEHEAD2_MSGSTR	"meal"
+#define DEFABSENCEHEAD3_MSGSTR	"meeting"
+#define DEFABSENCEHEAD4_MSGSTR	"visitor"
+#define DEFABSENCEHEAD5_MSGSTR	"out"
+#define DEFABSENCEHEAD6_MSGSTR	"home"
+#define DEFABSENCEHEAD7_MSGSTR	"Edo"
+#define DEFABSENCEHEAD8_MSGSTR	"priest"
+#define CANTRESOLVE_MSGSTR		"Can't resolve"
+
+// SHAREDLG
+#define FILENAME_MSGSTR		"filename"
+#define SIZE_MSGSTR			"size"
+#define LOCATION_MSGSTR		"location"
+#define LUMPBUTTON_MSGSTR	"Lump (%s / %d file)"
+#define FILEINFO_MSGSTR		"No: %d / %d  filename: \"%s\"  size: %s"
+#define PREVBUTTON_MSGSTR	"Prev"
+#define NEXTBUTTON_MSGSTR	"Next"
+#define OVERWRITE_MSGSTR	"same file name exists.\r\nOverwrite OK?"
+#define ATTENTION_MSGSTR	"Attention"
+#define DIRSAVE_MSGSTR		"Folder (Can't overwrite)"
+
+#else
+
+// RECVDLG
+#define BROADCAST_MSGSTR	"Broadcast from..."
+#define MULTICAST_MSGSTR	"Multicast from..."
+#define UNICAST_MSGSTR		"Message from..."
+#define UNIABSENCE_MSGSTR	"Message from (•sİƒ‚[ƒh)..."
+#define KEYOPEN_MSGSTR		"iù‘O•t‚«j"
+#define FILEATTBTN_MSGSTR	"iƒtƒ@ƒCƒ‹“Y•tj"
+#define INTERCEPT_MSGSTR	"Œ}Œ‚"
+#define FONTSET_MSGSTR		"Fontİ’è"
+#define SIZESET_MSGSTR		"Sizeİ’è"
+#define SAVEPOS_MSGSTR		"ˆÊ’uŒÅ’è"
+#define SAVEFILE_MSGSTR		"ƒtƒ@ƒCƒ‹–¼‚ğw’è‚µ‚Ä•Û‘¶"
+#define TRANSSTOP_MSGSTR	"“]‘—‚ğ’†’f‚µ‚Ü‚·‚©H"
+#define PREPARETRANS_MSGSTR	"ƒtƒ@ƒCƒ‹“]‘—€”õ’†..."
+#define CREATEFAIL_MSGSTR	"ƒtƒ@ƒCƒ‹ì¬¸”s"
+#define WRITEFAIL_MSGSTR	"ƒtƒ@ƒCƒ‹‘¸”s"
+#define DECRYPTERR_MSGSTR	"\r\n ==== ©“®•ÔM(DecryptErr) ====\r\n  ŒöŠJŒ®‚ªV‚µ‚­‚È‚Á‚½‚½‚ßA\r\n  óM‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B\r\n  ‘—M‰æ–Ê‚ÅuXVvƒ{ƒ^ƒ“‚ğ\r\n  ‰Ÿ‚µ‚½ŒãAÄ‘—‚µ‚Ä‚­‚¾‚³‚¢B\r\n  ‚à‚µAƒÀ”Å‚ğ‚¨g‚¢‚Ìê‡‚ÍA\r\n   http://www.ipmsg.org ‚©‚ç\r\n  ³®”Å‚ğ download ‚µ‚Ä‰º‚³‚¢\r\n =============================="
+#define PATHTOOLONG_MSGSTR	"ƒpƒX’·‚ª’·‚·‚¬‚Ü‚·"
+#define NOTSAFEPATH_MSGSTR	"•s³‚ÈƒpƒX–¼‚Å‚·"
+
+//MISCDLG
+#define CANTEXEC_MSGSTR		"Can't Execute"
+#define EXECPROGRAM_MSGSTR	"%s ‹N“®ƒvƒƒOƒ‰ƒ€"
+#define OPENFILEPRG_MSGSTR	"ƒvƒƒOƒ‰ƒ€(*.exe)\0*.exe\0‚·‚×‚Ä‚Ìƒtƒ@ƒCƒ‹(*.*)\0*.*\0\0"
+#define CANTAUTH_MSGSTR		"”FØŠm”F‚Å‚«‚Ü‚¹‚ñ"
+#define NOTSAMEPASS_MSGSTR	"V‚µ‚¢ƒpƒXƒ[ƒh“¯m‚ªˆê’v‚µ‚Ä‚Ü‚¹‚ñ"
+#define IPMSGURL_MSGSTR		"http://www.ipmsg.org/"
+
+//LOGDLG
+#define OPENFILESND_MSGSTR	"ƒTƒEƒ“ƒhƒtƒ@ƒCƒ‹w’è", "ƒTƒEƒ“ƒhƒtƒ@ƒCƒ‹(*.wav)\0*.wav\0‚·‚×‚Ä‚Ìƒtƒ@ƒCƒ‹(*.*)\0*.*\0\0"
+#define OPENFILEICON_MSGSTR	"ƒAƒCƒRƒ“ƒtƒ@ƒCƒ‹w’è", "ƒAƒCƒRƒ“ƒtƒ@ƒCƒ‹(*.ico,*.exe,*.dll)\0*.ico;*.exe;*.dll\0‚·‚×‚Ä‚Ìƒtƒ@ƒCƒ‹(*.*)\0*.*\0\0"
+#define OPENFILELOG_MSGSTR	"ƒƒOƒtƒ@ƒCƒ‹w’è", "ƒƒOƒtƒ@ƒCƒ‹(*.log)\0*.log\0‚·‚×‚Ä‚Ìƒtƒ@ƒCƒ‹(*.*)\0*.*\0\0"
+#define LOGALERT_MSGSTR		"ƒƒOƒtƒ@ƒCƒ‹‚ªƒŠƒ‚[ƒgƒhƒ‰ƒCƒu‚Éì‚ç‚ê‚é‰Â”\«‚ª‚ ‚è‚Ü‚·\r\niƒtƒ‹ƒpƒXw’è‚·‚é‚ÆŒx‚ğ—}~‚Å‚«‚Ü‚·j"
+
+//SENDDLG
+#define FIRE_MSGSTR				"”­Ë"
+#define ABSENCEQUERY_MSGSTR		"•sİ’Ê’mƒ‚[ƒh‚É‚È‚Á‚Ä‚¢‚Ü‚·B‰ğœ‚µ‚Ä‘—M‚µ‚Ü‚·‚©H"
+#define USERNUM_MSGSTR			"Õ°»Ş”\r\n"
+#define BROADCASTHEAD_MSGSTR	"BROADCAST"
+#define RETRYSEND_MSGSTR		"‚É‘—M‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½BÄs‚µ‚Ü‚·‚©H"
+#define BROADCASTSEND_MSGSTR	"ƒuƒ[ƒhƒLƒƒƒXƒgi“¯•ñj‘—M‚µ‚Ü‚·"
+#define GROUPSELECT_MSGSTR		"Group‘I‘ğ"
+#define DEFAULTSET_MSGSTR		"‘Sˆõ‚ğƒfƒtƒHƒ‹ƒg‚É–ß‚µ‚Ü‚·"
+#define BROADCASTMSG_MSGSTR		"ˆêÄ“¯•ñ‘—M"
+#define BUSYMSG_MSGSTR			"Busy...try again"
+#define MOVETO_MSGSTR			"‚ÉˆÚ“®"
+#define SELECT_MSGSTR			"‚ğ‘I‘ğ"
+#define DEFAULTDISP_MSGSTR		"ÃŞÌ«ÙÄ•\¦ "
+#define USER_MSGSTR				"ƒ†[ƒU"
+#define DISPPRIORITY_MSGSTR		"•\¦—Dæ“x %d"
+#define NODISP_MSGSTR			"”ñ•\¦  "
+#define MEMBERCOUNT_MSGSTR		"il” %2d / %2dj"
+#define MEMBERCOUNTDEF_MSGSTR	"il” %2dj"
+#define TMPNODISPDISP_MSGSTR	"”ñ•\¦‚ğˆê•\¦i‚±‚Ì‰æ–Ê‚Ì‚İj"
+#define RESETPRIORITY_MSGSTR	"‘Sˆõ‚ğ ÃŞÌ«ÙÄ•\¦ ‚É–ß‚·"
+#define SORTFILTER_MSGSTR		"ƒ\[ƒgEƒtƒBƒ‹ƒ^"
+#define FINDDLG_MSGSTR			"Õ°»ŞŒŸõ Ctl+F"
+#define FILEATTACHMENU_MSGSTR	"ƒtƒ@ƒCƒ‹“Y•t"
+#define FOLDERATTACHMENU_MSGSTR	"(Ì«ÙÀ?“Y•t"
+#define SAVECOLUMN_MSGSTR		"Ø½ÄÍ¯ÀŞ•Û‘?
+#define COMCTL_MSGSTR			"‚¨g‚¢‚Ì comctl32.dll ‚ÍŒÃ‚¢‰Â”\«‚ª‚ ‚è‚Ü‚·B\r\nver4.71 i‚Å‚«‚ê‚Î 5.0jˆÈ~‚ğ“üè‚µ‚Ä‚­‚¾‚³‚¢B\r\nÚ‚µ‚­‚Í readme.txt ‚ğ‚²——‚­‚¾‚³‚¢"
+#define CANTGETORDER_MSGSTR		"ƒJƒ‰ƒ€‡‚ªæ“¾‚Å‚«‚Ü‚¹‚ñ"
+#define MEMBERDISP_MSGSTR		"Ú×•\¦İ’è..."
+#define PRIORITY_MSGSTR			"—Dæ“x"
+#define ABSENCE_MSGSTR			"*"
+#define GROUP_MSGSTR			"ƒOƒ‹[ƒv"
+#define HOST_MSGSTR				"ƒzƒXƒg"
+#define LOGON_MSGSTR			"ƒƒOƒIƒ“"
+#define IPADDR_MSGSTR			"IPƒAƒhƒŒƒX"
+#define ADDFILE_MSGSTR			"ƒtƒ@ƒCƒ‹’Ç‰Á"
+#define OPENFILEALL_MSGSTR		"‚·‚×‚Ä‚Ìƒtƒ@ƒCƒ‹(*.*)\0*.*\0\0"
+#define FOLDERATTACH_MSGSTR		"“Y•tƒtƒHƒ‹ƒ_‘I‘ğ"
+
+//LOGMNG
+#define BROADCASTLOG_MSGSTR	"(“¯•ñ)"
+#define AUTORETLOG_MSGSTR	"(©)"
+#define MULTICASTLOG_MSGSTR	"(‘½)"
+#define PASSWDLOG_MSGSTR	"(ù)"
+#define SECRETLOG_MSGSTR	"(••)"
+#define FILEATTACH_MSGSTR	"(“Y•t)"
+#define ENCRYPT_MSGSTR		"(RSA)"
+#define CANTDELLOG_MSGSTR	"Can't Delete DecodeFile"
+
+//MAINWIN
+#define USEWIN32_MSGSTR		"This Program is Win16 version.\r\nPlease Use <IPMsg for Win>"
+#define IPMSG_MSGSTR		"IPMsg"
+#define PASSWDNOTSET_MSGSTR	"ƒpƒXƒ[ƒh‚ªİ’è‚³‚ê‚Ä‚¢‚È‚¢‚æ‚¤‚Å‚·B\r\nÄİ’è‚µ‚Ä‚­‚¾‚³‚¢"
+#define WIN32EDITION_MSGSTR	"Win32”Å %s"
+#define WIN16EDITION_MSGSTR	"Win16”Å %s"
+#define OPENFIN_MSGSTR		"ŠJ••‚³‚ê‚Ü‚µ‚½"
+#define NOTABSENCE_MSGSTR	"Not Absence mode"
+#define FILEEXTERR_MSGSTR	"Šg’£q‚Ö‚ÌŠÖ˜A•t‚¯‚ª‚È‚¢‚©A–³Œø‚Å‚·"
+#define CANTOPENLOG_MSGSTR	"ƒƒO‚ğŠJ‚¯‚Ü‚¹‚ñ"
+#define ABSENCEMENU_MSGSTR	"•sİƒ‚[ƒh"
+#define ABSENCELIFT_MSGSTR	"‰ğœ"
+#define ABSENCESET_MSGSTR	"Ú×İ’è..."
+#define DOWNLOAD_MSGSTR		"Downloadƒ‚ƒjƒ^"
+
+//MSGMNG
+#define SETENVHOST_MSGSTR	"ŠÂ‹«•Ï”HOSTNAME‚ÉƒzƒXƒg–¼‚ğƒZƒbƒg‚µ‚Ä‰º‚³‚¢"
+#define HOSTUNREACH_MSGSTR	"sendto(10065) error\r\nTCP/IP İ’è‚ÌÃŞÌ«ÙÄ¹Ş°Ä³ª²‚ªİ’è‚³‚ê‚Ä‚¢‚È‚¢‰Â”\«‚ª‚ ‚è‚Ü‚·"
+
+//SETUPDLG
+#define DEFABSENCE1_MSGSTR	"‚½‚¾‚¢‚ÜAÈ‚ğ‚Í‚¸‚µ‚Ä‚¨‚è‚Ü‚·B\r\n"
+#define DEFABSENCE2_MSGSTR	"H–’†‚Å‚·B\r\n"
+#define DEFABSENCE3_MSGSTR	"‰ï‹c’†‚Å‚·B\r\n"
+#define DEFABSENCE4_MSGSTR	"—ˆ‹q’†‚Å‚·B\r\n"
+#define DEFABSENCE5_MSGSTR	"ŠOo’†‚Å‚·B\r\n"
+#define DEFABSENCE6_MSGSTR	"‹A‘î‚µ‚Ü‚µ‚½B\r\n"
+#define DEFABSENCE7_MSGSTR	"]ŒËŠ•¥‚¢‚ğ\‚µ“n‚·I\r\n"
+#define DEFABSENCE8_MSGSTR	"l¶‚É”æ‚ê‚Ü‚µ‚½...\r\n’T‚³‚È‚¢‚Å‚­‚¾‚³‚¢...\r\n"
+#define DEFABSENCEHEAD1_MSGSTR	"•sİ"
+#define DEFABSENCEHEAD2_MSGSTR	"H–’†"
+#define DEFABSENCEHEAD3_MSGSTR	"‰ï‹c’†"
+#define DEFABSENCEHEAD4_MSGSTR	"—ˆ‹q’†"
+#define DEFABSENCEHEAD5_MSGSTR	"ŠOo’†"
+#define DEFABSENCEHEAD6_MSGSTR	"‹A‘î"
+#define DEFABSENCEHEAD7_MSGSTR	"]ŒË"
+#define DEFABSENCEHEAD8_MSGSTR	"o‰Æ"
+#define CANTRESOLVE_MSGSTR		"IPƒAƒhƒŒƒX‚É•ÏŠ·‚Å‚«‚Ü‚¹‚ñ"
+
+// SHAREDLG
+#define FILENAME_MSGSTR		"ƒtƒ@ƒCƒ‹–¼"
+#define SIZE_MSGSTR			"ƒTƒCƒY"
+#define LOCATION_MSGSTR		"êŠ"
+#define LUMPBUTTON_MSGSTR	"ˆêŠ‡ (%s / %d file)"
+#define FILEINFO_MSGSTR		"No: %d / %d   file: \"%s\"   size: %s"
+#define PREVBUTTON_MSGSTR	"‘O‚Ö"
+#define NEXTBUTTON_MSGSTR	"Ÿ‚Ö"
+#define OVERWRITE_MSGSTR	"“¯‚¶ƒtƒ@ƒCƒ‹‚ª‘¶İ‚µ‚Ü‚·\r\nã‘‚«‚µ‚Ü‚·‚©H"
+#define ATTENTION_MSGSTR	"’ˆÓ"
+#define DIRSAVE_MSGSTR		"ƒtƒHƒ‹ƒ_iã‘‚«•s‰Âj"
+#endif
+
+#endif

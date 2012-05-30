@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IPMSG", "IPMSG.vcproj", "{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		English|Win32 = English|Win32
+		Installer|Win32 = Installer|Win32
+		InstallerDbg|Win32 = InstallerDbg|Win32
+		InstallerEng|Win32 = InstallerEng|Win32
+		Japanese|Win32 = Japanese|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.Debug|Win32.Build.0 = Debug|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.English|Win32.ActiveCfg = English|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.English|Win32.Build.0 = English|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.Installer|Win32.ActiveCfg = Installer|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.Installer|Win32.Build.0 = Installer|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.InstallerDbg|Win32.ActiveCfg = InstallerDbg|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.InstallerDbg|Win32.Build.0 = InstallerDbg|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.InstallerEng|Win32.ActiveCfg = InstallerEng|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.InstallerEng|Win32.Build.0 = InstallerEng|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.Japanese|Win32.ActiveCfg = Japanese|Win32
+		{1DE48BE5-30CB-4BC0-84D8-471F05D269CD}.Japanese|Win32.Build.0 = Japanese|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
