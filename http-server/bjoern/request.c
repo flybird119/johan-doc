@@ -1,3 +1,5 @@
+#define inline __inline
+
 #include <Python.h>
 #include <cStringIO.h>
 #include "request.h"
@@ -6,7 +8,7 @@
 static inline void PyDict_ReplaceKey(PyObject* dict, PyObject* k1, PyObject* k2);
 static PyObject* wsgi_http_header(string header);
 static http_parser_settings parser_settings;
-static PyObject* wsgi_base_dict = NULL;	//wsgi 基本字典
+static PyObject* wsgi_base_dict = NULL;	//wsgi服务器基本信息字典				全局变量
 
 /* Non-public type from cStringIO I abuse in on_body */
 typedef struct {
@@ -31,11 +33,27 @@ Request* Request_new(int client_fd, const char* client_addr)
   return request;
 }
 
+Request* Request_init()
+{
+  Request* request = malloc(sizeof(Request));	//分配内存
+#ifdef DEBUG
+  static unsigned long request_id = 0;
+  request->id = request_id++;
+#endif
+  http_parser_init((http_parser*)&request->parser, HTTP_REQUEST);	//初始化这个结构,并设置好回调函数.    HTTP Parser是一个用C编写的HTTP消息分析工具. 既分析请求也分析响应，它不使用任何系统调用也不分配内存，不缓存数据, 可以在任何时候被中断
+  request->parser.parser.data = request;
+  Request_reset(request);
+  return request;
+}
+
 void Request_reset(Request* request)	//Request对象的初始化 state 和 parser.body清空
 {
+  string m;
   memset(&request->state, 0, sizeof(Request) - (size_t)&((Request*)NULL)->state);	//memset:作用是在一段内存块中填充某个给定的值，它对较大的结构体或数组进行清零操作的一种最快方法
   request->state.response_length_unknown = true;
-  request->parser.body = (string){NULL, 0};
+  m.data = NULL;
+  m.len = 0;
+  request->parser.body = m;//(string){NULL, 0};
 }
 
 void Request_free(Request* request)
@@ -49,7 +67,7 @@ void Request_clean(Request* request)
 {
   if(request->iterable) {
     /* Call 'iterable.close()' if available */
-    PyObject* close_method = PyObject_GetAttr(request->iterable, _close);
+    PyObject* close_method = PyObject_GetAttr(request->iterable, _close_m);
     if(close_method == NULL) {
       if(PyErr_ExceptionMatches(PyExc_AttributeError))
         PyErr_Clear();
@@ -69,12 +87,17 @@ void Request_clean(Request* request)
 
 void Request_parse(Request* request, const char* data, const size_t data_len)
 {
-  dprint("Request_parse",data);
+  size_t nparsed;
   assert(data_len);
-  size_t nparsed = http_parser_execute((http_parser*)&request->parser,
+  printf("解析如下请求:%d\n%s\n",data_len,data);
+  nparsed = http_parser_execute((http_parser*)&request->parser,
                                        &parser_settings, data, data_len);
+  printf("处理完成的数据:%d\n",nparsed);
   if(nparsed != data_len)
+  {
+    printf("************HTTP_BAD_REQUEST************ %d | %d \n",data_len,nparsed);
     request->state.error_code = HTTP_BAD_REQUEST;
+  }
 }
 
 #define REQUEST ((Request*)parser->data)
@@ -97,8 +120,11 @@ void Request_parse(Request* request, const char* data, const size_t data_len)
 #define _set_header_free_value(k, v) \
   do { \
     PyObject* val = (v); \
-    _set_header(k, val); \
+	printf("_set_header_free_value\n");\
+	_set_header(k, val); \
+	printf("_set_header_free_value...mid\n");\
     Py_DECREF(val); \
+	printf("_set_header_free_value...end\n");\
   } while(0)
 #define _set_header_free_both(k, v) \
   do { \
@@ -111,14 +137,17 @@ void Request_parse(Request* request, const char* data, const size_t data_len)
 
 static int on_message_begin(http_parser* parser)
 {
+  string s1 = {NULL,0};
+  string s2 = {NULL,0};
   REQUEST->headers = PyDict_New();
-  PARSER->field = (string){NULL, 0};
-  PARSER->value = (string){NULL, 0};
+  PARSER->field = s1;
+  PARSER->value = s2;
   return 0;
 }
 
 static int on_path(http_parser* parser, char* path, size_t len)
 {
+  printf("on_path\n");
   if(!(len = unquote_url_inplace(path, len)))
     return 1;
   _set_header_free_value(_PATH_INFO, PyString_FromStringAndSize(path, len));
@@ -127,12 +156,15 @@ static int on_path(http_parser* parser, char* path, size_t len)
 
 static int on_query_string(http_parser* parser, const char* query, size_t len)
 {
+  printf("on_query_string\n");
   _set_header_free_value(_QUERY_STRING, PyString_FromStringAndSize(query, len));
   return 0;
 }
 
 static int on_header_field(http_parser* parser, const char* field, size_t len)
 {
+  string s1;
+  string s2={NULL, 0};
   if(PARSER->value.data) {
     /* Store previous header and start a new one */
     _set_header_free_both(
@@ -143,8 +175,10 @@ static int on_header_field(http_parser* parser, const char* field, size_t len)
     UPDATE_LENGTH(field);
     return 0;
   }
-  PARSER->field = (string){(char*)field, len};
-  PARSER->value = (string){NULL, 0};
+  s1.data = (char*)field;
+  s1.len = len;
+  PARSER->field = s1;
+  PARSER->value = s2;
   return 0;
 }
 
@@ -155,14 +189,20 @@ on_header_value(http_parser* parser, const char* value, size_t len)
     UPDATE_LENGTH(value);
   } else {
     /* Start a new value */
-    PARSER->value = (string){(char*)value, len};
+	string s;
+	s.data = (char*)value;
+	s.len = len;
+    PARSER->value = s;
   }
   return 0;
 }
 
-static int
-on_headers_complete(http_parser* parser)
+
+
+
+static int on_headers_complete(http_parser* parser)
 {
+  printf("on_headers_complete\n");
   if(PARSER->field.data) {
     _set_header_free_both(
       wsgi_http_header(PARSER->field),
@@ -176,14 +216,15 @@ static int
 on_body(http_parser* parser, const char* data, const size_t len)
 {
   Iobject* body;
-
+  printf("on_body\n");
   body = (Iobject*)PyDict_GetItem(REQUEST->headers, _wsgi_input);
   if(body == NULL) {
+    PyObject* buf;
     if(!parser->content_length) {
       REQUEST->state.error_code = HTTP_LENGTH_REQUIRED;
       return 1;
     }
-    PyObject* buf = PyString_FromStringAndSize(NULL, parser->content_length);
+    buf = PyString_FromStringAndSize(NULL, parser->content_length);
     body = (Iobject*)PycStringIO->NewInput(buf);
     Py_XDECREF(buf);
     if(body == NULL)
@@ -199,6 +240,8 @@ on_body(http_parser* parser, const char* data, const size_t len)
 static int
 on_message_complete(http_parser* parser)
 {
+  PyObject* body;
+  printf("on_message_complete\n");
   /* HTTP_CONTENT_{LENGTH,TYPE} -> CONTENT_{LENGTH,TYPE} */
   PyDict_ReplaceKey(REQUEST->headers, _HTTP_CONTENT_LENGTH, _CONTENT_LENGTH);
   PyDict_ReplaceKey(REQUEST->headers, _HTTP_CONTENT_TYPE, _CONTENT_TYPE);
@@ -218,7 +261,7 @@ on_message_complete(http_parser* parser)
   /* REMOTE_ADDR */
   _set_header(_REMOTE_ADDR, REQUEST->client_addr);
 
-  PyObject* body = PyDict_GetItem(REQUEST->headers, _wsgi_input);
+  body = PyDict_GetItem(REQUEST->headers, _wsgi_input);
   if(body) {
     /* We abused the `pos` member for tracking the amount of data copied from
      * the buffer in on_body, so reset it to zero here. */
@@ -272,14 +315,15 @@ PyDict_ReplaceKey(PyObject* dict, PyObject* old_key, PyObject* new_key)
   }
 }
 
-
+// http解析器回调函数设置
 static http_parser_settings
 parser_settings = {
   on_message_begin, on_path, on_query_string, NULL, NULL, on_header_field,
   on_header_value, on_headers_complete, on_body, on_message_complete
 };
 
-void _initialize_request_module(const char* server_host, const int server_port)	// 初始化请求模块
+// wsgi服务器相关信息初始化
+void _initialize_request_module(const char* server_host, const int server_port)	
 {
   if(wsgi_base_dict == NULL) {	//C语言中，所有的Python类型都被声明为PyObject型 Py_BuildValue()函数对数字和字符串进行转换处理，使之变成Python中相应的数据类型 PyObject* Py_BuildValue( const char *format, ...)
     PycString_IMPORT;

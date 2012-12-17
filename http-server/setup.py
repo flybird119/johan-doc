@@ -9,11 +9,11 @@ bjoern_extension = Extension(
     'bjoern',
     sources       = SOURCE_FILES,
     libraries     = ['ev'],
-    include_dirs  = ['http-parser'],
+    include_dirs  = ['http-parser','F:/open-source/libuv/include','C:/MinGW/lib/gcc/mingw32/4.5.0/include'],
     define_macros = [('WANT_SENDFILE', '1'),
                      ('WANT_SIGINT_HANDLING', '1')],
     extra_compile_args = ['-std=c99', '-fno-strict-aliasing', '-Wall',
-                          '-Wextra', '-Wno-unused', '-g', '-fPIC']
+                           '-g', '-fPIC']
 )
 
 setup(

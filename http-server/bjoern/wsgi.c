@@ -1,3 +1,5 @@
+#define inline __inline
+
 #include "common.h"
 #include "bjoernmodule.h"
 #include "filewrapper.h"
@@ -8,24 +10,30 @@ static size_t wsgi_getheaders(Request*, PyObject* buf);
 static inline bool inspect_headers(Request*);
 static inline bool should_keep_alive(Request*);
 
-typedef struct {
+typedef struct {	//对PyObject进行包装得到的类型
   PyObject_HEAD
   Request* request;
 } StartResponse;
 
-bool
-wsgi_call_application(Request* request)
+bool wsgi_call_application(Request* request)
 {
-  StartResponse* start_response = PyObject_NEW(StartResponse, &StartResponse_Type);
+  StartResponse* start_response=PyObject_NEW(StartResponse, &StartResponse_Type);//构造了一个自定义的对象
+  PyObject* request_headers;
+  PyObject* retval;
+  PyObject* first_chunk;
+  PyObject* buf;
+  Py_ssize_t length;
+  //printf("***********************in wsgi_call_application***********\n");
   start_response->request = request;
+
 
   /* From now on, `headers` stores the _response_ headers
    * (passed by the WSGI app) rather than the _request_ headers */
-  PyObject* request_headers = request->headers;
+  request_headers = request->headers;	// 请求头headers转储
   request->headers = NULL;
 
   /* application(environ, start_response) call */
-  PyObject* retval = PyObject_CallFunctionObjArgs(
+  retval = PyObject_CallFunctionObjArgs(	// 构造一个包装了wsgi_app可执行方法  请求头 客户端响应对象
     wsgi_app,
     request_headers,
     start_response,
@@ -37,7 +45,7 @@ wsgi_call_application(Request* request)
 
   if(retval == NULL)
     return false;
-
+   //printf("***********************go retval***********\n");
   /* The following code is somewhat magic, so worth an explanation.
    *
    * If the application we called was a generator, we have to call .next() on
@@ -63,22 +71,30 @@ wsgi_call_application(Request* request)
    * one string in it, we can pick the string and throw away the list so bjoern
    * does not have to come back again and look into the iterator a second time.
    */
-  PyObject* first_chunk;
+  
 
   if(PyList_Check(retval) && PyList_GET_SIZE(retval) == 1 &&
      PyString_Check(PyList_GET_ITEM(retval, 0)))
   {
     /* Optimize the most common case, a single string in a list: */
     PyObject* tmp = PyList_GET_ITEM(retval, 0);
+	//printf("------------wsgi 返回迭代对象\n");
     Py_INCREF(tmp);
     Py_DECREF(retval);
     retval = tmp;
-    goto string; /* eeevil */
+    //goto string; /* eeevil */
+    if(PyString_GET_SIZE(retval)) {
+      first_chunk = retval;
+    } else {
+      Py_DECREF(retval);
+      first_chunk = NULL;
+    }
   } else if(PyString_Check(retval)) {
+	  //printf("------------wsgi 返回字符对象\n");
     /* According to PEP 333 strings should be handled like any other iterable,
      * i.e. sending the response item for item. "item for item" means
      * "char for char" if you have a string. -- I'm not that stupid. */
-    string:
+    //string:
     if(PyString_GET_SIZE(retval)) {
       first_chunk = retval;
     } else {
@@ -86,6 +102,7 @@ wsgi_call_application(Request* request)
       first_chunk = NULL;
     }
   } else if(FileWrapper_CheckExact(retval)) {
+	//printf("------------wsgi 返回文件对象\n");
     request->state.use_sendfile = true;
     request->iterable = ((FileWrapper*)retval)->file;
     Py_INCREF(request->iterable);
@@ -93,6 +110,7 @@ wsgi_call_application(Request* request)
     request->iterator = NULL;
     first_chunk = NULL;
   } else {
+	//printf("------------wsgi 返回其他普通对象\n");
     /* Generic iterable (list of length != 1, generator, ...) */
     request->iterable = retval;
     request->iterator = PyObject_GetIter(retval);
@@ -129,8 +147,8 @@ wsgi_call_application(Request* request)
    * At least for small responses, the complete response could be sent with
    * one send() call (in server.c:ev_io_on_write) which is a (tiny) performance
    * booster because less kernel calls means less kernel call overhead. */
-  PyObject* buf = PyString_FromStringAndSize(NULL, 1024);
-  Py_ssize_t length = wsgi_getheaders(request, buf);
+  buf = PyString_FromStringAndSize(NULL, 1024);
+  length = wsgi_getheaders(request, buf);
   if(length == 0) {
     Py_DECREF(first_chunk);
     Py_DECREF(buf);
@@ -155,6 +173,7 @@ wsgi_call_application(Request* request)
          PyString_GET_SIZE(first_chunk));
 
   Py_DECREF(first_chunk);
+  //printf("&&&&&&&&&&&&&&&&&&& wsgi 结果字符:\n%s\n",buf);
 
 out:
   request->state.wsgi_call_done = true;
@@ -170,18 +189,21 @@ inspect_headers(Request* request)
   PyObject* tuple;
 
   for(i=0; i<PyList_GET_SIZE(request->headers); ++i) {
+	PyObject* field;
+	PyObject* value;
+
     tuple = PyList_GET_ITEM(request->headers, i);
 
     if(!PyTuple_Check(tuple) || PyTuple_GET_SIZE(tuple) != 2)
       goto err;
 
-    PyObject* field = PyTuple_GET_ITEM(tuple, 0);
-    PyObject* value = PyTuple_GET_ITEM(tuple, 1);
+    field = PyTuple_GET_ITEM(tuple, 0);
+    value = PyTuple_GET_ITEM(tuple, 1);
 
     if(!PyString_Check(field) || !PyString_Check(value))
       goto err;
 
-    if(!strncasecmp(PyString_AS_STRING(field), "Content-Length", PyString_GET_SIZE(field)))
+    if(!strnicmp(PyString_AS_STRING(field), "Content-Length", PyString_GET_SIZE(field)))
       request->state.response_length_unknown = false;
   }
   return true;
@@ -196,6 +218,7 @@ static size_t
 wsgi_getheaders(Request* request, PyObject* buf)
 {
   char* bufp = PyString_AS_STRING(buf);
+  Py_ssize_t i;
 
   #define buf_write(src, len) \
     do { \
@@ -209,7 +232,7 @@ wsgi_getheaders(Request* request, PyObject* buf)
   buf_write(PyString_AS_STRING(request->status),
         PyString_GET_SIZE(request->status));
 
-  for(Py_ssize_t i=0; i<PyList_GET_SIZE(request->headers); ++i) {
+  for(i=0; i<PyList_GET_SIZE(request->headers); ++i) {
     PyObject *tuple = PyList_GET_ITEM(request->headers, i);
     PyObject *field = PyTuple_GET_ITEM(tuple, 0),
          *value = PyTuple_GET_ITEM(tuple, 1);
@@ -259,11 +282,14 @@ restore_exception_tuple(PyObject* exc_info, bool incref_items)
     PyTuple_GET_ITEM(exc_info, 2)
   );
 }
-
+//-----------------类型对象的可调用函数
 static PyObject*
 start_response(PyObject* self, PyObject* args, PyObject* kwargs)
 {
   Request* request = ((StartResponse*)self)->request;
+  PyObject* status = NULL;
+  PyObject* headers = NULL;
+  PyObject* exc_info = NULL;
 
   if(request->state.start_response_called) {
     /* not the first call of start_response --
@@ -273,9 +299,9 @@ start_response(PyObject* self, PyObject* args, PyObject* kwargs)
     request->state.response_length_unknown = false;
   }
 
-  PyObject* status = NULL;
-  PyObject* headers = NULL;
-  PyObject* exc_info = NULL;
+  status = NULL;
+  headers = NULL;
+  exc_info = NULL;
   if(!PyArg_UnpackTuple(args, "start_response", 2, 3, &status, &headers, &exc_info))
     return NULL;
 
@@ -329,7 +355,7 @@ start_response(PyObject* self, PyObject* args, PyObject* kwargs)
   Py_RETURN_NONE;
 }
 
-PyTypeObject StartResponse_Type = {
+PyTypeObject StartResponse_Type = {	//类型对象定义
   PyVarObject_HEAD_INIT(NULL, 0)
   "start_response",           /* tp_name (__name__)                         */
   sizeof(StartResponse),      /* tp_basicsize                               */
@@ -367,11 +393,14 @@ wrap_http_chunk_cruft_around(PyObject* chunk)
   /* Who the hell decided to use decimal representation for Content-Length
    * but hexadecimal representation for chunk lengths btw!?! Fuck W3C */
   size_t chunklen = PyString_GET_SIZE(chunk);
+  size_t n;
+  PyObject* new_chunk;
+  char* new_chunk_p;
+  char buf[10];
   assert(chunklen);
-  char buf[strlen("ffffffff") + 2];
-  size_t n = sprintf(buf, "%x\r\n", (unsigned int)chunklen);
-  PyObject* new_chunk = PyString_FromStringAndSize(NULL, n + chunklen + 2);
-  char* new_chunk_p = PyString_AS_STRING(new_chunk);
+  n = sprintf(buf, "%x\r\n", (unsigned int)chunklen);
+  new_chunk = PyString_FromStringAndSize(NULL, n + chunklen + 2);
+  new_chunk_p = PyString_AS_STRING(new_chunk);
   memcpy(new_chunk_p, buf, n);
   new_chunk_p += n;
   memcpy(new_chunk_p, PyString_AS_STRING(chunk), chunklen);

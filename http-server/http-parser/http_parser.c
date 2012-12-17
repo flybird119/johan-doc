@@ -1,4 +1,4 @@
-/* Based on src/http/ngx_http_parse.c from NGINX copyright Igor Sysoev
+﻿/* Based on src/http/ngx_http_parse.c from NGINX copyright Igor Sysoev
  *
  * Additional changes are licensed under the same terms as NGINX and
  * copyright Joyent, Inc. and other Node contributors. All rights reserved.
@@ -21,7 +21,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-#include <http_parser.h>
+#include "http_parser.h"
 #include <assert.h>
 #include <stddef.h>
 
@@ -342,6 +342,13 @@ size_t http_parser_execute (http_parser *parser,
   uint64_t index = parser->index;
   uint64_t nread = parser->nread;
 
+  const char *header_field_mark = 0;
+  const char *header_value_mark = 0;
+  const char *fragment_mark = 0;
+  const char *query_string_mark = 0;
+  const char *path_mark = 0;
+  const char *url_mark = 0;
+  printf("http_parser_execute\n");
   if (len == 0) {
     switch (state) {
       case s_body_identity_eof:
@@ -362,12 +369,7 @@ size_t http_parser_execute (http_parser *parser,
   /* technically we could combine all of these (except for url_mark) into one
      variable, saving stack space, but it seems more clear to have them
      separated. */
-  const char *header_field_mark = 0;
-  const char *header_value_mark = 0;
-  const char *fragment_mark = 0;
-  const char *query_string_mark = 0;
-  const char *path_mark = 0;
-  const char *url_mark = 0;
+
 
   if (state == s_header_field)
     header_field_mark = data;
@@ -385,7 +387,7 @@ size_t http_parser_execute (http_parser *parser,
       || state == s_req_host
       || state == s_req_fragment_start || state == s_req_fragment)
     url_mark = data;
-
+  printf("开始循环\n");
   for (p=data, pe=data+len; p != pe; p++) {
     ch = *p;
 
@@ -619,10 +621,11 @@ size_t http_parser_execute (http_parser *parser,
 
       case s_req_method:
       {
+		const char *matcher;
         if (ch == '\0')
           goto error;
 
-        const char *matcher = method_strings[parser->method];
+        matcher = method_strings[parser->method];
         if (ch == ' ' && matcher[index] == '\0') {
           state = s_req_spaces_before_url;
         } else if (ch == matcher[index]) {
@@ -1591,7 +1594,7 @@ size_t http_parser_execute (http_parser *parser,
         goto error;
     }
   }
-
+  printf("结束循环\n");
   CALLBACK_NOCLEAR(header_field);
   CALLBACK_NOCLEAR(header_value);
   CALLBACK_NOCLEAR(fragment);

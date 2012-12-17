@@ -4,6 +4,7 @@ static PyObject*
 FileWrapper_New(PyObject* self, PyObject* args, PyObject* kwargs)
 {
   PyObject* file;
+  FileWrapper* wrapper;
   if(!PyArg_ParseTuple(args, "O:FileWrapper", &file))
     return NULL;
   if(!PyFile_Check(file)) {
@@ -11,7 +12,7 @@ FileWrapper_New(PyObject* self, PyObject* args, PyObject* kwargs)
     return NULL;
   }
   Py_INCREF(file);
-  FileWrapper* wrapper = PyObject_NEW(FileWrapper, &FileWrapper_Type);
+  wrapper = PyObject_NEW(FileWrapper, &FileWrapper_Type);
   PyFile_IncUseCount((PyFileObject*)file);
   wrapper->file = file;
   return (PyObject*)wrapper;

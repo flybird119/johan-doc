@@ -1,10 +1,14 @@
 #ifndef __common_h__
 #define __common_h__
 
+#define bool int
+#define true 1
+#define false 0
+
 #include <Python.h>
 #include <stdlib.h>
 #include <stddef.h>
-#include <stdbool.h>
+//#include <stdbool.h>
 #include <string.h>
 
 #if PY_MINOR_VERSION < 6
@@ -25,7 +29,8 @@ void (_init_common)();
 
 PyObject *_REMOTE_ADDR, *_PATH_INFO, *_QUERY_STRING, *_REQUEST_METHOD, *_GET,
          *_HTTP_CONTENT_LENGTH, *_CONTENT_LENGTH, *_HTTP_CONTENT_TYPE, *_CONTENT_TYPE,
-         *_SERVER_PROTOCOL, *_HTTP_1_1, *_HTTP_1_0, *_wsgi_input, *_close, *_empty_string;
+         *_SERVER_PROTOCOL, *_HTTP_1_1, *_HTTP_1_0, *_wsgi_input, *_close_m, *_empty_string;
+
 
 #ifdef DEBUG
   #define DBG_REQ(request, ...) \
@@ -55,6 +60,18 @@ PyObject *_REMOTE_ADDR, *_PATH_INFO, *_QUERY_STRING, *_REQUEST_METHOD, *_GET,
 #endif
 
 #endif
+
+#define ASSERT(expr)                                      \
+ do {                                                     \
+  if (!(expr)) {                                          \
+    fprintf(stderr,                                       \
+            "Assertion failed in %s on line %d: %s\n",    \
+            __FILE__,                                     \
+            __LINE__,                                     \
+            #expr);                                       \
+    abort();                                              \
+  }                                                       \
+ } while (0)
 
 
 void dprint(const char * name,const char * content);

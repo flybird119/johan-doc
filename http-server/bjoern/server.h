@@ -1,4 +1,5 @@
 #include "request.h"
 
-bool server_init(const char* hostaddr, const int port);
-void server_run();
+int server_run(const char* hostaddr, const int port);
+//bool server_init(const char* hostaddr, const int port);
+//void server_run();

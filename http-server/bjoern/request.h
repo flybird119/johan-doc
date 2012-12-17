@@ -1,7 +1,7 @@
 #ifndef __request_h__
 #define __request_h__
 
-#include <ev.h>
+#include <uv.h>
 #include "http_parser.h"
 #include "common.h"
 
@@ -30,8 +30,8 @@ typedef struct {	//Request对象的定义
   unsigned long id;
 #endif
   bj_parser parser;
-  ev_io ev_watcher;
-
+  uv_tcp_t ev_watcher;
+  uv_write_t write_req;
   int client_fd;	//客户端套接字ID
   PyObject* client_addr;	//客户端套接字地址
 
@@ -49,6 +49,7 @@ typedef struct {	//Request对象的定义
   (Request*)((size_t)watcher - (size_t)(&(((Request*)NULL)->ev_watcher)));
 
 Request* Request_new(int client_fd, const char* client_addr);
+Request* Request_init();
 void Request_parse(Request*, const char*, const size_t);
 void Request_reset(Request*);
 void Request_clean(Request*);
