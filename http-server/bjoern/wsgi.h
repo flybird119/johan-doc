@@ -7,3 +7,8 @@ PyObject* wrap_http_chunk_cruft_around(PyObject* chunk);
 
 PyTypeObject StartResponse_Type;
 
+#ifdef WIN32
+	#define SCMP strnicmp 
+#else
+	#define SCMP strncmp
+#endif

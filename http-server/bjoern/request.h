@@ -30,7 +30,7 @@ typedef struct {	//Request对象的定义
   unsigned long id;
 #endif
   bj_parser parser;
-  uv_tcp_t ev_watcher;
+  uv_stream_t* ev_watcher;
   uv_write_t write_req;
   int client_fd;	//客户端套接字ID
   PyObject* client_addr;	//客户端套接字地址

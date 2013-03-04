@@ -203,7 +203,7 @@ inspect_headers(Request* request)
     if(!PyString_Check(field) || !PyString_Check(value))
       goto err;
 
-    if(!strnicmp(PyString_AS_STRING(field), "Content-Length", PyString_GET_SIZE(field)))
+    if(!SCMP(PyString_AS_STRING(field), "Content-Length", PyString_GET_SIZE(field)))
       request->state.response_length_unknown = false;
   }
   return true;

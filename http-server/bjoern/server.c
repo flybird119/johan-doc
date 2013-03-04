@@ -75,7 +75,7 @@ int server_run(const char* hostaddr, const int port)	//ÔËÐÐ·þÎñ
     return 1;
   }
 
-  r = uv_listen((uv_stream_t*)&tcpServer, SOMAXCONN, on_connection);	//¼àÌý¶Ë¿Ú
+  r = uv_listen((uv_stream_t*)&tcpServer, M_SOMAXCONN, on_connection);	//¼àÌý¶Ë¿Ú
   
   if (r) {
     /* TODO: Error codes */
@@ -88,9 +88,9 @@ int server_run(const char* hostaddr, const int port)	//ÔËÐÐ·þÎñ
   Py_END_ALLOW_THREADS
 
 #if WANT_SIGINT_HANDLING
-  ev_signal signal_watcher;
-  ev_signal_init(&signal_watcher, ev_signal_on_sigint, SIGINT);
-  ev_signal_start(mainloop, &signal_watcher);
+//  ev_signal signal_watcher;
+//  ev_signal_init(&signal_watcher, ev_signal_on_sigint, SIGINT);
+//  ev_signal_start(mainloop, &signal_watcher);
 #endif
   return 0;
 }
@@ -108,38 +108,39 @@ static void on_connection(uv_stream_t* server, int status) {	//µ±ÓÐ¿Í»§¶ËÁ¬½ÓÊ±´
 	Request* request;
 	struct sockaddr_in sockaddr;	//¶¨ÒåÌ×½Ó×ÖµØÖ·
 	socklen_t addrlen;
-
+	uv_stream_t* handle;
+	dprint("on connection.");
 	if (status != 0) {				//×´Ì¬ÅÐ¶Ï, ×´Ì¬±ØÐëÎª0
 	fprintf(stderr, "Connect error %d\n",
 		uv_last_error(loop).code);
 	}
 	ASSERT(status == 0);
 
+	handle = malloc(sizeof(uv_tcp_t));
 	GIL_LOCK(0);
 	request = Request_init();
 	GIL_UNLOCK(0);
 
-	r = uv_tcp_init(loop, &request->ev_watcher);//³õÊ¼»¯Á¬½ÓÁ÷½á¹¹Ìå
+	r = uv_tcp_init(loop, (uv_tcp_t*)handle);//³õÊ¼»¯Á¬½ÓÁ÷½á¹¹Ìå
 	ASSERT(r == 0);
 
-	request->ev_watcher.data = request;
-
-	r = uv_accept(server, (uv_stream_t*)&request->ev_watcher);
+	r = uv_accept(server, handle);
 	ASSERT(r == 0);
 
 	//-----------------µÃµ½¿Í»§¶ËÐÅÏ¢
 	addrlen = sizeof(struct sockaddr_in);
-	r = uv_tcp_getpeername(&request->ev_watcher, (struct sockaddr *)&sockaddr, &addrlen);
+	r = uv_tcp_getpeername((uv_tcp_t *)handle, (struct sockaddr *)&sockaddr, &addrlen);
 	ASSERT(r == 0);
 	
 	request->client_addr = PyString_FromString(inet_ntoa(sockaddr.sin_addr));
-	request->client_fd = request->ev_watcher.socket;
-
+	request->client_fd = 1;//request->ev_watcher.socket;
+	request->ev_watcher = handle;
+	handle->data = request;
 	DBG_REQ(request, "Accepted client %s:%d on fd %d",
-		  inet_ntoa(sockaddr.sin_addr), ntohs(sockaddr.sin_port), (int)((request->ev_watcher).socket));
-	free(&sockaddr);
+		  inet_ntoa(sockaddr.sin_addr), ntohs(sockaddr.sin_port), (int)(GET_HANDLE_FD(handle)));
+	//@@@@@@@@@@@@@@@@@free(&sockaddr);
 	//-----------------¶ÁÊÂ¼þÑ­»·
-	r = uv_read_start((uv_stream_t*)&request->ev_watcher, on_alloc, on_read);
+	r = uv_read_start(handle, on_alloc, on_read);
 	ASSERT(r == 0);
 }
 
@@ -164,55 +165,48 @@ static void after_write(uv_write_t* req, int status) {
 	UVERR(err,"uv_write error");
 	//ASSERT(0);
   }
+  free(req);
   //uv_close((uv_handle_t*)req->handle, on_close);
   /* Free the read/write buffer and the request */
-  free(req);
+  //@@@@@@@@@@@@@free(req);
 }
 
 static void on_read(uv_stream_t* handle, ssize_t nread, uv_buf_t buf) {
 	Request* request;
-
+	dprint("go on_read");
 	request =(Request*)handle->data;
 	GIL_LOCK(0);
-	if (nread < 0) {
-		uv_err_t err = uv_last_error(loop);
-		UVERR(err, "uv read error");
-		/* Error or EOF */
-		//ASSERT (uv_last_error(loop).code == UV_EOF);
-
+	if (nread <= 0) {
+		//@@@@@@@@@@@@@@@uv_err_t err = uv_last_error(loop);
+		//@@@@@@@@@@@@@@@UVERR(err, "uv read error");
+		if(nread == 0)
+		        dprint("Client disconnected");
+		uv_close((uv_handle_t*)handle, on_close);
+		Request_free(request);
 		if (buf.base) {
 		  free(buf.base);
 		}
-		//req = (uv_shutdown_t*) malloc(sizeof *req);
-		//uv_shutdown(req, handle, after_shutdown);
-		goto out;
-	}
-
-	if (nread == 0) {
-		/* Everything OK, but nothing read. */
-		free(buf.base);
 		goto out;
 	}
     Request_parse(request, buf.base, nread);	//´¦ÀíRequest½âÎö
 	free(buf.base);
     if(request->state.error_code) {
       DBG_REQ(request, "Parse error");
-      request->current_chunk = PyString_FromString(
-        http_error_messages[request->state.error_code]);
+      request->current_chunk = PyString_FromString(http_error_messages[request->state.error_code]);//´¦ÀíÓÐ´íÎóµÄÐÅÏ¢·µ»Ø
 	  assert(request->iterator == NULL);
-	  uv_close((uv_handle_t*) &request->ev_watcher, on_close);
-	  Request_free(request);
-	  goto out;
+	  //@@@@@@@@@ uv_close((uv_handle_t*) &request->ev_watcher, on_close);//½âÎöÓÐ´íÎóµÄÇëÇóÖ±½Ó¹Ø±Õ¿Í»§¶ËÁ¬½Ó
+	  //@@@@@@@@@@ Request_free(request);
+	  //@@@@@@@@@ goto out;
     }
-    else if(request->state.parse_finished) {	// ×¼±¸ºÃ
+    else if(request->state.parse_finished) {	// ½âÎöºÃºó
 	  dprint("Ö´ÐÐwsgi³ÌÐò >>>");
       if(!wsgi_call_application(request)) {	// Ö´ÐÐwsgi
 	    dprint("wsgiÖ´ÐÐ°üº¬´íÎó");
         assert(PyErr_Occurred());
-        PyErr_Print();
+        PyErr_Print();	//´òÓ¡python´íÎóµÄ¸ú×Ù¶ÑÕ»ÐÅÏ¢
         assert(!request->state.chunked_response);
         Py_XCLEAR(request->iterator);
-        request->current_chunk = PyString_FromString(
+        request->current_chunk = PyString_FromString(	//·µ»Ø´íÎóÐÅÏ¢¸ø¿Í»§¶Ë
           http_error_messages[HTTP_SERVER_ERROR]);
       }
     } else {
@@ -220,7 +214,7 @@ static void on_read(uv_stream_t* handle, ssize_t nread, uv_buf_t buf) {
       goto out;
     }
     dprint("¿ªÊ¼¿Í»§¶ËÊý¾Ý·µ»Ø >>>");
-    while(request->current_chunk){
+    while(request->current_chunk){	//¿Í»§¶Ë·µ»ØÑ­»·
 	  io_write(request);
     }
 
@@ -230,10 +224,8 @@ static void on_read(uv_stream_t* handle, ssize_t nread, uv_buf_t buf) {
 }
 
 static void on_close(uv_handle_t* handle) {
-  //Request* request =(Request*)handle->data;
-  //DBG_REQ(request, "done, close");
-  //Request_free(request);
-  //free(request);
+  free(handle);
+  //dprint("on close.");
 }
 
 static void io_write(Request* request)
@@ -279,7 +271,7 @@ static void io_write(Request* request)
 		  dprint("µü´ú³ö´í");
           PyErr_Print();
           DBG_REQ(request, "Exception in iterator, can not recover");
-		  uv_close((uv_handle_t*) &request->ev_watcher, on_close);
+		  uv_close((uv_handle_t*) request->ev_watcher, on_close);
 		  Request_free(request);
 		  err = uv_last_error(loop);
 		  UVERR(err, "uv_write error on next chunk");
@@ -307,7 +299,8 @@ static void io_write(Request* request)
     Request_clean(request);
     Request_reset(request);
   } else {
-	uv_close((uv_handle_t*) &request->ev_watcher, on_close);
+	dprint("done not keep alive");
+	uv_close((uv_handle_t*) request->ev_watcher, on_close);
 	Request_free(request);
   }
 
@@ -322,6 +315,8 @@ send_chunk(Request* request)
 {
   Py_ssize_t bytes_sent;
   static uv_buf_t resbuf;
+  uv_write_t * wr;
+  wr = (uv_buf_t*) malloc(sizeof *wr);
   //dprint("·¢ËÍchunk:\n%s",PyString_AS_STRING(request->current_chunk) + request->current_chunk_p);
   dprint("·¢ËÍ´óÐ¡:%d",PyString_GET_SIZE(request->current_chunk) - request->current_chunk_p);
   assert(request->current_chunk != NULL);
@@ -329,8 +324,8 @@ send_chunk(Request* request)
          && PyString_GET_SIZE(request->current_chunk) != 0));
   resbuf = uv_buf_init(PyString_AS_STRING(request->current_chunk) + request->current_chunk_p, PyString_GET_SIZE(request->current_chunk) - request->current_chunk_p);
   bytes_sent = uv_write(
-		   &request->write_req,
-		   (uv_stream_t*)&request->ev_watcher,
+		   wr,
+		   request->ev_watcher,
 		   &resbuf,
 		   1,
 		   after_write);
@@ -346,8 +341,8 @@ send_chunk(Request* request)
     request->current_chunk_p = 0;
     return false;
   }
-  Py_CLEAR(request->current_chunk);
-  free(resbuf.base);
+  //@@@@@@@@@@@@@@@@@ Py_CLEAR(request->current_chunk);
+  //@@@@@@@@@@@@@@@@@ free(resbuf.base);
   return true;
 }
 
@@ -370,7 +365,7 @@ do_sendfile(Request* request)
 static bool
 handle_nonzero_errno(Request* request)
 {
-  if(errno == EAGAIN || errno == WSAEWOULDBLOCK) {	//EWOULDBLOCK
+  if(errno == EAGAIN || errno == M_EWOULDBLOCK) {	//WSAEWOULDBLOCK
     /* Try again later */
     return true;
   } else {

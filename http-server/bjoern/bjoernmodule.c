@@ -1,4 +1,5 @@
 #include <Python.h>
+#include <object.h>
 #include "server.h"
 #include "wsgi.h"
 #include "bjoernmodule.h"	//PyObject* wsgi_app;

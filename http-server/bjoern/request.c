@@ -98,7 +98,7 @@ void Request_parse(Request* request, const char* data, const size_t data_len)
   dprint("处理完成的数据:%d",nparsed);
   if(nparsed != data_len)
   {
-    printf("************HTTP_BAD_REQUEST************ %d | %d \n",data_len,nparsed);
+    dprint("************HTTP_BAD_REQUEST************ %d | %d \n",data_len,nparsed);
     request->state.error_code = HTTP_BAD_REQUEST;
   }
 }
