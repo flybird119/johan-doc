@@ -42,15 +42,3 @@ void _init_common()
   _empty_string = PyString_FromString("");
   #undef _
 }
-
-void dprint(const char * name,const char * content)
-{
-
-}
-
-
-void dnote(const char * content)
-{
-
-}
-

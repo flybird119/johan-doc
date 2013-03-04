@@ -48,6 +48,22 @@ PyObject *_REMOTE_ADDR, *_PATH_INFO, *_QUERY_STRING, *_REQUEST_METHOD, *_GET,
   #define DBG_REQ(...) DBG(__VA_ARGS__)
 #endif
 
+#ifdef DEBUG_DEV
+  #define dprint_req(request, ...) \
+    do { \
+      printf("[DEBUG Req %ld] ", request->id); \
+      dprint(__VA_ARGS__); \
+    } while(0)
+  #define dprint(...) \
+    do { \
+      printf(__VA_ARGS__); \
+      printf("\n"); \
+    } while(0)
+#else
+  #define dprint(...) do{}while(0)
+  #define dprint_req(...) dprint(__VA_ARGS__)
+#endif
+
 #define DBG_REFCOUNT(obj) \
   DBG(#obj "->obj_refcnt: %d", obj->ob_refcnt)
 
@@ -72,10 +88,5 @@ PyObject *_REMOTE_ADDR, *_PATH_INFO, *_QUERY_STRING, *_REQUEST_METHOD, *_GET,
     abort();                                              \
   }                                                       \
  } while (0)
-
-
-void dprint(const char * name,const char * content);
-
-void dnote(const char * content);
 
 

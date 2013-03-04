@@ -49,6 +49,7 @@ Request* Request_init()
 void Request_reset(Request* request)	//Request¶ÔÏóµÄ³õÊ¼»¯ state ºÍ parser.bodyÇå¿Õ
 {
   string m;
+  dprint("Request_reset...");
   memset(&request->state, 0, sizeof(Request) - (size_t)&((Request*)NULL)->state);	//memset:×÷ÓÃÊÇÔÚÒ»¶ÎÄÚ´æ¿éÖÐÌî³äÄ³¸ö¸ø¶¨µÄÖµ£¬Ëü¶Ô½Ï´óµÄ½á¹¹Ìå»òÊý×é½øÐÐÇåÁã²Ù×÷µÄÒ»ÖÖ×î¿ì·½·¨
   request->state.response_length_unknown = true;
   m.data = NULL;
@@ -58,6 +59,7 @@ void Request_reset(Request* request)	//Request¶ÔÏóµÄ³õÊ¼»¯ state ºÍ parser.bodyÇ
 
 void Request_free(Request* request)
 {
+  dprint("Request_free...");
   Request_clean(request);
   Py_DECREF(request->client_addr);
   free(request);
@@ -65,6 +67,7 @@ void Request_free(Request* request)
 
 void Request_clean(Request* request)
 {
+  dprint("Request_clean...");
   if(request->iterable) {
     /* Call 'iterable.close()' if available */
     PyObject* close_method = PyObject_GetAttr(request->iterable, _close_m);
@@ -89,10 +92,10 @@ void Request_parse(Request* request, const char* data, const size_t data_len)
 {
   size_t nparsed;
   assert(data_len);
-  printf("½âÎöÈçÏÂÇëÇó:%d\n%s\n",data_len,data);
+  dprint("½âÎöÈçÏÂÇëÇó:%d\n%s",data_len,data);
   nparsed = http_parser_execute((http_parser*)&request->parser,
                                        &parser_settings, data, data_len);
-  printf("´¦ÀíÍê³ÉµÄÊý¾Ý:%d\n",nparsed);
+  dprint("´¦ÀíÍê³ÉµÄÊý¾Ý:%d",nparsed);
   if(nparsed != data_len)
   {
     printf("************HTTP_BAD_REQUEST************ %d | %d \n",data_len,nparsed);
@@ -120,11 +123,9 @@ void Request_parse(Request* request, const char* data, const size_t data_len)
 #define _set_header_free_value(k, v) \
   do { \
     PyObject* val = (v); \
-	printf("_set_header_free_value\n");\
+	dprint("_set_header_free_value\n");\
 	_set_header(k, val); \
-	printf("_set_header_free_value...mid\n");\
     Py_DECREF(val); \
-	printf("_set_header_free_value...end\n");\
   } while(0)
 #define _set_header_free_both(k, v) \
   do { \
@@ -147,7 +148,7 @@ static int on_message_begin(http_parser* parser)
 
 static int on_path(http_parser* parser, char* path, size_t len)
 {
-  printf("on_path\n");
+  dprint("on_path");
   if(!(len = unquote_url_inplace(path, len)))
     return 1;
   _set_header_free_value(_PATH_INFO, PyString_FromStringAndSize(path, len));
@@ -156,7 +157,7 @@ static int on_path(http_parser* parser, char* path, size_t len)
 
 static int on_query_string(http_parser* parser, const char* query, size_t len)
 {
-  printf("on_query_string\n");
+  dprint("on_query_string");
   _set_header_free_value(_QUERY_STRING, PyString_FromStringAndSize(query, len));
   return 0;
 }
@@ -202,7 +203,7 @@ on_header_value(http_parser* parser, const char* value, size_t len)
 
 static int on_headers_complete(http_parser* parser)
 {
-  printf("on_headers_complete\n");
+  dprint("on_headers_complete");
   if(PARSER->field.data) {
     _set_header_free_both(
       wsgi_http_header(PARSER->field),
@@ -216,7 +217,7 @@ static int
 on_body(http_parser* parser, const char* data, const size_t len)
 {
   Iobject* body;
-  printf("on_body\n");
+  dprint("on_body");
   body = (Iobject*)PyDict_GetItem(REQUEST->headers, _wsgi_input);
   if(body == NULL) {
     PyObject* buf;
@@ -241,7 +242,7 @@ static int
 on_message_complete(http_parser* parser)
 {
   PyObject* body;
-  printf("on_message_complete\n");
+  dprint("on_message_complete");
   /* HTTP_CONTENT_{LENGTH,TYPE} -> CONTENT_{LENGTH,TYPE} */
   PyDict_ReplaceKey(REQUEST->headers, _HTTP_CONTENT_LENGTH, _CONTENT_LENGTH);
   PyDict_ReplaceKey(REQUEST->headers, _HTTP_CONTENT_TYPE, _CONTENT_TYPE);
