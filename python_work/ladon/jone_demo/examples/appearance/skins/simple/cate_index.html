@@ -1,0 +1,23 @@
+
+<html>
+        <head>
+                <meta content="text/html; charset={{ charset }}" http-equiv="Content-Type" />
+                <title>{{ catalog_name }}</title>
+                <style>
+                </style>
+        </head>
+        <body>
+                <div class="catName">{{ catalog_name }}</div>
+                <div class="catDesc">{{ catalog_desc }}</div>
+                <div class="catContent">
+                        <ul class="catService">
+{% for service in services %}
+                                <li>
+                                        <b><a href="/{{ service.servicename }}{{ '?' if query_string }}{{query_string}}">{{ service.servicename }}</a></b><br/>
+                                        {{ service.doc_lines|join('\n') }}
+                                </li>
+{% endfor %}
+                        </ul>
+                </div>
+        </body>
+</html>

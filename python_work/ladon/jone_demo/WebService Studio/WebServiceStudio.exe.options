@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataEditors />
+  <InvokeSettings>
+    <RecentlyUsedUris>
+      <Uri>http://127.0.0.1:8099/service/ShopService/soap/description/</Uri>
+      <Uri>http://127.0.0.1:8099/service/AlbumService/soap/description/</Uri>
+      <Uri>http://127.0.0.1:8099/service/Calculator/soap/description/</Uri>
+      <Uri>http://127.0.0.1:8099/soap/personnel/Employee/soap/description</Uri>
+      <Uri>http://ladonize.org/python-demos/AlbumService/soap/description</Uri>
+      <Uri>http://localhost:8090/AlbumService/soap/description</Uri>
+      <Uri>http://127.0.0.1:8099/soap/personnel/Employee/soap?description</Uri>
+      <Uri>http://localhost:8090/Calculator/soap/description</Uri>
+      <Uri>http://localhost:8090/sAlbumService/soap/description</Uri>
+      <Uri>http://localhost:8090/ShopService/soap/description</Uri>
+      <Uri>http://soap.search.msn.com/webservices.asmx?wsdl</Uri>
+      <Uri>http://necla/Corporate/GDCWS_PinService/PinService.svc</Uri>
+      <Uri>http://necla/Corporate/GDCWS_Activation/ActivationService.svc</Uri>
+    </RecentlyUsedUris>
+  </InvokeSettings>
+  <TypeConverters />
+  <UiSettings>
+    <MessageFont>Lucida Sans Unicode, 9.25pt</MessageFont>
+    <ReqRespFont>Lucida Sans Unicode, 9.25pt</ReqRespFont>
+    <WsdlFont>Lucida Sans Unicode, 8.25pt</WsdlFont>
+  </UiSettings>
+  <WsdlSettings CustomCodeDomProvider="" Language="CS" Protocol="SOAP" />
+</Configuration>

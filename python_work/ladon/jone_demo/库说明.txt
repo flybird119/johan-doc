@@ -1,0 +1,22 @@
+suds
+svn: http://svn.fedorahosted.org/svn/suds/trunk
+python的webservice客户端调用工具库
+使用方法：http://ully.iteye.com/blog/1266320
+
+
+psutil
+是一个 Python模块用来获取正在运行的进程信息和系统的CPU和内存的利用率。类似 Linux 的 ps 、top 和 Windows 的任务管理器等程序。
+svn: http://psutil.googlecode.com/svn/trunk
+
+
+
+ladon
+创建soap服务器是像在 soaplib （使用修饰器）。Ladon 不需要额外的用户代码的情况下同时公开更多的接口
+主页 http://ladonize.org/index.php/Main_About
+
+在线调试工具
+
+
+lxml
+高效强大的python xml解析库
+http://blog.csdn.net/zbyufei/article/details/6411079
